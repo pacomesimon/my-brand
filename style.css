@@ -1,0 +1,63 @@
+body{
+    padding: 0px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background: orange;
+  }
+  .grid-item {
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+  .navbar {
+    align-items: center;
+    /* padding: 1.5ex; */
+    
+    position: absolute;
+    width: 100%;
+    height: 6ex;
+    left: 0px;
+    top: 0px;
+    
+    background: rgba(255, 255, 255, 0.95);
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto 40%;
+  }
+  #logo {
+    text-align: center;
+    width: 4ex;
+    height: 4ex;
+    /* border-radius: 50%; */
+    background: rgba(0, 0, 255, 0.49);
+    color: white;
+  }
+  .intro{
+      padding: 70px 0px 10px 10%;
+  }
+  .intro-buttons{
+    padding: 0px 0px 10px 10%;
+  }
+  .portfolio{
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px 10% 10px 10%;
+  }
+  .projects-grid{
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  .project-card{
+    display: grid;
+    grid-template-columns: auto;
+    border: solid 2px black;
+    padding: 1%;
+  }
+  .col1 .col2{
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .project-img {
+      height: 15ex;
+      width: 100%;
+  }
