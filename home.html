@@ -5,6 +5,8 @@
             My Brand
         </title>
         <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/e752615e51.js" crossorigin="anonymous"></script>
         <style>
 
         </style>
@@ -12,11 +14,11 @@
     <body>
         <div class="navbar">
             <div id="logo">
-                <span>
-                    P
-                </span>
+                <div id="capitalp">
+                  P
+                </div>
             </div>
-            <span>Home</span>
+            <span id="currentpage">Home</span>
             <span>About</span>
             <span>Contact</span>
             <span>Blog</span>
@@ -24,67 +26,73 @@
             <span>Log out</span>
         </div>
         <a id="mytopref"></a>
-        <a id="uparrow" href="#mytopref">^</a>
+        <a id="uparrow" href="#mytopref"><i class="fa-solid fa-circle-arrow-up"></i></a>
         <div class="intro">
-            <p>Hi! I'm Pacome<br>Graphics & Web Design trainee.</p>
+            <a id="hiwords">Hi! I'm Pacome</a><br>Graphics & Web Design trainee.</p>
         </div>
         <div class="intro-buttons">
-            <button>ABOUT ME -></button><br>
-            <button>IG</button><button>lI</button>
+            <button>ABOUT ME <i class="fa-solid fa-right-long"></i></button><br>
+            <button><i class="fa-brands fa-linkedin"></i></button>
+            <button><i class="fa-brands fa-twitter"></i></button>
+            <button><i class="fa-brands fa-instagram"></i></button>
         </div>
         
         <div class="portfolio">
             <div class="projects-grid">
                 <div class="col1">
                     <div class="portfolio-title">
-                        Portfolio
+                        <div class="portfolio-title-raw">
+                            Portfolio
+                        </div>
                     </div>
                     <div class="project-card">
-                        <img src="??" class="project-img">
-                        <span>Digital Handwritting</span>
+                        <img src="images/digital-writting.jpg" class="project-img">
+                        <span><strong>Digital Handwritting</strong></span>
                         <span>Academic Project</span>
                         <span>2021</span>
-                        <button>VIEW PROJECT -></button>
+                        <button>VIEW PROJECT <i class="fa-solid fa-right-long"></i></button>
                     </div>
                 </div>
                 <div class="col2">
                     <div class="project-card">
-                        <img src="??" class="project-img">
-                        <span>Document Skimmer</span>
+                        <img src="images/document-skimmer.jpg" class="project-img">
+                        <span><strong>Document Skimmer</strong></span>
                         <span>Self-Study Project</span>
                         <span>2020</span>
-                        <button>VIEW PROJECT -></button>
+                        <button>VIEW PROJECT <i class="fa-solid fa-right-long"></i></button>
                     </div>
                     <div class="project-card">
-                        <img src="??" class="project-img">
-                        <span>Taxi Data Processing</span>
+                        <img src="images/data-processing.jpg" class="project-img">
+                        <span><strong>Taxi Data Processing</strong></span>
                         <span>Self-Study Project</span>
                         <span>2019</span>
-                        <button>VIEW PROJECT -></button>
+                        <button>VIEW PROJECT <i class="fa-solid fa-right-long"></i></button>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>  
 
         <div class="myskills">
             <div class="projects-grid">
                 <div class="col1">
                     <div class="skills-title">
-                        My Skills
+                        <div class="skills-title-raw">
+                            My Skills
+                        </div>
                     </div>
                     <div class="skills-card">
-                        <img src="??" class="skill-img">
-                        <span>Linux Shell Programming</span>
+                        <img src="images/linux.jpg" class="skill-img">
+                        <span><strong>Linux Shell Programming</strong></span>
                     </div>
                 </div>
                 <div class="col2">
                     <div class="skills-card">
-                        <img src="??" class="skill-img">
-                        <span>Data Analytics</span>
+                        <img src="images/data analytics.jpg" class="skill-img">
+                        <span><strong>Data Analytics</strong></span>
                     </div>
                     <div class="skills-card">
-                        <img src="??" class="skill-img">
-                        <span>Electronics Troubleshooting</span>
+                        <img src="images/electronics.jpg" class="skill-img">
+                        <span><strong>Electronics Troubleshooting</strong></span>
                     </div>
                 </div>
             </div>
@@ -93,17 +101,17 @@
         <footer>
             <div class="footer">
                 <div id="footer-contact">
-                    <span>Contact me</span>
-                    <button>Click here -></button>
+                    <span><strong>Contact me:</strong></span>
+                    <div>Click here <i class="fa-solid fa-right-long"></i></div>
                 </div>
                 <div id="footer-blog">
-                    <span>See my blog!</span>
-                    <button>Click here -></button>
+                    <span><strong>See my blog!</strong></span>
+                    <div>Click here <i class="fa-solid fa-right-long"></i></div>
                 </div>
                 <div id="footer-social">
-                    <button>IG</button>
-                    <button>TW</button>
-                    <button>lI</button>  
+                    <span><i class="fa-brands fa-linkedin"></i></span>
+                    <span><i class="fa-brands fa-twitter"></i></span>
+                    <span><i class="fa-brands fa-instagram"></i></span>  
                 </div>
                 <div id="footer-copyright">
                     Ⓒ PacomeSimon 2022 
