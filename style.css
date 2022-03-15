@@ -94,10 +94,6 @@ body{
 
   footer{
     margin-top: 2ex;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
   }
   .footer{
     align-items: center;
@@ -137,4 +133,5 @@ body{
     /* background: rgba(196, 196, 196, 0.05); */
   }
 
+  
   
