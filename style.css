@@ -1,21 +1,12 @@
 body{
-    padding: 0px;
+  margin: 0;
+  font-family: "Lucida Console";
 }
-.grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    background: orange;
-  }
-  .grid-item {
-    padding: 20px;
-    font-size: 30px;
-    text-align: center;
-  }
   .navbar {
+    position: fixed;
     align-items: center;
-    /* padding: 1.5ex; */
+    padding: 0.5ex;
     
-    position: absolute;
     width: 100%;
     height: 6ex;
     left: 0px;
@@ -27,10 +18,23 @@ body{
   }
   #logo {
     text-align: center;
-    width: 4ex;
-    height: 4ex;
-    /* border-radius: 50%; */
+    align-items: center;
+    width: 2ex;
+    height: 2ex;
+    border-radius: 50%;
     background: rgba(0, 0, 255, 0.49);
+    color: white;
+    padding: 1ex;
+  }
+  #uparrow {
+    position: fixed;
+    right: 3ex;
+    bottom: 3ex;
+    text-align: center;
+    width: 7ex;
+    height: 7ex;
+    border-radius: 50%;
+    background: rgba(156, 156, 156, 0.58);
     color: white;
   }
   .intro{
@@ -42,22 +46,76 @@ body{
   .portfolio{
     background: rgba(255, 255, 255, 0.8);
     padding: 10px 10% 10px 10%;
+    margin-top: 2ex;
   }
   .projects-grid{
     display: grid;
     grid-template-columns: auto auto;
+    gap: 1ex;
   }
   .project-card{
     display: grid;
     grid-template-columns: auto;
     border: solid 2px black;
     padding: 1%;
+    margin-bottom: 1ex;
   }
   .col1 .col2{
     display: grid;
     grid-template-columns: auto;
   }
+
   .project-img {
       height: 15ex;
       width: 100%;
   }
+
+  .myskills{
+    background: rgba(0, 0, 255, 0.5);
+    padding: 10px 10% 10px 10%;
+    margin-top: 2ex;
+  }
+  .skills-card{
+    display: grid;
+    grid-template-columns: auto;
+    border: solid 2px black;
+    padding: 1%;
+    margin-bottom: 1ex;
+  }
+  .skill-img{
+    height: 7.5ex;
+    width: 100%;
+  }
+
+  footer{
+    margin-top: 2ex;
+  }
+  .footer{
+    align-items: center;
+    /* padding: 1.5ex; */
+    
+    width: 100%;
+    height: auto;
+    
+    background: rgba(0, 0, 0, 0.8);
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    color: white;
+  }
+  #footer-contact {
+    display: grid;
+    grid-template-columns: auto;
+    padding: 1%;
+  }
+  #footer-blog {
+    display: grid;
+    grid-template-columns: auto; 
+    padding: 1%;
+  }
+  #footer-social {
+    padding: 10% 20% 10% 20%;
+  }
+  #footer-copyright{
+    text-align: center;
+  }
+  
