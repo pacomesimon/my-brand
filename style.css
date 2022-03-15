@@ -23,6 +23,14 @@ body{
     font-weight: 400; */
     font-size: 16px;
   }
+
+  #navbar2 {
+    display: none;
+  }
+  #navbar-expanded {
+    display: none;
+  }
+
   #currentpage{
     color: black;
     font-size:20px;
@@ -199,4 +207,92 @@ body{
     /* background: rgba(196, 196, 196, 0.05); */
   }
 
+
+
+
+  @media (max-width: 890px) { 
+    .footer{
+      grid-template-columns: auto;
+      gap: 0.2ex;
+      height: auto;
+      padding-top: 1ex;
+      padding-bottom: 1ex;
+      width:100%
+    }
+
+
+
+    .fa-bars{
+      color: rgba(0, 0, 255, 0.49);
+      font-size: 24px;
+      margin: 0.5ex;
+    }
+    .navbar{
+      display: none;
+    }
+    #navbar2{
+      display: block;
+    z-index : 10;
+    position: fixed;
+    align-items: center;
+    padding: 0.5ex;
+    
+    width: 100%;
+    height: 6ex;
+    left: 0px;
+    top: 0px;
+    
+    background: rgba(255, 255, 255, 0.95);
+    display: grid;
+    grid-template-columns: 3ex 3ex 15ex;
+    gap: 2ex;
+    color: #414141;
+    font-size: 16px;
+    }
+    #navbar-expanded{
+      position: fixed;
+      width: 15ex;
+      top: 7ex;
+      padding: 1.5ex;
+      background: rgba(255, 255, 255, 0.95);
+      display: grid;
+      grid-template-columns: auto;
+      gap: 0.5ex;
+      color: #414141;
+      font-size: 16px;
+      z-index: 10;
+      display:none;
+    }
+
+    .projects-grid{
+      display: grid;
+      grid-template-columns: auto;
+      gap: 0.5ex;
+    }
+
+    .intro{
+      padding: 70px 0px 5px 10%;
+      font-weight: 700;
+      font-size: 36px;
+      width: 50%
+    }
+    .portfolio{
+      padding: 10px 1.5% 10px 1.5%;
+    }
+    .portfolio-title{
+      font-weight: bold;
+      font-size: 24px;
+      height: 5ex;
+      width: 20ex;
+      margin-bottom: 1ex;
+      display: flex;
+      align-items: center;
+    }
+    .project-img {
+      height: 20ex;
+      width: 100%;
+      object-fit: cover;
+    }
+
+  }
   
