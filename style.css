@@ -43,10 +43,10 @@ body{
   .intro-buttons{
     padding: 0px 0px 10px 10%;
   }
-  .portfolio{
+  .about-body{
     background: rgba(255, 255, 255, 0.8);
     padding: 10px 10% 10px 10%;
-    margin-top: 2ex;
+    margin-top: 10ex;
   }
   .projects-grid{
     display: grid;
@@ -88,7 +88,11 @@ body{
   }
 
   footer{
+    position: absolute;
     margin-top: 2ex;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
   }
   .footer{
     align-items: center;
