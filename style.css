@@ -1,8 +1,11 @@
 body{
   margin: 0;
   font-family: "Lucida Console";
+  background-image: url("images/background-image.jpg");
+  background-attachment: fixed;
 }
   .navbar {
+    z-index : 10;
     position: fixed;
     align-items: center;
     padding: 0.5ex;
@@ -14,7 +17,17 @@ body{
     
     background: rgba(255, 255, 255, 0.95);
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto 40%;
+    grid-template-columns: auto auto auto auto auto auto auto 55%;
+    gap: 2ex;
+    color: #414141;
+    font-size: 16px;
+  }
+  /* .navbar-expanded{
+  
+  } */
+  #currentpage{
+    color: black;
+    font-size:20px;
   }
   #logo {
     text-align: center;
@@ -32,95 +45,96 @@ body{
   }
   #uparrow {
     position: fixed;
-    right: 3ex;
-    bottom: 3ex;
+    right: 1ex;
+    bottom: 1ex;
     text-align: center;
-    width: 7ex;
-    height: 7ex;
-    border-radius: 50%;
-    background: rgba(156, 156, 156, 0.58);
-    color: white;
+    font-size: 7ex;
+    color: rgba(156, 156, 156, 0.58);
   }
-  .intro{
-      padding: 70px 0px 10px 10%;
-  }
-  .intro-buttons{
-    padding: 0px 0px 10px 10%;
-  }
+  
   .about-body{
     background: rgba(255, 255, 255, 0.8);
-    padding: 10px 10% 10px 10%;
-    margin-top: 10ex;
+    padding: 30px 20% 30px 20%;
+    margin-top: 8ex;
   }
-  .about-grid{
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 1ex;
-  }
-  .col1{
-    display: grid;
-    grid-template-columns: auto;
-  }
-  .col2{
-    display: grid;
-    grid-template-columns: auto;
-  }
-
-  .profile-img {
-      height: 15ex;
-      width: 100%;
-  }
-
-  .myskills{
-    background: rgba(0, 0, 255, 0.5);
-    padding: 10px 10% 10px 10%;
-    margin-top: 2ex;
-  }
-  .skills-card{
-    display: grid;
-    grid-template-columns: auto;
-    border: solid 2px black;
-    padding: 1%;
+  .about-title{
+    
+    color: rgba(0, 0, 255, 0.49);
+    font-weight: bold;
+    font-size: 36px;
     margin-bottom: 1ex;
   }
-  .skill-img{
-    height: 7.5ex;
-    width: 100%;
+
+  #profilepic {
+    border-radius: 50%;
+    width: 30ex;
+    height: 30ex;
+    float: right;
+    opacity: 0.7;
+    z-index : -1;
+  }
+
+  #about-paragraph{
+    line-height: 1.8;
+  }
+
+  button{
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 255, 0.49);
+    font-weight: bold;
+    font-size: 16px;
+    text-align: left;
+    padding-left: 0px;
+  }
+  .footer button{
+    color: inherit;
+    font-weight: normal;
   }
 
   footer{
-    position: absolute;
     margin-top: 2ex;
+    position: absolute;
     bottom: 0px;
-    right: 0px;
     left: 0px;
+    right: 0px;
   }
   .footer{
     align-items: center;
     /* padding: 1.5ex; */
     
     width: 100%;
-    height: auto;
+    height: 10ex;
     
     background: rgba(0, 0, 0, 0.8);
     display: grid;
     grid-template-columns: auto auto auto auto;
+    gap: 18ex;
     color: white;
   }
   #footer-contact {
+    text-align: center;
     display: grid;
     grid-template-columns: auto;
     padding: 1%;
+    color: white;
+    background: rgba(196, 196, 196, 0.05);
   }
   #footer-blog {
+    text-align: center;
     display: grid;
     grid-template-columns: auto; 
     padding: 1%;
+    background: rgba(196, 196, 196, 0.05);
   }
   #footer-social {
-    padding: 10% 20% 10% 20%;
+    text-align: center;
+    /* padding: 10% 10% 10% 10%; */
+    background: rgba(196, 196, 196, 0.05);
   }
   #footer-copyright{
     text-align: center;
+    /* background: rgba(196, 196, 196, 0.05); */
   }
+
   
