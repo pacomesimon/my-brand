@@ -7,6 +7,11 @@ body{
   font-family: "Lucida Console";
   background-image: url("../images/background-image.jpg");
   background-attachment: fixed;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
 }
   .navbar {
     position: fixed;
@@ -203,6 +208,7 @@ body{
   }
   #footer-social {
     text-align: center;
+    font-size: xx-large;
     /* padding: 10% 10% 10% 10%; */
     background: rgba(196, 196, 196, 0.05);
   }
@@ -299,4 +305,3 @@ body{
     }
 
   }
-  
