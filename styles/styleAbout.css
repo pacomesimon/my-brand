@@ -1,0 +1,209 @@
+a {
+  color: inherit; 
+  text-decoration: inherit;
+}
+body{
+  margin: 0;
+  font-family: "Lucida Console";
+  background-image: url("../images/background-image.jpg");
+  background-attachment: fixed;
+}
+  .navbar {
+    display: block;
+    z-index : 10;
+    position: fixed;
+    align-items: center;
+    padding: 0.5ex;
+    
+    width: 100%;
+    height: 6ex;
+    left: 0px;
+    top: 0px;
+    
+    background: rgba(255, 255, 255, 0.95);
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto 55%;
+    gap: 2ex;
+    color: #414141;
+    font-size: 16px;
+  }
+  #navbar2{
+    display:none;
+  }
+  #navbar-expanded{
+    display:none; 
+  }
+
+
+
+
+      
+
+      
+  #currentpage{
+    color: black;
+    font-size:20px;
+  }
+  #logo {
+    text-align: center;
+    width: 3ex;
+    height: 3ex;
+    border-radius: 50%;
+    background: rgba(0, 0, 255, 0.49);
+    color: white;
+    font-size:x-large;
+    padding: 0ex;
+  }
+  #capitalp{
+    margin-top: 0.5ex;
+    margin-bottom: 0.5ex;
+  }
+  #uparrow {
+    position: fixed;
+    right: 1ex;
+    bottom: 1ex;
+    text-align: center;
+    font-size: 7ex;
+    color: rgba(156, 156, 156, 0.58);
+  }
+  
+  .about-body{
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px 20% 30px 20%;
+    margin-top: 8ex;
+  }
+  .about-title{
+    
+    color: rgba(0, 0, 255, 0.49);
+    font-weight: bold;
+    font-size: 36px;
+    margin-bottom: 1ex;
+  }
+
+  #profilepic {
+    border-radius: 50%;
+    width: 30ex;
+    height: 30ex;
+    float: right;
+    opacity: 0.7;
+    z-index : -2;
+  }
+
+  #about-paragraph{
+    line-height: 1.8;
+  }
+
+  button{
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 255, 0.49);
+    font-weight: bold;
+    font-size: 16px;
+    text-align: left;
+    padding-left: 0px;
+  }
+  .footer button{
+    color: inherit;
+    font-weight: normal;
+  }
+
+  footer{
+    margin-top: 2ex;
+  }
+  .footer{
+    align-items: center;
+    /* padding: 1.5ex; */
+    
+    width: 100%;
+    height: 10ex;
+    
+    background: rgba(0, 0, 0, 0.8);
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 18ex;
+    color: white;
+  }
+  #footer-contact {
+    text-align: center;
+    display: grid;
+    grid-template-columns: auto;
+    padding: 1%;
+    color: white;
+    background: rgba(196, 196, 196, 0.05);
+  }
+  #footer-blog {
+    text-align: center;
+    display: grid;
+    grid-template-columns: auto; 
+    padding: 1%;
+    background: rgba(196, 196, 196, 0.05);
+  }
+  #footer-social {
+    text-align: center;
+    /* padding: 10% 10% 10% 10%; */
+    background: rgba(196, 196, 196, 0.05);
+  }
+  #footer-copyright{
+    text-align: center;
+    /* background: rgba(196, 196, 196, 0.05); */
+  }
+
+  @media (max-width: 890px) { 
+    .footer{
+      grid-template-columns: auto;
+      gap: 0.2ex;
+      height: auto;
+      padding-top: 1ex;
+      padding-bottom: 1ex;
+      width:100%
+    }
+
+
+
+    .fa-bars{
+      color: rgba(0, 0, 255, 0.49);
+      font-size: 24px;
+      margin: 0.5ex;
+    }
+    .navbar{
+      display: none;
+    }
+    #navbar2{
+      display: block;
+    z-index : 10;
+    position: fixed;
+    align-items: center;
+    padding: 0.5ex;
+    
+    width: 100%;
+    height: 6ex;
+    left: 0px;
+    top: 0px;
+    
+    background: rgba(255, 255, 255, 0.95);
+    display: grid;
+    grid-template-columns: 3ex 3ex 15ex;
+    gap: 2ex;
+    color: #414141;
+    font-size: 16px;
+    }
+    #navbar-expanded{
+      position: fixed;
+      width: 15ex;
+      top: 7ex;
+      padding: 1.5ex;
+      background: rgba(255, 255, 255, 0.95);
+      display: grid;
+      grid-template-columns: auto;
+      gap: 0.5ex;
+      color: #414141;
+      font-size: 16px;
+      z-index: 10;
+      display:none;
+    }
+
+    #profilepic {
+      width: 15ex;
+      height: 15ex;
+    }
+  }
