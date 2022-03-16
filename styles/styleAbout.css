@@ -1,7 +1,11 @@
+a {
+  color: inherit; 
+  text-decoration: inherit;
+}
 body{
   margin: 0;
   font-family: "Lucida Console";
-  background-image: url("images/background-image.jpg");
+  background-image: url("../images/background-image.jpg");
   background-attachment: fixed;
 }
   .navbar {
