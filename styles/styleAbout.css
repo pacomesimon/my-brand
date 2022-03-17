@@ -140,6 +140,7 @@ body{
   }
   #footer-social {
     text-align: center;
+    font-size: xx-large;
     /* padding: 10% 10% 10% 10%; */
     background: rgba(196, 196, 196, 0.05);
   }
@@ -150,8 +151,8 @@ body{
 
   @media (max-width: 890px) { 
     .footer{
-      grid-template-columns: auto;
-      gap: 0.2ex;
+      grid-template-columns: auto 50%;
+      gap: 1ex;
       height: auto;
       padding-top: 1ex;
       padding-bottom: 1ex;
@@ -201,9 +202,25 @@ body{
       z-index: 10;
       display:none;
     }
+    .about-body{
+      padding: 10px 5% 10px 5%;
+      margin-top: 8ex;
+    }
 
     #profilepic {
       width: 15ex;
       height: 15ex;
     }
+    #footer-social {
+      font-size: medium;
+    }
   }
+
+  @media (max-width: 320px) { 
+    footer{
+      font-size: x-small;
+    }
+    #footer-social {
+      font-size: medium;
+    }
+}

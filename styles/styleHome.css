@@ -65,6 +65,7 @@ body{
     text-align: center;
     font-size: 7ex;
     color: rgba(156, 156, 156, 0.58);
+    z-index: 10;
   }
   .intro{
       padding: 100px 0px 10px 10%;
@@ -113,6 +114,10 @@ body{
     background: rgba(196, 196, 196, 0.58);
     border-radius: 5px;
   }
+  .project-card-details{
+    display: grid;
+    grid-template-columns: auto;
+  }
   .col1 .col2{
     display: grid;
     grid-template-columns: auto;
@@ -147,7 +152,9 @@ body{
   }
   .skills-card{
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: 50% 30%;
+    gap: 1ex;
+    align-items: center;
     /* border: solid 2px black; */
     padding: 1%;
     margin-bottom: 1ex;
@@ -156,7 +163,7 @@ body{
     color: white;
   }
   .skill-img{
-    height: 15ex;
+    height: 11ex;
     width: 100%;
     object-fit: cover;
   }
@@ -177,6 +184,7 @@ body{
 
   footer{
     margin-top: 2ex;
+    width: 100%;
   }
   .footer{
     align-items: center;
@@ -222,8 +230,8 @@ body{
 
   @media (max-width: 890px) { 
     .footer{
-      grid-template-columns: auto;
-      gap: 0.2ex;
+      grid-template-columns: auto 50%;
+      gap: 1ex;
       height: auto;
       padding-top: 1ex;
       padding-bottom: 1ex;
@@ -280,6 +288,17 @@ body{
       gap: 0.5ex;
     }
 
+    .project-card{
+      display: grid;
+      grid-template-columns: 50% auto;
+      align-items: center;
+      gap: 1ex;
+      padding: 1%;
+      margin-bottom: 1ex;
+      background: rgba(196, 196, 196, 0.58);
+      border-radius: 5px;
+    }
+
     .intro{
       padding: 70px 0px 5px 10%;
       font-weight: 700;
@@ -299,9 +318,58 @@ body{
       align-items: center;
     }
     .project-img {
-      height: 20ex;
+      height: 12ex;
       width: 100%;
       object-fit: cover;
     }
 
+    .skills-title{
+      font-weight: bold;
+      font-size: 24px;
+      height: 5ex;
+      width: 20ex;
+      margin-bottom: 1ex;
+      display: flex;
+      align-items: center;
+    }
+    .skills-card{
+      font-size: small;
+    }
+    #uparrow {
+      position: fixed;
+      right: 0.5ex;
+      bottom: 1.5ex;
+      text-align: center;
+      font-size: 4ex;
+      color: rgba(156, 156, 156, 0.58);
+      z-index: 10;
+    }
+
   }
+
+@media (max-width: 320px) { 
+          footer{
+            font-size: x-small;
+          }
+          .project-card{
+            font-size: x-small;
+          }
+          .skills-card{
+            font-size: x-small;
+          }
+          .portfolio-title{
+            font-size: small;
+          }
+          .skills-title{
+            font-size: small;
+          }
+          .intro{
+            font-size: medium;
+          }
+          .intro-buttons button{
+            font-size: x-small;
+          }
+          #footer-social {
+            font-size: small;
+          }
+}
