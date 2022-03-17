@@ -344,6 +344,9 @@ body{
       color: rgba(156, 156, 156, 0.58);
       z-index: 10;
     }
+    .project-card-details button{
+      font-size: small;
+    }
 
   }
 
@@ -371,5 +374,8 @@ body{
           }
           #footer-social {
             font-size: small;
+          }
+          .project-card-details button{
+            font-size: x-small;
           }
 }
