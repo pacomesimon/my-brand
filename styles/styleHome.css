@@ -13,6 +13,10 @@ body{
   left: 0px;
   right: 0px;
 }
+
+#wrapper {
+  min-height:100%;
+}
   .navbar {
     position: fixed;
     align-items: center;
@@ -25,11 +29,9 @@ body{
     
     background: rgba(255, 255, 255, 0.95);
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto 55%;
+    grid-template-columns: auto auto auto auto auto auto 60%;
     gap: 2ex;
     color: #414141;
-    /* font-style: normal;
-    font-weight: 400; */
     font-size: 16px;
   }
 
@@ -57,6 +59,10 @@ body{
   #capitalp{
     margin-top: 0.5ex;
     margin-bottom: 0.5ex;
+  }
+  #logout-button{
+    text-align: right;
+    margin-right: 2ex;
   }
   #uparrow {
     position: fixed;
@@ -216,7 +222,7 @@ body{
   }
   #footer-social {
     text-align: center;
-    font-size: xx-large;
+    font-size: x-large;
     /* padding: 10% 10% 10% 10%; */
     background: rgba(196, 196, 196, 0.05);
   }
@@ -262,24 +268,35 @@ body{
     
     background: rgba(255, 255, 255, 0.95);
     display: grid;
-    grid-template-columns: 3ex 3ex 15ex;
+    grid-template-columns:  3ex 15ex auto 6ex;
     gap: 2ex;
     color: #414141;
     font-size: 16px;
     }
     #navbar-expanded{
+      border-top: 1px solid white;
       position: fixed;
-      width: 15ex;
+      width: 60%;
+      border-bottom-left-radius: 5%;
       top: 7ex;
+      right: 0px;
       padding: 1.5ex;
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(128, 128, 255, 0.95);
       display: grid;
       grid-template-columns: auto;
-      gap: 0.5ex;
-      color: #414141;
+      gap: 1.5ex;
+      color: white;
       font-size: 16px;
       z-index: 10;
       display:none;
+    }
+    #brandname{
+      color: black;
+      font-size: 20px;
+    }
+    #currentpage{
+      color: white;
+      font-weight: bold;
     }
 
     .projects-grid{

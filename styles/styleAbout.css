@@ -8,6 +8,7 @@ body{
   background-image: url("../images/background-image.jpg");
   background-attachment: fixed;
 }
+html, body {height: 100%;}
   .navbar {
     display: block;
     z-index : 10;
@@ -22,7 +23,7 @@ body{
     
     background: rgba(255, 255, 255, 0.95);
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto 55%;
+    grid-template-columns: auto auto auto auto auto auto 60%;
     gap: 2ex;
     color: #414141;
     font-size: 16px;
@@ -33,12 +34,6 @@ body{
   #navbar-expanded{
     display:none; 
   }
-
-
-
-
-      
-
       
   #currentpage{
     color: black;
@@ -54,6 +49,10 @@ body{
     font-size:x-large;
     padding: 0ex;
   }
+  #logout-button{
+    text-align: right;
+    margin-right: 2ex;
+  }
   #capitalp{
     margin-top: 0.5ex;
     margin-bottom: 0.5ex;
@@ -66,7 +65,9 @@ body{
     font-size: 7ex;
     color: rgba(156, 156, 156, 0.58);
   }
-  
+  #wrapper{
+    min-height: 100%;
+  }
   .about-body{
     background: rgba(255, 255, 255, 0.8);
     padding: 30px 20% 30px 20%;
@@ -183,24 +184,35 @@ body{
     
     background: rgba(255, 255, 255, 0.95);
     display: grid;
-    grid-template-columns: 3ex 3ex 15ex;
+    grid-template-columns: 3ex 15ex auto 6ex;
     gap: 2ex;
     color: #414141;
     font-size: 16px;
     }
     #navbar-expanded{
+      border-top: 1px solid white;
       position: fixed;
-      width: 15ex;
+      width: 60%;
+      border-bottom-left-radius: 5%;
       top: 7ex;
+      right: 0px;
       padding: 1.5ex;
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(128, 128, 255, 0.95);
       display: grid;
       grid-template-columns: auto;
-      gap: 0.5ex;
-      color: #414141;
+      gap: 1.5ex;
+      color: white;
       font-size: 16px;
       z-index: 10;
       display:none;
+    }
+    #brandname{
+      color: black;
+      font-size: 20px;
+    }
+    #currentpage{
+      color: white;
+      font-weight: bold;
     }
     .about-body{
       padding: 10px 5% 10px 5%;
