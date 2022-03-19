@@ -29,7 +29,7 @@ body{
     
     background: rgba(255, 255, 255, 0.95);
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto 60%;
+    grid-template-columns: auto auto auto auto auto 70%;
     gap: 2ex;
     color: #414141;
     font-size: 16px;
@@ -62,7 +62,7 @@ body{
   }
   #logout-button{
     text-align: right;
-    margin-right: 2ex;
+    margin-right: 8ex;
   }
   #uparrow {
     position: fixed;
