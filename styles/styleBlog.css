@@ -7,11 +7,17 @@ body{
   font-family: "Lucida Console";
   background-image: url("../images/background-image.jpg");
   background-attachment: fixed;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
 }
-/* html, body {height: 100%;} */
+
+#wrapper {
+  min-height:100%;
+}
   .navbar {
-    display: block;
-    z-index : 10;
     position: fixed;
     align-items: center;
     padding: 0.5ex;
@@ -28,13 +34,14 @@ body{
     color: #414141;
     font-size: 16px;
   }
-  #navbar2{
-    display:none;
+
+  #navbar2 {
+    display: none;
   }
-  #navbar-expanded{
-    display:none; 
+  #navbar-expanded {
+    display: none;
   }
-      
+
   #currentpage{
     color: black;
     font-size:20px;
@@ -49,13 +56,13 @@ body{
     font-size:x-large;
     padding: 0ex;
   }
-  #logout-button{
-    text-align: right;
-    margin-right: 8ex;
-  }
   #capitalp{
     margin-top: 0.5ex;
     margin-bottom: 0.5ex;
+  }
+  #logout-button{
+    text-align: right;
+    margin-right: 8ex;
   }
   #uparrow {
     position: fixed;
@@ -66,43 +73,77 @@ body{
     color: rgba(156, 156, 156, 0.58);
     z-index: 10;
   }
-  #page-container {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto 10ex;
-    position: relative;
-    min-height: 100vh;
+  .intro{
+      padding: 50px 0px 10px 10%;
+      font-weight: 700;
+      font-size: 48px;
+      width: 50%
   }
-  /* #wrapper{
-    align-items: center;
-  } */
-  .about-body{
+
+  .portfolio{
     background: rgba(255, 255, 255, 0.8);
-    padding: 30px 20% 30px 20%;
-    margin-top: 8ex;
-    min-height: 60vh;
+    padding: 10px 10% 10px 10%;
+    margin-top: 2ex;
   }
-  .about-title{
-    
+  .portfolio-title{
+    background: rgba(196, 196, 196, 0.12);
+    border-radius: 5px;
     color: rgba(0, 0, 255, 0.49);
     font-weight: bold;
-    font-size: 36px;
+    font-size: 24px;
+    height: 3ex;
+    width: 20ex;
     margin-bottom: 1ex;
+    display: flex;
+    align-items: center;
+  }
+  .portfolio-title-raw{
+    text-align: center;
+    width: 100%;
+  }
+  .projects-grid{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 1ex;
+  }
+  .project-card{
+    display: grid;
+    grid-template-columns: auto;
+    gap: 1ex;
+    /* border: solid 2px black; */
+    padding: 1%;
+    margin-bottom: 1ex;
+    background: rgba(196, 196, 196, 0.58);
+    border-radius: 5px;
+  }
+  .project-card-details{
+    display: grid;
+    grid-template-columns: auto;
+    text-align: center;
+    color: rgba(0, 0, 255, 0.49);
+  }
+  .reactions{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 1ex;
+    color: #a0a0a0;
+  }
+  .like-reaction,.comment-reaction,.view-reaction{
+    background: rgba(255, 255, 255, 0.4);
+    text-align: center;
+  }
+  .col1 .col2{
+    display: grid;
+    grid-template-columns: auto;
   }
 
-  #profilepic {
-    border-radius: 50%;
-    width: 30ex;
-    height: 30ex;
-    float: right;
-    opacity: 0.65;
-    z-index : -2;
+  .project-img {
+      height: 30ex;
+      width: 100%;
+      object-fit: cover;
   }
 
-  #about-paragraph{
-    line-height: 1.8;
-    text-align: left;
-  }
+  
 
   button{
     border: none;
@@ -120,21 +161,18 @@ body{
 
   footer{
     margin-top: 2ex;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    align-items: center;
-    
+    width: 100%;
   }
   .footer{
     align-items: center;
     /* padding: 1.5ex; */
-    margin-top: 0.3ex;
+    
     width: 100%;
+    height: 10ex;
     
-    
- 
+    background: rgba(0, 0, 0, 0.8);
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto;
     gap: 18ex;
     color: white;
   }
@@ -163,6 +201,9 @@ body{
     text-align: center;
     /* background: rgba(196, 196, 196, 0.05); */
   }
+
+
+
 
   @media (max-width: 890px) { 
     .footer{
@@ -198,7 +239,7 @@ body{
     
     background: rgba(255, 255, 255, 0.95);
     display: grid;
-    grid-template-columns: 3ex 15ex auto 6ex;
+    grid-template-columns:  3ex 15ex auto 6ex;
     gap: 2ex;
     color: #414141;
     font-size: 16px;
@@ -228,25 +269,83 @@ body{
       color: white;
       font-weight: bold;
     }
-    .about-body{
-      padding: 10px 5% 10px 5%;
-      margin-top: 8ex;
+
+    .projects-grid{
+      display: grid;
+      grid-template-columns: auto;
+      gap: 0.5ex;
     }
 
-    #profilepic {
-      width: 15ex;
-      height: 15ex;
+    .project-card{
+      display: grid;
+      grid-template-columns: 50% auto;
+      align-items: center;
+      gap: 1ex;
+      padding: 1%;
+      margin-bottom: 1ex;
+      background: rgba(196, 196, 196, 0.58);
+      border-radius: 5px;
     }
-    #footer-social {
-      font-size: medium;
+
+    .intro{
+      padding: 70px 0px 5px 10%;
+      font-weight: 700;
+      font-size: 36px;
+      width: 50%
     }
+    .portfolio{
+      padding: 10px 1.5% 10px 1.5%;
+    }
+    .portfolio-title{
+      font-weight: bold;
+      font-size: 24px;
+      height: 3ex;
+      width: 20ex;
+      margin-bottom: 1ex;
+      display: flex;
+      align-items: center;
+    }
+    .project-img {
+      height: 12ex;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    #uparrow {
+      position: fixed;
+      right: 0.5ex;
+      bottom: 1.5ex;
+      text-align: center;
+      font-size: 4ex;
+      color: rgba(156, 156, 156, 0.58);
+      z-index: 10;
+    }
+    .project-card-details button{
+      font-size: small;
+    }
+
   }
 
-  @media (max-width: 320px) { 
-    footer{
-      font-size: x-small;
-    }
-    #footer-social {
-      font-size: medium;
-    }
+@media (max-width: 320px) { 
+          footer{
+            font-size: x-small;
+          }
+          .project-card{
+            font-size: x-small;
+          }
+          .portfolio-title{
+            font-size: small;
+          }
+          .intro{
+            font-size: medium;
+          }
+          .intro-buttons button{
+            font-size: x-small;
+          }
+          #footer-social {
+            font-size: small;
+          }
+          .project-card-details button{
+            font-size: x-small;
+          }
 }
