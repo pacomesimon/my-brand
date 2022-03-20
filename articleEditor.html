@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Admin Panel - Articles' menu
+        </title>
+        <link rel="stylesheet" href="./styles/styleArticleEditor.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/e752615e51.js" crossorigin="anonymous"></script>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <div id="page-container">
+            <div id="wrapper">
+                
+                <div class="navbar">
+                    <div id="logo">
+                        <div id="capitalp">
+                        P
+                        </div>
+                    </div>
+                    <a href="home.html"><span>Home</span></a>
+                    <a href="about.html"><span>About</span></a>
+                    <a href="contact.html"><span>Contact</span></a>
+                    <span id="currentpage">Blog</span>
+                    <span id="logout-button"><a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> Log out </a></span>
+                </div>
+                <div id="panel-navbar">
+                    <button class="selected"><i class="fa-solid fa-newspaper"></i> Articles' Menu</button>
+                    <button><i class="fa-solid fa-envelope"></i> Querries</button>
+                </div>
+
+                <div id="navbar2">
+                    <div id="logo">
+                        <div id="capitalp">
+                        P
+                        </div>
+                    </div>
+                    <span id="brandname">PacomeSimon</span>
+                    <span></span>
+                    <div><i class="fa-solid fa-bars" id="menuicon"></i></div>
+                </div>
+                <div id="navbar-expanded">
+                    <a href="home.html"><span>Home</span></a>
+                    <a href="about.html"><span>About</span></a>
+                    <a href="contact.html"><span>Contact</span></a>
+                    <span id="currentpage">Blog</span>
+                    <!-- <span> </span> -->
+                    <a href="login.html"><span> Log out </span></a>
+                </div>
+
+
+                <a id="mytopref"></a>
+                <a id="uparrow" href="#"><i class="fa-solid fa-circle-arrow-up"></i></a>
+                <div class="intro">
+                </div>
+                
+                <div class="portfolio">
+                    <div class="projects-grid">
+                        
+                            <div class="portfolio-title">
+                                <div class="portfolio-title-raw">
+                                    <i class="fa-solid fa-left-long"></i> Articles' menu
+                                </div>
+                            </div>
+                            <div class="contact-body">
+                                <div class="contact-title">
+                                    Article Editor
+                                </div>
+                                <div class="container">
+                                    <form id="contact-form">
+                                  
+                                      <label for="title">Title:</label>
+                                      <input type="text" id="title" name="title" placeholder="Article's title ...">
+                                      <label for="previewImageURL">Preview Image's URL:</label>
+                                      <input type="text" id="previewImageURL" name="previewImageURL" placeholder="Preview Image's URL ...">
+                                      <label for="articleBody">Body:</label>
+                                      <textarea id="articleBody" name="articleBody" placeholder="Start writting ..." style="height:300px"></textarea>
+                                        <div class="buttons">
+                                            <button type="submit" class="edit"><i class="fa-solid fa-file-pen"></i> Post</button>
+                                            <button class="delete"><i class="fa-solid fa-trash"></i> Discard</button>
+                                        </div>
+                                  
+                                    </form>
+                                  </div> 
+                                
+                            </div>
+                            
+                        
+                    </div>
+                </div>  
+
+                
+
+            </div>
+            <footer>
+                <div class="footer">
+                    <div id="footer-contact">
+                        <span>Contact me <i class="fa-solid fa-right-long"></i></span>
+                    </div>
+                    <div id="footer-social">
+                        <span><i class="fa-brands fa-linkedin"></i></span>
+                        <span><i class="fa-brands fa-twitter"></i></span>
+                        <span><i class="fa-brands fa-instagram"></i></span>  
+                    </div>
+                    <div id="footer-copyright">
+                        Ⓒ PacomeSimon 2022 
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script src="./js/indexArticleEditor.js"></script>
+    </body>
+</html>
