@@ -14,9 +14,17 @@ body{
   right: 0px;
 }
 
-#wrapper {
-  min-height:100%;
+#page-container {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: min-content auto;
+  position: relative;
+  min-height: 100vh;
 }
+
+/* #wrapper {
+  min-height:100%;
+} */
   .navbar {
     position: fixed;
     align-items: center;
@@ -33,6 +41,7 @@ body{
     gap: 2ex;
     color: #414141;
     font-size: 16px;
+    z-index: 10;
   }
   .fa-right-from-bracket{
     margin-left: 3ex;
@@ -172,6 +181,9 @@ body{
   footer{
     margin-top: 2ex;
     width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: flex-start;
   }
   .footer{
     align-items: center;
@@ -180,11 +192,12 @@ body{
     width: 100%;
     height: 10ex;
     
-    background: rgba(0, 0, 0, 0.8);
+
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 18ex;
     color: white;
+    padding: 0 15% 0 15%;
   }
   #footer-contact {
     text-align: center;
@@ -192,20 +205,20 @@ body{
     grid-template-columns: auto;
     padding: 1%;
     color: white;
-    background: rgba(196, 196, 196, 0.05);
+    background: rgba(196, 196, 196, 0.0);
   }
   #footer-blog {
     text-align: center;
     display: grid;
     grid-template-columns: auto; 
     padding: 1%;
-    background: rgba(196, 196, 196, 0.05);
+    background: rgba(196, 196, 196, 0.0);
   }
   #footer-social {
     text-align: center;
     font-size: x-large;
     /* padding: 10% 10% 10% 10%; */
-    background: rgba(196, 196, 196, 0.05);
+    background: rgba(196, 196, 196, 0.0);
   }
   #footer-copyright{
     text-align: center;
@@ -219,12 +232,16 @@ body{
     .footer{
       grid-template-columns: auto 50%;
       gap: 1ex;
+      row-gap: 4ex;
       height: auto;
       padding-top: 1ex;
       padding-bottom: 1ex;
-      width:100%
+      width:100%;
+      padding: 0;
     }
-
+    #footer-copyright {
+      grid-column: 1 / span 2;
+    }
 
 
     .fa-bars{
@@ -333,6 +350,7 @@ body{
     .project-card-details button{
       font-size: small;
     }
+    
 
   }
 

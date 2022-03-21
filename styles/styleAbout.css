@@ -72,18 +72,19 @@ body{
   #page-container {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: auto 10ex;
+    grid-template-rows: min-content auto;
     position: relative;
     min-height: 100vh;
   }
   /* #wrapper{
+    display: flex;
     align-items: center;
   } */
   .about-body{
     background: rgba(255, 255, 255, 0.65);
     padding: 30px 20% 30px 20%;
     margin-top: 8ex;
-    height: fit-content;
+    height:fit-content;
   }
   .about-title{
     
@@ -125,7 +126,7 @@ body{
     margin-top: 2ex;
     background: rgba(0, 0, 0, 0.8);
     display: flex;
-    align-items: center;
+    align-items:flex-start;
     
   }
   .footer{
@@ -133,12 +134,12 @@ body{
     /* padding: 1.5ex; */
     margin-top: 0.3ex;
     width: 100%;
-    
+    padding: 0 9% 0 9%;
     
  
     display: grid;
     grid-template-columns: auto auto auto auto;
-    gap: 18ex;
+    gap: 1ex;
     color: white;
   }
   #footer-contact {
@@ -147,20 +148,20 @@ body{
     grid-template-columns: auto;
     padding: 1%;
     color: white;
-    background: rgba(196, 196, 196, 0.05);
+    background: rgba(196, 196, 196, 0);
   }
   #footer-blog {
     text-align: center;
     display: grid;
     grid-template-columns: auto; 
     padding: 1%;
-    background: rgba(196, 196, 196, 0.05);
+    background: rgba(196, 196, 196, 0);
   }
   #footer-social {
     text-align: center;
     font-size: x-large;
     /* padding: 10% 10% 10% 10%; */
-    background: rgba(196, 196, 196, 0.05);
+    background: rgba(196, 196, 196, 0);
   }
   #footer-copyright{
     text-align: center;
@@ -174,7 +175,8 @@ body{
       height: auto;
       padding-top: 1ex;
       padding-bottom: 1ex;
-      width:100%
+      width:100%;
+      padding: 0;
     }
 
 
