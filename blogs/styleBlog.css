@@ -109,11 +109,12 @@ body{
   .project-card{
     display: grid;
     grid-template-columns: 40% auto;
-    gap: 1ex;
+    column-gap: 1ex;
+    row-gap: 0.5ex;
     /* border: solid 2px black; */
     padding: 1%;
     margin-bottom: 1ex;
-    background: rgba(196, 196, 196, 0.12);
+    background: rgba(255, 255, 255, 0.5);
     align-items: center;
   }
   .project-card-details{
@@ -124,7 +125,7 @@ body{
     font-family: sans-serif;
   }
   .blog-title{
-    font-size: 24px;
+    font-size: 16px;
     color: rgba(0, 0, 255, 0.49);
   } 
   .blog-subtitle{
@@ -141,7 +142,8 @@ body{
     width: 50%;
   }
   .like-reaction,.comment-reaction,.view-reaction{
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.5);
+    padding: 0.5ex;
     text-align: center;
     font-size: 12px;
   }
@@ -168,7 +170,7 @@ body{
   .comments-section{
     display: grid;
     grid-template-columns: auto;
-    gap: 1ex;
+    gap: 2ex;
   }
   #comments-title{
     font-size: 20px;
@@ -177,16 +179,28 @@ body{
     margin-top: 2ex; 
     /* margin-bottom: 0.4ex; */
   }
+  .comment-template{
+    display: grid;
+    grid-template-columns: auto;
+    gap:0ex;
+  }
   .commenter-name {
     font-weight: bold;
+    font-size: 18px;
+    padding-top: 0.5ex;
+    padding-bottom: 0.5ex;
+    padding-left: 1ex;
     background-color: rgba(255, 255, 255, 0.5);
   }
   .comment-payload {
     background-color: rgba(196, 196, 196, 0.25);
-    padding-left: 1ex;
+    padding-top: 0.5ex;
+    padding-bottom: 0.5ex;
+    padding-left: 3ex;
+    font-size: 18px;
   }
   .contact-body{
-    margin-top: 2ex;
+    margin-top: 4ex;
     min-height: 60vh;
   }
   .contact-title{
@@ -198,7 +212,7 @@ body{
   }
   #contact-form{
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: 10% auto;
     gap: 1ex;
   }
 
@@ -337,10 +351,11 @@ body{
       display: grid;
       grid-template-columns: 50% auto;
       align-items: center;
-      gap: 1ex;
+      column-gap: 1ex;
+      row-gap: 0.5ex;
       padding: 1%;
       margin-bottom: 1ex;
-      background: rgba(196, 196, 196, 0.58);
+      background: rgba(255,255,255,0.5);
       border-radius: 5px;
     }
 
@@ -380,6 +395,11 @@ body{
     .project-card-details button{
       font-size: small;
     }
+    #contact-form{
+      display: grid;
+      grid-template-columns: auto;
+      gap: 1ex;
+    }
 
   }
 
@@ -387,7 +407,7 @@ body{
           footer{
             font-size: x-small;
           }
-          .project-card{
+          .project-card, .project-card-details, .blog-title, .blog-subtitle{
             font-size: x-small;
           }
           .portfolio-title{
@@ -404,5 +424,8 @@ body{
           }
           .project-card-details button{
             font-size: x-small;
+          }
+          .like-reaction,.comment-reaction,.view-reaction{
+            font-size: xx-small;
           }
 }

@@ -34,6 +34,9 @@ body{
   #navbar-expanded{
     display:none; 
   }
+  .fa-right-from-bracket{
+    margin-left: 3ex;
+  }
       
   #currentpage{
     color: black;
@@ -80,7 +83,7 @@ body{
     background: rgba(255, 255, 255, 0.8);
     padding: 30px 20% 30px 20%;
     margin-top: 8ex;
-    min-height: 60vh;
+    height: fit-content;
   }
   .about-title{
     

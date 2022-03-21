@@ -103,24 +103,34 @@ body{
   }
   .projects-grid{
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto;
     gap: 1ex;
   }
   .project-card{
     display: grid;
-    grid-template-columns: auto;
-    gap: 1ex;
+    grid-template-columns: 20% auto;
+    column-gap: 3ex;
+    row-gap: 0.5ex;
     /* border: solid 2px black; */
-    padding: 1%;
+    padding: 0.3%;
     margin-bottom: 1ex;
-    background: rgba(196, 196, 196, 0.58);
-    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    align-items: center;
   }
   .project-card-details{
     display: grid;
     grid-template-columns: auto;
-    text-align: center;
+    gap: 0ex;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.9);
+  }
+  .blog-title{
+    font-size: 16px;
     color: rgba(0, 0, 255, 0.49);
+  } 
+  .blog-subtitle{
+    font-size: 12px;
+    font-style: italic;
   }
   .reactions{
     display: grid;
@@ -129,16 +139,14 @@ body{
     color: #a0a0a0;
   }
   .like-reaction,.comment-reaction,.view-reaction{
-    background: rgba(255, 255, 255, 0.4);
+    font-size: 12px;
+    /* background: rgba(255, 255, 255, 0.4); */
     text-align: center;
   }
-  .col1 .col2{
-    display: grid;
-    grid-template-columns: auto;
-  }
+
 
   .project-img {
-      height: 30ex;
+      height: 15ex;
       width: 100%;
       object-fit: cover;
   }
@@ -278,13 +286,13 @@ body{
 
     .project-card{
       display: grid;
-      grid-template-columns: 50% auto;
+      grid-template-columns: 40% auto;
       align-items: center;
       gap: 1ex;
       padding: 1%;
       margin-bottom: 1ex;
-      background: rgba(196, 196, 196, 0.58);
-      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 3px;
     }
 
     .intro{
@@ -330,7 +338,7 @@ body{
           footer{
             font-size: x-small;
           }
-          .project-card{
+          .project-card, .project-card-details, .blog-title, .blog-subtitle{
             font-size: x-small;
           }
           .portfolio-title{
@@ -347,5 +355,8 @@ body{
           }
           .project-card-details button{
             font-size: x-small;
+          }
+          .like-reaction,.comment-reaction,.view-reaction{
+            font-size: xx-small;
           }
 }
