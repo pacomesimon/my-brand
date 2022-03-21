@@ -41,6 +41,9 @@ body{
     color: #414141;
     font-size: 16px;
   }
+  .fa-right-from-bracket{
+    margin-left: 3ex;
+  }  
   #panel-navbar {
     position: fixed;
     align-items: center;
@@ -147,7 +150,7 @@ body{
     padding: 0.5ex;
   }
   .portfolio-title-raw{
-    background: rgba(196, 196, 196, 0.12);
+    background: rgba(196, 196, 196, 0);
     text-align: center;
     width:fit-content;
     padding: 0.2ex;

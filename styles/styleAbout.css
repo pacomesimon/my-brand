@@ -80,7 +80,7 @@ body{
     align-items: center;
   } */
   .about-body{
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.65);
     padding: 30px 20% 30px 20%;
     margin-top: 8ex;
     height: fit-content;

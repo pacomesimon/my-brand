@@ -41,6 +41,9 @@ body{
     color: #414141;
     font-size: 16px;
   }
+  .fa-right-from-bracket{
+    margin-left: 3ex;
+  }  
   #panel-navbar {
     position: fixed;
     align-items: center;
@@ -165,7 +168,7 @@ body{
     /* border: solid 2px black; */
     padding: 0.5ex;
     margin-bottom: 1ex;
-    background: rgba(196, 196, 196, 0.12);
+    background: rgba(196, 196, 196, 0.2);
     align-items: center;
   }
   .project-card button{
@@ -301,6 +304,9 @@ body{
   }
 
   @media (max-width: 768px) { 
+    .reactions{
+      display: none;
+    }
     .footer{
       grid-template-columns: auto 50%;
       gap: 1ex;
@@ -378,7 +384,7 @@ body{
       gap: 1ex;
       padding: 1%;
       margin-bottom: 1ex;
-      background: rgba(196, 196, 196, 0.58);
+      background: rgba(196, 196, 196, 0.2);
       border-radius: 5px;
     }
 

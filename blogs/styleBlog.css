@@ -34,6 +34,9 @@ body{
     color: #414141;
     font-size: 16px;
   }
+  .fa-right-from-bracket{
+    margin-left: 3ex;
+  }  
 
   #navbar2 {
     display: none;
@@ -81,16 +84,16 @@ body{
   }
 
   .portfolio{
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.5);
     padding: 10px 10% 10px 10%;
     margin-top: 2ex;
   }
   .portfolio-title{
-    background: rgba(196, 196, 196, 0.12);
+    background: rgba(196, 196, 196, 0);
     border-radius: 5px;
     color: rgba(0, 0, 255, 0.49);
     font-weight: bold;
-    font-size: 24px;
+    font-size: 20px;
     height: 3ex;
     width: 20ex;
     margin-bottom: 1ex;

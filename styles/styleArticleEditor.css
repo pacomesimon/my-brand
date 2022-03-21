@@ -41,6 +41,9 @@ body{
     color: #414141;
     font-size: 16px;
   }
+  .fa-right-from-bracket{
+    margin-left: 3ex;
+  }  
   #panel-navbar {
     position: fixed;
     align-items: center;
@@ -128,7 +131,7 @@ body{
     border-radius: 5px;
     color: rgba(0, 0, 255, 0.49);
     font-weight: bold;
-    font-size: 24px;
+    font-size: 20px;
     height: 3ex;
     width: 100%;
     margin-bottom: 1ex;
@@ -147,7 +150,7 @@ body{
     padding: 0.5ex;
   }
   .portfolio-title-raw{
-    background: rgba(196, 196, 196, 0.12);
+    /* background: rgba(196, 196, 196, 0.12); */
     text-align: center;
     width:fit-content;
     padding: 0.2ex;
@@ -232,7 +235,7 @@ body{
   }
   
   .contact-title{
-    background-color: rgba(196, 196, 196, 0.12);
+    /* background-color: rgba(196, 196, 196, 0.12); */
     color: rgba(0, 0, 255, 0.49);
     padding: 1% 2% 1% 2%;
     font-weight: bold;
