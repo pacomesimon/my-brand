@@ -150,7 +150,7 @@ body{
   }
 
   .myskills{
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
     padding: 10px 10% 10px 10%;
     margin-top: 2ex;
   }
@@ -181,11 +181,11 @@ body{
     align-items: center;
     padding: 1%;
     margin-bottom: 1ex;
-    background: rgba(196, 196, 196, 0.58);
+    background: rgba(196, 196, 196, 0.3);
     border-radius: 3px;
     color: white;
     width: max-content;
-    font-size: 2.5ex;
+    font-size: 2ex;
   }
   .skill-img{
     height: 3ex;
