@@ -7,6 +7,7 @@ body{
   font-family: "Lucida Console";
   background-image: url("../images/background-image.jpg");
   background-attachment: fixed;
+  background-size: cover;
   position: absolute;
   top: 0px;
   bottom: 0px;
@@ -149,40 +150,45 @@ body{
   }
 
   .myskills{
-    background-color: rgba(0, 0, 255, 0.45);
+    background-color: rgba(0, 0, 0, 0.3);
     padding: 10px 10% 10px 10%;
     margin-top: 2ex;
   }
   .skills-title{
-    background: rgba(196, 196, 196, 0.12);
+    background: rgba(196, 196, 196, 0.05);
     border-radius: 5px;
     color: rgba(255, 255, 255, 1);
     font-weight: normal;
     font-size: 30px;
-    height: 3ex;
-    width: 80%;
+    height: 1ex;
+    padding: 1ex;
+    width: max-content;
     margin-bottom: 1ex;
     display: flex;
     align-items: center;
   }
   .skills-title-raw{
     text-align: center;
-    width: 100%;
+    font-weight: bold;
+  }
+  .skills-list {
+    margin: 1rem;
+    /* padding: 2rem 2rem;
+    text-align: center; */
   }
   .skills-card{
-    display: grid;
-    grid-template-columns: 50% 30%;
-    gap: 1ex;
+    display: inline-block;
     align-items: center;
-    /* border: solid 2px black; */
     padding: 1%;
     margin-bottom: 1ex;
     background: rgba(196, 196, 196, 0.58);
     border-radius: 3px;
     color: white;
+    width: max-content;
+    font-size: 2.5ex;
   }
   .skill-img{
-    height: 11ex;
+    height: 3ex;
     width: 100%;
     object-fit: cover;
   }
@@ -216,6 +222,7 @@ body{
     background: rgba(0, 0, 0, 0.8);
     display: flex;
     align-items: flex-start;
+    padding: 0.5ex 0 1.5ex 0;
   }
   .footer{
     align-items: center;
@@ -369,10 +376,7 @@ body{
 
     .skills-title{
       font-weight: bold;
-      font-size: 24px;
-      height: 5ex;
-      width: 20ex;
-      margin-bottom: 1ex;
+      font-size: 18px;
       display: flex;
       align-items: center;
     }

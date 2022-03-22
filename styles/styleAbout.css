@@ -7,6 +7,7 @@ body{
   font-family: "Lucida Console";
   background-image: url("../images/background-image.jpg");
   background-attachment: fixed;
+  background-size: cover;
 }
 /* html, body {height: 100%;} */
   .navbar {
@@ -127,6 +128,7 @@ body{
     background: rgba(0, 0, 0, 0.8);
     display: flex;
     align-items:flex-start;
+    padding: 0.5ex 0 1.5ex 0;
     
   }
   .footer{

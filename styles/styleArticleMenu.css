@@ -7,6 +7,7 @@ body{
   font-family: "Lucida Console";
   background-image: url("../images/background-image.jpg");
   background-attachment: fixed;
+  background-size: cover;
   position: absolute;
   top: 0px;
   bottom: 0px;
@@ -123,7 +124,7 @@ body{
   }
 
   .portfolio{
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.4);
     padding: 10px 10% 10px 10%;
     margin-top: 2ex;
   }
@@ -150,7 +151,6 @@ body{
     padding: 0.5ex;
   }
   .portfolio-title-raw{
-    background: rgba(196, 196, 196, 0.12);
     text-align: center;
     width:fit-content;
     padding: 0.2ex;
@@ -168,7 +168,7 @@ body{
     /* border: solid 2px black; */
     padding: 0.5ex;
     margin-bottom: 1ex;
-    background: rgba(196, 196, 196, 0.2);
+    background: rgba(255,255,255,0.8);
     align-items: center;
   }
   .project-card button{
@@ -257,6 +257,7 @@ body{
     background: rgba(0, 0, 0, 0.8);
     display: flex;
     align-items: flex-start;
+    padding: 0.5ex 0 1.5ex 0;
   }
   .footer{
     align-items: center;

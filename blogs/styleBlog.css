@@ -7,6 +7,7 @@ body{
   font-family: "Lucida Console";
   background-image: url("../images/background-image.jpg");
   background-attachment: fixed;
+  background-size: cover;
   position: absolute;
   top: 0px;
   bottom: 0px;
@@ -194,21 +195,25 @@ body{
     display: grid;
     grid-template-columns: auto;
     gap:0ex;
+    margin-left: 3ex;
   }
   .commenter-name {
     font-weight: bold;
+    width: 25%;
     font-size: 18px;
     padding-top: 0.5ex;
     padding-bottom: 0.5ex;
     padding-left: 1ex;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(196, 196, 196, 0.6);
+    border-top-right-radius: 4ex;
   }
   .comment-payload {
-    background-color: rgba(196, 196, 196, 0.5);
-    padding-top: 0.5ex;
-    padding-bottom: 0.5ex;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding-top: 1ex;
+    padding-bottom: 1ex;
     padding-left: 3ex;
     font-size: 18px;
+    border: 1px solid rgba(196, 196, 196, 1);
   }
   .contact-body{
     margin-top: 4ex;
@@ -222,8 +227,37 @@ body{
   }
   #contact-form{
     display: grid;
-    grid-template-columns: 10% auto;
+    grid-template-columns: 60%;
     gap: 1ex;
+    font-size: 2ex;
+    margin: 3ex;
+  }
+  #name{
+    font-family: "Lucida Console";
+    height: 3ex;
+    font-size: 1.7ex; 
+    border-radius: 5px;
+    border: 1px solid rgb(100,100,100);
+    padding-left: 1ex;
+    background-color: rgba(255,255,255,0.1);
+  }
+
+  #email{
+    font-family: "Lucida Console";
+    height: 3ex;
+    font-size: 1.7ex;
+    border-radius: 5px;
+    border: 1px solid rgb(100,100,100);
+    padding-left: 1ex;
+    background-color: rgba(255,255,255,0.1);
+  }
+  #message{
+    font-family: "Lucida Console";
+    font-size: 1.7ex;
+    border-radius: 5px;
+    border: 1px solid rgb(100,100,100);
+    padding-left: 1ex;
+    background-color: rgba(255,255,255,0.1);
   }
 
   button{
@@ -231,9 +265,12 @@ body{
     background-color: rgba(0, 0, 0, 0);
     color: rgba(0, 0, 255, 0.49);
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
     text-align: left;
     padding-left: 0px;
+  }
+  form button:hover{
+    font-size: 20px;
   }
   .footer button{
     color: inherit;
@@ -246,6 +283,7 @@ body{
     display: flex;
     align-items: flex-start;
     background: rgba(0, 0, 0, 0.8);
+    padding: 0.5ex 0 1.5ex 0;
   }
   .footer{
     align-items: center;

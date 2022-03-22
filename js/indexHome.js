@@ -1,5 +1,6 @@
 var myToggler = false;
 document.getElementById("menuicon").onclick = function() {myFunction()};
+// document.getElementById("navbar-expanded").onmouseout= function() {myFunction()};
 
 function myFunction() {
     var menuVisibility = "";
