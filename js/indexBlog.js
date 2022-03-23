@@ -36,3 +36,12 @@ function myFunc(x) {
   var x = window.matchMedia("(max-width: 890px)")
   myFunc(x) 
   x.addListener(myFunc)
+
+
+  document.getElementById("load-button").onclick = function() {blogLoaderFunction()};
+
+  function blogLoaderFunction(){
+    document.getElementById("projects-grid").innerHTML += document.getElementById("projects-grid").innerHTML;
+    document.getElementById("load-button").style["display"] = "none";
+    document.getElementById("end-button").style["display"] = "block";
+  }

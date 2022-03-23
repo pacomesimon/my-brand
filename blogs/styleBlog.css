@@ -119,11 +119,10 @@ body{
   }
   .project-card{
     display: grid;
-    grid-template-columns: 30% auto;
+    grid-template-columns: 35% auto;
     column-gap: 1ex;
     row-gap: 0.5ex;
-    /* border: solid 2px black; */
-    padding: 1%;
+    /* padding: 1%; */
     margin-bottom: 1ex;
     background: rgba(255, 255, 255, 0.8);
     align-items: center;
@@ -136,12 +135,13 @@ body{
     font-family: sans-serif;
   }
   .blog-title{
-    font-size: 16px;
+    font-size: 24px;
     color: rgba(0, 0, 255, 0.49);
   } 
   .blog-subtitle{
     font-size: 14px;
-    font-style: italic;
+    /* font-style: italic; */
+    color:#414141;
   }
   .reactions{
     display: grid;
@@ -165,7 +165,7 @@ body{
   }
 
   .project-img {
-      height: 20ex;
+      height: 25ex;
       width: 100%;
       object-fit: cover;
   }

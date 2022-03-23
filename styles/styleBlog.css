@@ -86,10 +86,16 @@ body{
     z-index: 10;
   }
   .intro{
-      padding: 50px 0px 10px 10%;
-      font-weight: 700;
-      font-size: 48px;
-      width: 50%
+    padding: 120px 0px 20px 15%;
+    font-weight: normal;
+    font-size: 36px;
+    width: 40%;
+    color: #414141;
+    line-height: 1.2;
+  }
+  #hiwords{
+    color: rgba(0, 0, 255, 0.49);
+    font-size: 48px;
   }
 
   .portfolio{
@@ -114,7 +120,7 @@ body{
     text-align: center;
     width: 100%;
   }
-  .projects-grid{
+  #projects-grid{
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 1.6ex;
@@ -134,7 +140,7 @@ body{
   .project-card-details{
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 25% 65% 10%;
+    grid-template-rows: 15% 75% 10%;
     gap: 0ex;
     text-align: left;
     color: rgba(0, 0, 0, 0.9);
@@ -174,7 +180,25 @@ body{
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
   }
-
+  #body-loaders{
+    display: grid;
+    grid-template-columns: auto;
+    justify-items: center;
+    margin-top: 2ex;
+  }
+  #load-button{
+    background: rgba(0, 0, 255, 0.5);
+    color: white;
+    padding: 1ex;
+    border-radius: 5px;
+  }
+  #end-button{
+    background-color: rgba(0, 0,0, 0.5);
+    color: white;
+    padding: 1ex;
+    border-radius: 5px;
+    display: none;
+  }
   
 
   button{
@@ -311,7 +335,7 @@ body{
       font-weight: bold;
     }
 
-    .projects-grid{
+    #projects-grid{
       display: grid;
       grid-template-columns: auto;
       gap: 0.5ex;

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Admin Panel - Article Editor
+        </title>
+        <link rel="stylesheet" href="./styles/styleArticleEditor.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/e752615e51.js" crossorigin="anonymous"></script>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <div id="page-container">
+            <div id="wrapper">
+                
+                <div class="navbar">
+                    <div id="logo">
+                        <div id="capitalp">
+                        P
+                        </div>
+                    </div>
+                    <a href="home.html"><span>Home</span></a>
+                    <a href="about.html"><span>About</span></a>
+                    <a href="contact.html"><span>Contact</span></a>
+                    <a href="blog.html"><span>Blog</span></a>
+                    <span id="logout-button"><a id="currentpage">Admin Panel</a> <a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> Log out </a></span>
+                </div>
+                <div id="panel-navbar">
+                    <button class="selected"><i class="fa-solid fa-newspaper"></i> Articles' Menu</button>
+                    <button><i class="fa-solid fa-envelope"></i> Querries</button>
+                </div>
+
+                <div id="navbar2">
+                    <div id="logo">
+                        <div id="capitalp">
+                        P
+                        </div>
+                    </div>
+                    <span id="brandname">PacomeSimon</span>
+                    <span></span>
+                    <div><i class="fa-solid fa-bars" id="menuicon"></i></div>
+                </div>
+                <div id="navbar-expanded">
+                    <a href="home.html"><span>Home</span></a>
+                    <a href="about.html"><span>About</span></a>
+                    <a href="contact.html"><span>Contact</span></a>
+                    <span id="currentpage">Blog</span>
+                    <!-- <span> </span> -->
+                    <a href="login.html"><span> Log out </span></a>
+                </div>
+
+
+                <a id="mytopref"></a>
+                <a id="uparrow" href="#"><i class="fa-solid fa-circle-arrow-up"></i></a>
+                <div class="intro">
+                </div>
+                
+                <div class="portfolio">
+                    <div class="projects-grid">
+                        
+                            <div class="portfolio-title">
+                                <div class="portfolio-title-raw">
+                                    <a href="articleMenu.html"><i class="fa-solid fa-left-long"></i> Articles' menu</a>
+                                </div>
+                            </div>
+                            <div class="contact-body">
+                                <div class="contact-title">
+                                    Article Editor
+                                </div>
+                                <div class="container">
+                                    <form id="contact-form">
+                                  
+                                      <label for="title">Title:</label>
+                                      <input type="text" id="title" name="title" placeholder="Article's title ..." value="Web design skilled labour needed">
+                                      <label for="previewImageURL">Preview Image's URL:</label>
+                                      <input type="text" id="previewImageURL" name="previewImageURL" placeholder="Preview Image's URL ..." value="./images/digital-writting.jpg">
+                                      <label for="articleBody">Body:</label>
+                                      <textarea id="articleBody" name="articleBody" placeholder="Start writting ..." style="height:300px">The term web developer is used interchangeably with web designer, but this is not correct. Web developing is a special career, focusing on the back-end development, using programming languages to make the web design an app that works fine. <p>The emergence of touchscreen phones and tablet devices has caused a new way of designing websites, making the web designer need to ensure that web pages are screen-adaptive to any type of device that can be used. Therefore, the need to design and test web applications on various devices’ screens, has become a crucial task of this career. </p><p>To build future web design engineers, different training initiatives are being deployed, thus contributing to the task force of web development companies. </p>
+                                      </textarea>
+                                        <div class="buttons">
+                                            <button type="submit" class="edit"><i class="fa-solid fa-file-pen"></i> Update</button>
+                                            <button class="delete"><i class="fa-solid fa-trash"></i> Discard</button>
+                                        </div>
+                                  
+                                    </form>
+                                  </div> 
+                                
+                            </div>
+                            
+                        
+                    </div>
+                </div>  
+
+                
+
+            </div>
+            <footer>
+                <div class="footer">
+                    <div id="footer-contact">
+                        <a href="contact.html"><span><i class="fa-solid fa-envelope"></i> Contact me</span></a>
+                    </div>
+                    <!-- <div id="footer-blog">
+                        <a href="blog.html"><span><i class="fa-solid fa-newspaper"></i> Visit my blog</span></a>
+                    </div> -->
+                    <div id="footer-social">
+                        <span><i class="fa-brands fa-linkedin"></i></span>
+                        <span><i class="fa-brands fa-twitter"></i></span>
+                        <span><i class="fa-brands fa-instagram"></i></span>  
+                    </div>
+                    <div id="footer-copyright">
+                        Ⓒ PacomeSimon 2022 
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script src="./js/indexArticleEditor.js"></script>
+    </body>
+</html>
