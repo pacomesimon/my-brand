@@ -94,7 +94,7 @@ body{
 
   .portfolio{
     background: rgba(255, 255, 255, 0.3);
-    padding: 10px 10% 10px 10%;
+    padding: 10px 15% 10px 15%;
     margin-top: 2ex;
   }
   .portfolio-title{
@@ -108,6 +108,7 @@ body{
     margin-bottom: 1ex;
     display: flex;
     align-items: center;
+    grid-column: 1 / span 3;
   }
   .portfolio-title-raw{
     text-align: center;
@@ -115,34 +116,43 @@ body{
   }
   .projects-grid{
     display: grid;
-    grid-template-columns: auto;
-    gap: 1ex;
+    grid-template-columns: auto auto auto;
+    gap: 1.6ex;
   }
   .project-card{
     display: grid;
-    grid-template-columns: 20% auto;
+    grid-template-columns: auto;
+    grid-template-rows: 20ex 20ex;
     column-gap: 3ex;
     row-gap: 0.5ex;
     /* border: solid 2px black; */
-    padding: 0.3%;
+    padding: 0%;
     margin-bottom: 1ex;
     background: rgba(255, 255, 255, 0.6);
-    align-items: center;
+    border-radius: 5px;
   }
   .project-card-details{
     display: grid;
     grid-template-columns: auto;
-    gap: 1ex;
+    grid-template-rows: 25% 65% 10%;
+    gap: 0ex;
     text-align: left;
     color: rgba(0, 0, 0, 0.9);
+    margin: 1.2ex;
   }
   .blog-title{
-    font-size: 16px;
+    font-size: 26px;
     color: rgba(0, 0, 255, 0.49);
   } 
+  .blog-pretitle{
+    font-size: 14px;
+    font-weight: bold;
+    color: #414141;
+  }
   .blog-subtitle{
-    font-size: 12px;
-    font-style: italic;
+    font-size: 14px;
+    font-weight:bold;
+    color: #414141;
   }
   .reactions{
     display: grid;
@@ -158,9 +168,11 @@ body{
 
 
   .project-img {
-      height: 15ex;
+      height: 20ex;
       width: 100%;
       object-fit: cover;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
   }
 
   
@@ -313,7 +325,7 @@ body{
       padding: 1%;
       margin-bottom: 1ex;
       background: rgba(255, 255, 255, 0.5);
-      border-radius: 3px;
+      border-radius: 5px;
     }
 
     .intro{

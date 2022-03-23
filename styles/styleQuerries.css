@@ -254,21 +254,21 @@ body{
   }
   .name{
     font-family: "Lucida Console";
-    height: 3ex;
+    height: max-content;
     font-size: 1.7ex; 
     border-radius: 5px;
     border: 1px solid rgb(100,100,100);
-    padding-left: 1ex;
+    padding: 0.5ex 1ex 0.5ex 1ex;
     background-color: rgba(255,255,255,0.1);
   }
 
   .email{
     font-family: "Lucida Console";
-    height: 3ex;
+    height: max-content;
     font-size: 1.7ex;
     border-radius: 5px;
     border: 1px solid rgb(100,100,100);
-    padding-left: 1ex;
+    padding: 0.5ex 1ex 0.5ex 1ex;
     background-color: rgba(255,255,255,0.1);
   }
   .message{
@@ -276,9 +276,14 @@ body{
     font-size: 1.7ex;
     border-radius: 5px;
     border: 1px solid rgb(100,100,100);
-    padding-left: 1ex;
+    padding: 1ex;
     background-color: rgba(255,255,255,0.1);
-    height: 12ex;
+    height: max-content;
+    line-height: 1.5;
+  }
+  .timestamp{
+    font-family: "Lucida Console";
+    font-size: 1.7ex;
   }
   
  
