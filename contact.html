@@ -59,11 +59,25 @@
                         <form id="contact-form">
                       
                           <!-- <label for="name"><strong>Name*</strong></label> -->
-                          <input type="text" id="name" name="name" placeholder="Your name ...">
-                          <!-- <label for="email"><strong>Email*</strong></label> -->
-                          <input type="text" id="email" name="email" placeholder="Your Email ...">
+                          <div>
+                            <input type="text" id="name" name="name" required>
+                            <label for="name" class="label-name">
+                                <span class="content-name">Name</span>
+                            </label>
+                          </div>
+                          <div>
+                            <input type="text" id="email" name="email" required>
+                            <label for="email" class="label-email">
+                                <span class="content-email">Email</span>
+                            </label>
+                          </div>
                           <!-- <label for="message"><strong>Message*</strong></label> -->
-                          <textarea id="message" name="message" placeholder="Write your message ..." style="height:200px"></textarea>
+                          <div>
+                            <textarea id="message" message="message" style="height:200px" required></textarea>
+                            <label for="message" class="label-message">
+                                <span class="content-message">Your Message</span>
+                            </label>
+                          </div>
                           <div></div>  
                           <button type="submit">SUBMIT <i class="fa-solid fa-right-long"></i></button>
                           

@@ -249,7 +249,19 @@ body{
     grid-template-columns: auto;
     gap: 1ex;
   }
-  
+
+  #title, #previewImageURL{
+    font-size: medium;
+    line-height: 1.5;
+    color: black;
+    height: 4ex;
+  }
+  #articleBody{
+    font-size: large;
+    line-height: 1.7;
+    color: black;
+    background-color: white;
+  }
  
 
   button{
