@@ -165,7 +165,7 @@ body{
   }
 
   .project-img {
-      height: 25ex;
+      height: 100%;
       width: 100%;
       object-fit: cover;
   }
@@ -199,7 +199,7 @@ body{
   }
   .commenter-name {
     font-weight: bold;
-    width: 25%;
+    width: 20ex;
     font-size: 18px;
     padding-top: 0.5ex;
     padding-bottom: 0.5ex;
@@ -604,9 +604,9 @@ body{
       align-items: center;
       column-gap: 1ex;
       row-gap: 0.5ex;
-      padding: 1%;
+      padding: 0%;
       margin-bottom: 1ex;
-      background: rgba(255,255,255,0.5);
+      background: rgba(255, 255, 255, 0.8);
       border-radius: 5px;
     }
 
@@ -629,7 +629,7 @@ body{
       align-items: center;
     }
     .project-img {
-      height: 12ex;
+      height: 100%;
       width: 100%;
       object-fit: cover;
     }
@@ -659,7 +659,10 @@ body{
             font-size: x-small;
           }
           .project-card, .project-card-details, .blog-title, .blog-subtitle{
-            font-size: x-small;
+            font-size: medium;
+          }
+          .blog-subtitle{
+            font-size: small;
           }
           .portfolio-title{
             font-size: small;
