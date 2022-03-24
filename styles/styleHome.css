@@ -265,10 +265,68 @@ body{
     /* background: rgba(196, 196, 196, 0.05); */
   }
 
-
-
-
   @media (max-width: 890px) { 
+    .portfolio{
+      padding: 10px 1.5% 10px 1.5%;
+    }
+  }
+  @media (max-width: 890px) { 
+    .fa-bars{
+      color: rgba(0, 0, 255, 0.49);
+      font-size: 24px;
+      margin: 0.5ex;
+    }
+    .navbar{
+      display: none;
+    }
+    #navbar2{
+      display: block;
+    z-index : 10;
+    position: fixed;
+    align-items: center;
+    padding: 0.5ex;
+    
+    width: 100%;
+    height: 6ex;
+    left: 0px;
+    top: 0px;
+    
+    background: rgba(255, 255, 255, 0.95);
+    display: grid;
+    grid-template-columns: 3ex 15ex auto 6ex;
+    gap: 2ex;
+    color: #414141;
+    font-size: 16px;
+    }
+    #navbar-expanded{
+      border-top: 1px solid white;
+      position: fixed;
+      width: 60%;
+      border-bottom-left-radius: 5%;
+      top: 7ex;
+      right: 0px;
+      padding: 1.5ex;
+      background: rgba(128, 128, 255, 0.95);
+      display: grid;
+      grid-template-columns: auto;
+      gap: 1.5ex;
+      color: white;
+      font-size: 16px;
+      z-index: 10;
+      display:none;
+    }
+    #brandname{
+      color: black;
+      font-size: 20px;
+    }
+    #currentpage{
+      color: white;
+      font-weight: bold;
+    }
+  
+  }
+
+  @media (max-width: 768px) {  
     .footer{
       grid-template-columns: auto 50%;
       gap: 1ex;
@@ -347,7 +405,7 @@ body{
       gap: 1ex;
       padding: 1%;
       margin-bottom: 1ex;
-      background: rgba(196, 196, 196, 0.58);
+      background: rgba(196, 196, 196, 0.3);
       border-radius: 5px;
     }
 

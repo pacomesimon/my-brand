@@ -1,62 +1,11 @@
-#message{
-    font-family: "Lucida Console";
-    height: 2ex;
-    font-size: 2ex;
-    border-radius: 5px;
-    border: 1px solid rgb(100,100,100);
-    padding-left: 1ex;
-    padding-top: 3ex;
-    padding-bottom: 0.5ex;
-    background-color: rgba(255,255,255,0.9);
-    width: 100%;
-    /* border: none; */
-    outline: none;
+@media (max-width: 890px) { 
+  #uparrow {
+    position: fixed;
+    right: 0.5ex;
+    bottom: 1.5ex;
+    text-align: center;
+    font-size: 4ex;
+    color: rgba(156, 156, 156, 0.58);
+    z-index: 10;
   }
-  form div{
-    position: relative;
-    /* overflow: hidden; */
-  }
-  div label{
-    position: absolute;
-    bottom: 0px;
-    left: 1ex;
-    width: 100%;
-    height: 100%;
-    color: #414141;
-    pointer-events: none;
-    /* border-bottom: 1px solid black; */
-  }
-  /* div label::after{
-    content:"";
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    height: 100%;
-    width: 100%;
-    border-bottom: 3px solid #5fa8d3;
-    transform: translateX(-100%);
-    transition: all .3s ease;
-  } */
-  .content-message{
-    position: absolute;
-    font-size: 2ex;
-    font-weight: 100;
-    bottom: 1.9ex;
-    left: 0px;
-    transition: all .3s ease;
-    color: rgb(100,100,100,.85);
-  }
-  #message:focus + .label-message .content-message,
-  #message:valid + .label-message .content-message{
-    transform: translateY(-130%);
-    font-size: small;
-    font-weight: bold;
-    color: rgba(0, 0, 255, 0.49);
-  }
-  /* #message:focus + .label-message::after,
-  #message:valid + .label-message::after{
-    transform: translateX(0%);
-  } */
-  #message:focus, #message:valid{
-    border: 2px solid rgba(0, 0, 255, 0.49);
-  }
+}

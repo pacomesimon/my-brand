@@ -263,10 +263,81 @@ body{
     /* background: rgba(196, 196, 196, 0.05); */
   }
 
-
-
+  @media (max-width: 992px){
+    #projects-grid{
+      grid-template-columns: auto auto;
+    }
+    #footer-social {
+      font-size: medium;
+    }
+  }
 
   @media (max-width: 890px) { 
+    #uparrow {
+      position: fixed;
+      right: 0.5ex;
+      bottom: 1.5ex;
+      text-align: center;
+      font-size: 4ex;
+      color: rgba(156, 156, 156, 0.58);
+      z-index: 10;
+    }
+    .fa-bars{
+      color: rgba(0, 0, 255, 0.49);
+      font-size: 24px;
+      margin: 0.5ex;
+    }
+    .navbar{
+      display: none;
+    }
+    #navbar2{
+      display: block;
+    z-index : 10;
+    position: fixed;
+    align-items: center;
+    padding: 0.5ex;
+    
+    width: 100%;
+    height: 6ex;
+    left: 0px;
+    top: 0px;
+    
+    background: rgba(255, 255, 255, 0.95);
+    display: grid;
+    grid-template-columns: 3ex 15ex auto 6ex;
+    gap: 2ex;
+    color: #414141;
+    font-size: 16px;
+    }
+    #navbar-expanded{
+      border-top: 1px solid white;
+      position: fixed;
+      width: 60%;
+      border-bottom-left-radius: 5%;
+      top: 7ex;
+      right: 0px;
+      padding: 1.5ex;
+      background: rgba(128, 128, 255, 0.95);
+      display: grid;
+      grid-template-columns: auto;
+      gap: 1.5ex;
+      color: white;
+      font-size: 16px;
+      z-index: 10;
+      display:none;
+    }
+    #brandname{
+      color: black;
+      font-size: 20px;
+    }
+    #currentpage{
+      color: white;
+      font-weight: bold;
+    }
+  
+  }
+
+  @media (max-width: 768px) { 
     .footer{
       grid-template-columns: auto 50%;
       gap: 1ex;
@@ -337,29 +408,40 @@ body{
 
     #projects-grid{
       display: grid;
-      grid-template-columns: auto;
-      gap: 0.5ex;
+      grid-template-columns: auto auto;
+      gap: 2ex;
     }
 
     .project-card{
       display: grid;
-      grid-template-columns: 40% auto;
-      align-items: center;
-      gap: 1ex;
-      padding: 1%;
+      grid-template-columns: auto;
+      grid-template-rows: 20ex 20ex;
+      column-gap: 3ex;
+      row-gap: 0.5ex;
+      /* border: solid 2px black; */
+      padding: 0%;
       margin-bottom: 1ex;
-      background: rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 0.6);
       border-radius: 5px;
+    }
+    .project-card-details{
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: 15% 75% 10%;
+      gap: 0ex;
+      text-align: left;
+      color: rgba(0, 0, 0, 0.9);
+      margin: 1.2ex;
     }
 
     .intro{
       padding: 70px 0px 5px 10%;
-      font-weight: 700;
+      font-weight: normal;
       font-size: 36px;
       width: 50%
     }
     .portfolio{
-      padding: 10px 1.5% 10px 1.5%;
+      padding: 10px 5% 10px 5%;
     }
     .portfolio-title{
       font-weight: bold;
@@ -371,7 +453,7 @@ body{
       align-items: center;
     }
     .project-img {
-      height: 12ex;
+      height: 20ex;
       width: 100%;
       object-fit: cover;
     }
@@ -388,22 +470,32 @@ body{
     .project-card-details button{
       font-size: small;
     }
+    .blog-title{
+      font-size: 22px;
+    }
     
 
+  }
+
+  @media (max-width: 480px) {
+    .intro{
+      font-size: large;
+    }
+    #hiwords{
+      font-size: large;
+    }
+    #projects-grid{
+      grid-template-columns: auto;
+    }
+    .portfolio-title-raw{
+      font-size: large;
+      font-weight: bold;
+    }
   }
 
 @media (max-width: 320px) { 
           footer{
             font-size: x-small;
-          }
-          .project-card, .project-card-details, .blog-title, .blog-subtitle{
-            font-size: x-small;
-          }
-          .portfolio-title{
-            font-size: small;
-          }
-          .intro{
-            font-size: medium;
           }
           .intro-buttons button{
             font-size: x-small;
