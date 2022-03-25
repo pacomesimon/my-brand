@@ -126,6 +126,10 @@ body{
     color: inherit;
     font-weight: normal;
   }
+  .footer a:hover{
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: normal;
+  }
 
   footer{
     margin-top: 2ex;

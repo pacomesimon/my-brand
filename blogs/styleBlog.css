@@ -112,6 +112,9 @@ body{
     text-align: center;
     width: 100%;
   }
+  .portfolio-title-raw:hover{
+    color: rgba(0, 0, 255, 0.7);
+  }
   .projects-grid{
     display: grid;
     grid-template-columns: auto auto;
@@ -156,8 +159,14 @@ body{
     background: rgba(255, 255, 255, 0.5);
     padding: 0.5ex;
     text-align: center;
-    font-size: 12px;
+    font-size: medium;
   }
+
+  .like-reaction:hover{
+    color: rgba(0, 0, 255, 0.49);
+    font-size: large;
+  }
+
   .col1{
     width: 100%;
     display: grid;
@@ -468,6 +477,10 @@ body{
   }
   .footer button{
     color: inherit;
+    font-weight: normal;
+  }
+  .footer a:hover{
+    color: rgba(255, 255, 255, 0.7);
     font-weight: normal;
   }
 

@@ -73,7 +73,16 @@ body{
     padding: 0.5ex;
     
   }
+  #panel-navbar button:hover{
+    background-color: rgba(0, 0, 255, 0.7);
+  }
+
+
   #panel-navbar .selected{
+    background-color: #A0A0A0;
+    font-weight: bold;
+  }
+  #panel-navbar .selected:hover{
     background-color: #A0A0A0;
     font-weight: bold;
   }
@@ -150,6 +159,9 @@ body{
     width:fit-content;
     padding: 0.5ex;
   }
+  .add-article:hover{
+    background-color: rgba(0, 0, 255, 0.7);
+  }
   .portfolio-title-raw{
     text-align: center;
     width:fit-content;
@@ -171,6 +183,9 @@ body{
     background: rgba(255,255,255,0.8);
     align-items: center;
   }
+  .project-card:hover{
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.49);
+  }
   .project-card button{
     color: white;
     text-align: center;
@@ -190,9 +205,16 @@ body{
   .edit{
     background: rgba(0, 0, 255, 0.5);
   }
+  .edit:hover{
+    background-color: rgba(0, 0, 255, 0.7);
+  }
   .delete{
     background-color: rgba(255, 0,0, 0.49);
   }
+  .delete:hover{
+    background-color: rgba(255, 0, 0, 0.7);
+  }
+
   .project-card-details{
     /* display: grid;
     grid-template-columns: auto; */
@@ -250,7 +272,10 @@ body{
     color: inherit;
     font-weight: normal;
   }
-
+  .footer a:hover{
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: normal;
+  }
   footer{
     margin-top: 2ex;
     margin-bottom: -2ex;
@@ -487,6 +512,7 @@ body{
       padding: 0.5ex;
       height: auto;
     }
+    
     .project-img {
       height: 12ex;
       width: 100%;
