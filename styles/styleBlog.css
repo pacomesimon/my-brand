@@ -497,10 +497,12 @@ body{
 
   @media (max-width: 480px) {
     .intro{
-      font-size: large;
+      font-size: 30px;
+      width: 80%;
+      padding-bottom: 0px;
     }
     #hiwords{
-      font-size: large;
+      font-size: 36px;
     }
     #projects-grid{
       grid-template-columns: auto;

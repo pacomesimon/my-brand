@@ -427,7 +427,7 @@ body{
 
     .intro{
       padding: 70px 0px 5px 10%;
-      font-weight: 700;
+      font-weight: normal;
       font-size: 36px;
       width: 50%
     }
@@ -471,6 +471,18 @@ body{
       font-size: small;
     }
 
+  }
+
+  @media (max-width: 480px) {
+    .intro{
+      font-size: 30px;
+      font-weight: normal;
+      width: 80%;
+      padding-bottom: 0px;
+    }
+    #hiwords{
+      font-size: 36px;
+    }
   }
 
 @media (max-width: 320px) { 

@@ -208,7 +208,9 @@ body{
   }
   .commenter-name {
     font-weight: bold;
-    width: 20ex;
+    word-wrap: break-word;
+    width: 33ex;
+    padding-right: 3ex;
     font-size: 18px;
     padding-top: 0.5ex;
     padding-bottom: 0.5ex;
