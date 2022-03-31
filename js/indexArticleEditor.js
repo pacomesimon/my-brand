@@ -36,3 +36,65 @@ function myFunc(x) {
   var x = window.matchMedia("(max-width: 890px)")
   myFunc(x) 
   x.addListener(myFunc)
+
+      ////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////
+
+
+const form = document.getElementById('contact-form');
+const title = document.getElementById('title');
+const previewImageURL = document.getElementById('previewImageURL');
+const articleBody = document.getElementById('articleBody');
+
+form.addEventListener('submit', e => {
+	e.preventDefault();
+	
+	checkInputs();
+});
+
+function checkInputs() {
+	const emailValue = previewImageURL.value.trim();
+    const nameValue = title.value.trim();
+	const messageValue = articleBody.value.trim();
+	
+	if(emailValue === '') {
+		setErrorFor(previewImageURL, 'Email cannot be blank');
+	} else if (!isEmail(emailValue)) {
+		setErrorFor(previewImageURL, 'Not a valid previewImageURL');
+	} else {
+		setSuccessFor(previewImageURL);
+	}
+	
+	if(messageValue === '') {
+		setErrorFor(articleBody, 'articleBody cannot be blank');
+	} else {
+		setSuccessFor(articleBody);
+	}
+    if(nameValue === '') {
+		setErrorFor(title, 'title cannot be blank');
+	} else {
+		setSuccessFor(title);
+	}
+	
+}
+
+function setErrorFor(input, articleBody) {
+	const formControl = input.parentElement;
+	const small = formControl.querySelector('small');
+	formControl.className = 'form-control error';
+	small.innerText = articleBody;
+    const label = formControl.querySelector('.label-raw');
+    label.style.color = "#e74c3c";
+}
+
+function setSuccessFor(input) {
+	const formControl = input.parentElement;
+	formControl.className = 'form-control success';
+    const label = formControl.querySelector('.label-raw');
+    label.style.color = "#2ecc71";
+}
+	
+function isEmail(previewImageURL) {
+	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(previewImageURL);
+}
+

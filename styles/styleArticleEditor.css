@@ -260,10 +260,78 @@ body{
   }
 
   #title, #previewImageURL{
-    font-size: medium;
-    line-height: 1.5;
-    color: black;
-    height: 4ex;
+    font-family: "Lucida Console";
+    height: 2ex;
+    font-size: 2ex;
+    border-radius: 5px;
+    border: 1px solid rgb(100,100,100);
+    padding-left: 1ex;
+    padding-top: 3ex;
+    padding-bottom: 0.5ex;
+    background-color: rgba(255,255,255,0);
+    width: 100%;
+    /* border: none; */
+    outline: none;
+    color: rgba(0,0,0,0.8);
+  }
+  .form-control{
+    position: relative;
+    /* overflow: hidden; */
+  }
+  .fa-check-circle{
+    position: absolute;
+    top: 0.75ex;
+    right: 0ex;
+    visibility:hidden;
+    font-size: 3ex;
+  }
+  .fa-exclamation-circle{
+    position: absolute;
+    top: 0.75ex;
+    right: 0ex;
+    visibility:hidden;
+    font-size: 3ex;
+  }
+  .form-control.success input#previewImageURL {
+    border-color: #2ecc71;
+  }
+  .form-control.success input#title {
+    border-color: #2ecc71;
+  }
+  .form-control.success textarea#articleBody {
+    border-color: #2ecc71;
+  }
+  .form-control.success i.fa-check-circle {
+    color: #2ecc71;
+    visibility: visible;
+  }
+  .form-control.error{
+    margin-bottom: 1.5ex;
+  }
+  .form-control.error input#previewImageURL {
+    border-color: #e74c3c;
+  }
+  .form-control.error input#title {
+    border-color: #e74c3c;
+  }
+  .form-control.error textarea#articleBody {
+    border-color: #e74c3c;
+  }
+  .form-control.error i.fa-exclamation-circle {
+    color: #e74c3c;
+    visibility: visible;
+  }
+  .form-control small {
+    color: #e74c3c;
+    position: absolute;
+    bottom: -2ex;
+    left: 0;
+    visibility: hidden;
+    font-size:medium;
+  }
+  
+  .form-control.error small {
+    visibility: visible;
   }
   #articleBody{
     font-size: large;
@@ -271,7 +339,121 @@ body{
     color: black;
     background-color: white;
   }
- 
+  div label{
+    position: absolute;
+    bottom: 0px;
+    left: 1ex;
+    width: 100%;
+    height: 100%;
+    color: #414141;
+    pointer-events: none;
+    /* border-bottom: 1px solid black; */
+  }
+  .content-title{
+    position: absolute;
+    font-size: 2ex;
+    font-weight: 100;
+    bottom: 1.9ex;
+    left: 0px;
+    transition: all .3s ease;
+    color: rgb(100,100,100,.85);
+  }
+  #title:focus + .label-title .content-title,
+  #title:valid + .label-title .content-title{
+    transform: translateY(-130%);
+    font-size: small;
+    font-weight: bold;
+    color: rgba(0, 0, 255, 0.49);
+  }
+  #title:focus, #title:valid{
+    border: 2px solid rgba(0, 0, 255, 0.49);
+  }
+  #previewImageURL {
+    font-family: "Lucida Console";
+    height: 2ex;
+    font-size: 2ex;
+    border-radius: 5px;
+    border: 1px solid rgb(100,100,100);
+    padding-left: 1ex;
+    padding-top: 3ex;
+    padding-bottom: 0.5ex;
+    background-color: rgba(255,255,255,0);
+    width: 100%;
+    /* border: none; */
+    outline: none;
+    color: rgba(0,0,0,0.8);
+  }
+  form div{
+    position: relative;
+    /* overflow: hidden; */
+  }
+  div label{
+    position: absolute;
+    bottom: 0px;
+    left: 1ex;
+    width: 100%;
+    height: 100%;
+    color: #414141;
+    pointer-events: none;
+    /* border-bottom: 1px solid black; */
+  }
+  .content-previewImageURL{
+    position: absolute;
+    font-size: 2ex;
+    font-weight: 100;
+    bottom: 1.9ex;
+    left: 0px;
+    transition: all .3s ease;
+    color: rgb(100,100,100,.85);
+  }
+  #previewImageURL:focus + .label-previewImageURL .content-previewImageURL,
+  #previewImageURL:valid + .label-previewImageURL .content-previewImageURL{
+    transform: translateY(-130%);
+    font-size: small;
+    font-weight: bold;
+    color: rgba(0, 0, 255, 0.49);
+  }
+  /* #email:focus + .label-email::after,
+  #email:valid + .label-email::after{
+    transform: translateX(0%);
+  } */
+  #previewImageURL:focus, #previewImageURL:valid{
+    border: 2px solid rgba(0, 0, 255, 0.49);
+  }
+  #articleBody{
+    font-family: "Lucida Console";
+    height: 35ex !important;
+    font-size: 2ex;
+    border-radius: 5px;
+    border: 1px solid rgb(100,100,100);
+    padding-left: 1ex;
+    padding-top: 4ex;
+    padding-bottom: 0.5ex;
+    background-color: rgba(255,255,255,0);
+    width: 100%;
+    /* border: none; */
+    outline: none;
+    color: rgba(0,0,0,0.8);
+  }
+  .content-articleBody{
+    position: absolute;
+    font-size: 2ex;
+    font-weight: 100;
+    top: 1.5ex;
+    left: 0px;
+    transition: all .3s ease;
+    color: rgb(100,100,100,.85);
+  }
+  #articleBody:focus + .label-articleBody .content-articleBody,
+  #articleBody:valid + .label-articleBody .content-articleBody{
+    transform: translateY(-5%);
+    font-size: medium;
+    font-weight: bold;
+    color: rgba(0, 0, 255, 0.49);
+  }
+  #articleBody:focus, #articleBody:valid{
+    border: 2px solid rgba(0, 0, 255, 0.49);
+  }
 
   button{
     border: none;
