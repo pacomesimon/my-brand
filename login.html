@@ -57,20 +57,32 @@
                     </div>
                     <div class="container">
                         <form id="login-form">
-                          <div>
+                          <div class="form-control">
                             <input type="text" id="email" name="email" required>
                             <label for="email" class="label-email">
-                                <span class="content-email">Email</span>
+                                <span class="content-email label-raw">Email</span>
                             </label>
+                            <i class="fas fa-check-circle"></i>
+			                <i class="fas fa-exclamation-circle"></i>
+			                <small>Error message</small>
                           </div>
-                          <div>
+                          <div class="form-control">
                             <input type="password" id="password" name="password" required>
                             <label for="password" class="label-password">
-                                <span class="content-password">Password</span>
+                                <span class="content-password label-raw">Password</span>
                             </label>
+                            <i class="fas fa-check-circle"></i>
+			                <i class="fas fa-exclamation-circle"></i>
+			                <small>Error message</small>
                           </div>
                             <div></div>
-                          <button type="submit"><a href="articleMenu.html">LOG IN </a><i class="fa-solid fa-right-long"></i></button>
+                          <button type="submit">
+                              <!-- <a href="articleMenu.html"> -->
+                                  LOG IN 
+                              <!-- </a> -->
+                              <i class="fa-solid fa-right-long"></i>
+                        
+                            </button>
                       
                         </form>
                       </div> 
