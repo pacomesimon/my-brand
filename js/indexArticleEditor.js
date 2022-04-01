@@ -58,15 +58,15 @@ function checkInputs() {
 	const messageValue = articleBody.value.trim();
 	
 	if(emailValue === '') {
-		setErrorFor(previewImageURL, 'Email cannot be blank');
+		setErrorFor(previewImageURL, 'Image URL cannot be blank');
 	} else if (!isEmail(emailValue)) {
-		setErrorFor(previewImageURL, 'Not a valid previewImageURL');
+		setErrorFor(previewImageURL, 'Not a valid Image URL');
 	} else {
 		setSuccessFor(previewImageURL);
 	}
 	
 	if(messageValue === '') {
-		setErrorFor(articleBody, 'articleBody cannot be blank');
+		setErrorFor(articleBody, 'article\'s body cannot be blank');
 	} else {
 		setSuccessFor(articleBody);
 	}
@@ -95,6 +95,7 @@ function setSuccessFor(input) {
 }
 	
 function isEmail(previewImageURL) {
-	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(previewImageURL);
+	// return /./.test(previewImageURL);
+    return true;
 }
 

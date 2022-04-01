@@ -41,6 +41,7 @@ body{
     gap: 2ex;
     color: #414141;
     font-size: 16px;
+    z-index: 20;
   }
   .fa-right-from-bracket{
     margin-left: 3ex;
@@ -61,6 +62,7 @@ body{
     gap: 0.1ex;
     color: #414141;
     font-size: 16px;
+    z-index: 20;
   }
   #panel-navbar button{
     color: white;
@@ -257,6 +259,7 @@ body{
     display: grid;
     grid-template-columns: auto;
     gap: 1ex;
+    z-index:1;
   }
 
   #title, #previewImageURL{
@@ -446,13 +449,15 @@ body{
   }
   #articleBody:focus + .label-articleBody .content-articleBody,
   #articleBody:valid + .label-articleBody .content-articleBody{
-    transform: translateY(-5%);
+    transform: translateY(10%);
     font-size: medium;
     font-weight: bold;
     color: rgba(0, 0, 255, 0.49);
   }
   #articleBody:focus, #articleBody:valid{
     border: 2px solid rgba(0, 0, 255, 0.49);
+    margin-top: 5ex;
+    padding-top: 0.5ex;
   }
 
   button{
@@ -539,7 +544,7 @@ body{
     }
     #navbar2{
       display: block;
-    z-index : 10;
+    z-index : 20;
     position: fixed;
     align-items: center;
     padding: 0.5ex;
@@ -555,6 +560,7 @@ body{
     gap: 2ex;
     color: #414141;
     font-size: 16px;
+    z-index: 20;
     }
     #navbar-expanded{
       border-top: 1px solid white;
@@ -570,7 +576,7 @@ body{
       gap: 1.5ex;
       color: white;
       font-size: 16px;
-      z-index: 10;
+      z-index: 20;
       display:none;
     }
     #brandname{
@@ -618,7 +624,7 @@ body{
     }
     #navbar2{
       display: block;
-    z-index : 10;
+    z-index : 20;
     position: fixed;
     align-items: center;
     padding: 0.5ex;
@@ -649,7 +655,7 @@ body{
       gap: 1.5ex;
       color: white;
       font-size: 16px;
-      z-index: 10;
+      z-index: 20;
       display:none;
     }
     #brandname{
@@ -714,7 +720,7 @@ body{
       text-align: center;
       font-size: 4ex;
       color: rgba(156, 156, 156, 0.58);
-      z-index: 10;
+      z-index: 20;
     }
     .project-card-details button{
       font-size: small;

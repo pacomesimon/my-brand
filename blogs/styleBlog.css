@@ -511,8 +511,8 @@ body{
   }
   #message:focus + .label-message .content-message,
   #message:valid + .label-message .content-message{
-    transform: translateY(-5%);
-    font-size: small;
+    transform: translateY(10%);
+    font-size: medium;
     font-weight: bold;
     color: rgba(0, 0, 255, 0.49);
   }
@@ -522,6 +522,8 @@ body{
   } */
   #message:focus, #message:valid{
     border: 2px solid rgba(0, 0, 255, 0.49);
+    margin-top: 5ex;
+    padding-top: 0.5ex;
   }
 
   button{
