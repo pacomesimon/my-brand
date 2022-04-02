@@ -34,6 +34,7 @@ body{
     gap: 2ex;
     color: #414141;
     font-size: 16px;
+    padding-left: 1ex;
   }
   .fa-right-from-bracket{
     margin-left: 3ex;

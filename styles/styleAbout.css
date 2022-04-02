@@ -28,6 +28,7 @@ body{
     gap: 2ex;
     color: #414141;
     font-size: 16px;
+    padding-left: 1ex;
   }
   #navbar2{
     display:none;

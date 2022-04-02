@@ -42,6 +42,7 @@ body{
     color: #414141;
     font-size: 16px;
     z-index: 20;
+    padding-left: 1ex;
   }
   .fa-right-from-bracket{
     margin-left: 3ex;
