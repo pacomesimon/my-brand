@@ -223,7 +223,7 @@ body{
     color: rgba(0, 0, 255, 0.5);
     font-weight: bold;
     width:fit-content;
-    padding: 0.5ex;
+    padding: 0.5ex 0.5ex 0.5ex 0ex;
     border-radius: 3px;
   }
   .footer button{
