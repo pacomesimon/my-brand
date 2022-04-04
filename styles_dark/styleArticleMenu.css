@@ -5,7 +5,7 @@ a {
 body{
   margin: 0;
   font-family: "Lucida Console";
-  background-image: url("../images/background-image.jpg");
+  background-image: url("../images/background-image-dark.jpg");
   background-attachment: fixed;
   background-size: cover;
   position: absolute;
@@ -35,14 +35,15 @@ body{
     left: 0px;
     top: 0px;
     
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(10, 10, 10, 0.975);
     display: grid;
     grid-template-columns: auto auto auto auto auto 70%;
     gap: 2ex;
-    color: #414141;
+    color: rgba(150,150,150);
     font-size: 16px;
     padding-left: 1ex;
-  }
+    z-index: 10;
+  } 
   .fa-right-from-bracket{
     margin-left: 3ex;
   }  
@@ -56,7 +57,7 @@ body{
     left: 0px;
     top: 7.2ex;
     
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(10, 10, 10, 0.975);
     display: grid;
     grid-template-columns: 23ex 15ex auto;
     gap: 0.1ex;
@@ -66,7 +67,7 @@ body{
   #panel-navbar button{
     color: white;
     border-radius: 5px;
-    background: rgba(0, 0, 255, 0.5);
+    background: rgba(65, 65, 210, .5);
     height: 3.5ex;
     font-family: "lucida Console";
     font-weight: normal;
@@ -75,16 +76,16 @@ body{
     
   }
   #panel-navbar button:hover{
-    background-color: rgba(0, 0, 255, 0.7);
+    background-color: rgba(67, 67, 250);
   }
 
 
   #panel-navbar .selected{
-    background-color: #A0A0A0;
+    background-color: #313131;
     font-weight: bold;
   }
   #panel-navbar .selected:hover{
-    background-color: #A0A0A0;
+    background-color: #313131;
     font-weight: bold;
   }
 
@@ -96,7 +97,7 @@ body{
   }
 
   #currentpage{
-    color: black;
+    color: rgba(200,200,200,1);
     font-size:20px;
   }
   #logo {
@@ -104,7 +105,7 @@ body{
     width: 3ex;
     height: 3ex;
     border-radius: 50%;
-    background: rgba(0, 0, 255, 0.49);
+    background: rgba(65, 65, 210, 0.9);
     color: white;
     font-size:x-large;
     padding: 0ex;
@@ -117,12 +118,21 @@ body{
     text-align: right;
     margin-right: 8ex;
   }
+  #night-day {
+    position: fixed;
+    right: 1ex;
+    bottom: 3.5ex;
+    text-align: center;
+    font-size: 4ex;
+    color: rgba(156, 156, 156, 0.58);
+    z-index: 10;
+  }
   #uparrow {
     position: fixed;
     right: 1ex;
     bottom: 1ex;
     text-align: center;
-    font-size: 7ex;
+    font-size: 4ex;
     color: rgba(156, 156, 156, 0.58);
     z-index: 10;
   }
@@ -134,13 +144,13 @@ body{
   }
 
   .portfolio{
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(20, 20, 20, 0.5);
     padding: 10px 10% 10px 10%;
     margin-top: 2ex;
   }
   .portfolio-title{
     border-radius: 5px;
-    color: rgba(0, 0, 255, 0.49);
+    color: rgba(65, 65, 210, 1);
     font-weight: bold;
     font-size: 24px;
     height: 3ex;
@@ -153,7 +163,7 @@ body{
   .portfolio-title button{
     color: white;
     border-radius: 5px;
-    background: rgba(0, 0, 255, 0.5);
+    background: rgba(65, 65, 210, .5);
     height: 3.5ex;
     font-family: "lucida Console";
     font-weight: bold;
@@ -161,7 +171,7 @@ body{
     padding: 0.5ex;
   }
   .add-article:hover{
-    background-color: rgba(0, 0, 255, 0.7);
+    background-color: rgba(67, 67, 255, 1);
   }
   .portfolio-title-raw{
     text-align: center;
@@ -181,7 +191,7 @@ body{
     /* border: solid 2px black; */
     padding: 0.5ex;
     margin-bottom: 1ex;
-    background: rgba(255,255,255,0.8);
+    background: rgba(56, 56, 56, 0.1);
     align-items: center;
   }
   .project-card:hover{
@@ -204,10 +214,10 @@ body{
     justify-items: center;
   }
   .edit{
-    background: rgba(0, 0, 255, 0.5);
+    background: rgba(65, 65, 210, .5);
   }
   .edit:hover{
-    background-color: rgba(0, 0, 255, 0.7);
+    background-color: rgba(65, 65, 255, 1);
   }
   .delete{
     background-color: rgba(255, 0,0, 0.49);
@@ -225,7 +235,7 @@ body{
   }
   .blog-title{
     font-size: 18px;
-    color: rgba(0, 0, 255, 0.49);
+    color: rgba(65, 65, 255, 1);
   } 
   .blog-subtitle{
     font-size: 14px;
@@ -241,7 +251,7 @@ body{
     width: 50%;
   }
   .like-reaction,.comment-reaction,.view-reaction{
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0);
     text-align: center;
     font-size: 12px;
   }
@@ -296,14 +306,13 @@ body{
     grid-template-columns: auto auto auto;
     gap: 5ex;
     padding: 0 15% 0 15%;
-    color: white;
+    color: #818181;
   }
   #footer-contact {
     text-align: center;
     display: grid;
     grid-template-columns: auto;
     padding: 1%;
-    color: white;
     background: rgba(196, 196, 196, 0.0);
   }
   #footer-blog {
@@ -330,12 +339,21 @@ body{
       font-size: 24px;
       margin: 0.5ex;
     }
+    #night-day {
+      position: fixed;
+      right: 0.5ex;
+      bottom: 4ex;
+      text-align: center;
+      font-size: 3ex;
+      color: rgba(156, 156, 156, 0.58);
+      z-index: 10;
+    }
     #uparrow {
       position: fixed;
       right: 0.5ex;
       bottom: 1.5ex;
       text-align: center;
-      font-size: 4ex;
+      font-size: 3ex;
       color: rgba(156, 156, 156, 0.58);
       z-index: 10;
     }
@@ -520,12 +538,21 @@ body{
       object-fit: cover;
     }
 
+    #night-day {
+      position: fixed;
+      right: 0.5ex;
+      bottom: 4ex;
+      text-align: center;
+      font-size: 3ex;
+      color: rgba(156, 156, 156, 0.58);
+      z-index: 10;
+    }
     #uparrow {
       position: fixed;
       right: 0.5ex;
       bottom: 1.5ex;
       text-align: center;
-      font-size: 4ex;
+      font-size: 3ex;
       color: rgba(156, 156, 156, 0.58);
       z-index: 10;
     }

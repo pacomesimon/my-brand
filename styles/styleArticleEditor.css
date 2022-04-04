@@ -110,12 +110,21 @@ body{
     text-align: right;
     margin-right: 8ex;
   }
+  #night-day {
+    position: fixed;
+    right: 1ex;
+    bottom: 3.5ex;
+    text-align: center;
+    font-size: 4ex;
+    color: rgba(156, 156, 156, 0.58);
+    z-index: 10;
+  }
   #uparrow {
     position: fixed;
     right: 1ex;
     bottom: 1ex;
     text-align: center;
-    font-size: 7ex;
+    font-size: 4ex;
     color: rgba(156, 156, 156, 0.58);
     z-index: 10;
   }
@@ -531,12 +540,21 @@ body{
       font-size: 24px;
       margin: 0.5ex;
     }
+    #night-day {
+      position: fixed;
+      right: 0.5ex;
+      bottom: 4ex;
+      text-align: center;
+      font-size: 3ex;
+      color: rgba(156, 156, 156, 0.58);
+      z-index: 10;
+    }
     #uparrow {
       position: fixed;
       right: 0.5ex;
       bottom: 1.5ex;
       text-align: center;
-      font-size: 4ex;
+      font-size: 3ex;
       color: rgba(156, 156, 156, 0.58);
       z-index: 10;
     }
@@ -714,14 +732,23 @@ body{
       object-fit: cover;
     }
 
+    #night-day {
+      position: fixed;
+      right: 0.5ex;
+      bottom: 4ex;
+      text-align: center;
+      font-size: 3ex;
+      color: rgba(156, 156, 156, 0.58);
+      z-index: 10;
+    }
     #uparrow {
       position: fixed;
       right: 0.5ex;
       bottom: 1.5ex;
       text-align: center;
-      font-size: 4ex;
+      font-size: 3ex;
       color: rgba(156, 156, 156, 0.58);
-      z-index: 20;
+      z-index: 10;
     }
     .project-card-details button{
       font-size: small;
