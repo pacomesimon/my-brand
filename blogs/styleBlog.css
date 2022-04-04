@@ -76,12 +76,21 @@ body{
     position: relative;
     min-height: 100vh;
   }
+  #night-day {
+    position: fixed;
+    right: 1ex;
+    bottom: 3.5ex;
+    text-align: center;
+    font-size: 4ex;
+    color: rgba(156, 156, 156, 0.58);
+    z-index: 10;
+  }
   #uparrow {
     position: fixed;
     right: 1ex;
     bottom: 1ex;
     text-align: center;
-    font-size: 7ex;
+    font-size: 4ex;
     color: rgba(156, 156, 156, 0.58);
     z-index: 10;
   }
@@ -178,6 +187,7 @@ body{
       height: 100%;
       width: 100%;
       object-fit: cover;
+      opacity: 1;
   }
   .blog-body{
     background-color: rgba(255, 255, 255, 0.8);
@@ -187,6 +197,7 @@ body{
     padding: 1.3ex;
     text-align: justify;
     max-height: min-content;
+    color: black;
 
   }
   .comments-section{
@@ -221,6 +232,7 @@ body{
   }
   .comment-payload {
     background-color: rgba(255, 255, 255, 0.8);
+    color: black;
     padding-top: 1ex;
     padding-bottom: 1ex;
     padding-left: 3ex;
@@ -575,7 +587,6 @@ body{
     display: grid;
     grid-template-columns: auto;
     padding: 1%;
-    color: white;
     background: rgba(196, 196, 196, 0.0);
   }
   #footer-blog {
@@ -711,12 +722,21 @@ body{
       object-fit: cover;
     }
 
+    #night-day {
+      position: fixed;
+      right: 0.5ex;
+      bottom: 4ex;
+      text-align: center;
+      font-size: 3ex;
+      color: rgba(156, 156, 156, 0.58);
+      z-index: 10;
+    }
     #uparrow {
       position: fixed;
       right: 0.5ex;
       bottom: 1.5ex;
       text-align: center;
-      font-size: 4ex;
+      font-size: 3ex;
       color: rgba(156, 156, 156, 0.58);
       z-index: 10;
     }

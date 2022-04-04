@@ -5,7 +5,7 @@ a {
 body{
   margin: 0;
   font-family: "Lucida Console";
-  background-image: url("../images/background-image.jpg");
+  background-image: url("../images/background-image-dark.jpg");
   background-attachment: fixed;
   background-size: cover;
   position: absolute;
@@ -17,7 +17,7 @@ body{
 #page-container {
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: min-content auto;
+  grid-template-rows: auto 11ex;
   position: relative;
   min-height: 100vh;
 }
@@ -35,14 +35,15 @@ body{
     left: 0px;
     top: 0px;
     
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(10, 10, 10, 0.975);
     display: grid;
     grid-template-columns: auto auto auto auto auto 70%;
     gap: 2ex;
-    color: #414141;
+    color: rgba(150,150,150);
     font-size: 16px;
     padding-left: 1ex;
-  }
+    z-index: 10;
+  } 
   .fa-right-from-bracket{
     margin-left: 3ex;
   }  
@@ -56,35 +57,28 @@ body{
     left: 0px;
     top: 7.2ex;
     
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(10, 10, 10, 0.975);
     display: grid;
     grid-template-columns: 23ex 15ex auto;
     gap: 0.1ex;
     color: #414141;
     font-size: 16px;
+    z-index: 20;
   }
   #panel-navbar button{
     color: white;
     border-radius: 5px;
-    background: rgba(0, 0, 255, 0.5);
+    background: rgba(0, 0, 255, 0.15);
     height: 3.5ex;
     font-family: "lucida Console";
     font-weight: normal;
     width:fit-content;
     padding: 0.5ex;
+    color: rgba(255, 255, 255, 0.25);
     
   }
-  #panel-navbar button:hover{
-    background-color: rgba(0, 0, 255, 0.7);
-  }
-
-
   #panel-navbar .selected{
-    background-color: #A0A0A0;
-    font-weight: bold;
-  }
-  #panel-navbar .selected:hover{
-    background-color: #A0A0A0;
+    background-color: rgba(196, 196, 196, 0.5);
     font-weight: bold;
   }
 
@@ -96,7 +90,7 @@ body{
   }
 
   #currentpage{
-    color: black;
+    color: rgba(200,200,200,1);
     font-size:20px;
   }
   #logo {
@@ -104,7 +98,7 @@ body{
     width: 3ex;
     height: 3ex;
     border-radius: 50%;
-    background: rgba(0, 0, 255, 0.49);
+    background: rgba(65, 65, 210, 0.9);
     color: white;
     font-size:x-large;
     padding: 0ex;
@@ -143,15 +137,15 @@ body{
   }
 
   .portfolio{
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(20, 20, 20, 0.5);
     padding: 10px 10% 10px 10%;
     margin-top: 2ex;
   }
   .portfolio-title{
     border-radius: 5px;
-    color: rgba(0, 0, 255, 0.49);
+    color: rgba(65, 65, 210, 1);
     font-weight: bold;
-    font-size: 24px;
+    font-size: 20px;
     height: 3ex;
     width: 100%;
     margin-bottom: 1ex;
@@ -170,10 +164,13 @@ body{
     padding: 0.5ex;
   }
   .portfolio-title-raw{
-    background: rgba(196, 196, 196, 0);
+    /* background: rgba(196, 196, 196, 0.12); */
     text-align: center;
     width:fit-content;
     padding: 0.2ex;
+  }
+  .portfolio-title-raw:hover{
+    color: rgba(105, 105, 255, 1);
   }
   
   .projects-grid{
@@ -208,10 +205,16 @@ body{
     justify-items: center;
   }
   .edit{
-    background: rgba(0, 0, 255, 0.5);
+    background: rgba(65, 65, 210, .5);
+  }
+  .edit:hover{
+    background-color: rgba(65, 65, 255, 1);
   }
   .delete{
     background-color: rgba(255, 0,0, 0.49);
+  }
+  .delete:hover{
+    background-color: rgba(255, 0, 0, 0.7);
   }
   .project-card-details{
     /* display: grid;
@@ -255,64 +258,218 @@ body{
   }
   
   .contact-title{
-    background-color: rgba(196, 196, 196, 0.12);
-    color: rgba(0, 0, 255, 0.49);
+    /* background-color: rgba(196, 196, 196, 0.12); */
+    color: #818181;
     padding: 1% 2% 1% 2%;
     font-weight: bold;
     font-size: 30px;
     margin-bottom: 1ex;
     width: fit-content;
   }
-  .contact-form{
+  #contact-form{
     display: grid;
-    grid-template-columns: 10ex 70%;
+    grid-template-columns: auto;
     gap: 1ex;
-    padding: 2ex;
-    background: rgba(196, 196, 196, 0.3);
-    margin-bottom: 2ex;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.49);
-  }
-  .contact-form:hover{
-    box-shadow: 5px 5px 5px rgba(0, 0, 255, 0.49);
-  }
-  .name{
-    font-family: "Lucida Console";
-    height: max-content;
-    font-size: 1.8ex; 
-    border-radius: 5px;
-    /* border: 1px solid rgb(100,100,100); */
-    padding: 0.5ex 1ex 0.5ex 1ex;
-    background-color: rgba(255,255,255,0.1);
-    padding-top: 0;
+    z-index:1;
   }
 
-  .email{
+  #title, #previewImageURL{
     font-family: "Lucida Console";
-    height: max-content;
-    font-size: 1.8ex;
+    height: 2ex;
+    font-size: 2ex;
     border-radius: 5px;
-    /* border: 1px solid rgb(100,100,100); */
-    padding: 0.5ex 1ex 0.5ex 1ex;
-    background-color: rgba(255,255,255,0.1);
-    padding-top: 0;
+    border: 1px solid rgb(100,100,100);
+    padding-left: 1ex;
+    padding-top: 3ex;
+    padding-bottom: 0.5ex;
+    background-color: rgba(255,255,255,0);
+    width: 100%;
+    /* border: none; */
+    outline: none;
+    color: #818181;
   }
-  .message{
-    font-family: "Lucida Console";
-    font-size: 1.8ex;
-    border-radius: 5px;
-    /* border: 1px solid rgb(100,100,100); */
-    padding: 1ex;
-    background-color: rgba(255,255,255,0.1);
-    height: max-content;
-    line-height: 1.5;
-    padding-top: 0;
+  .form-control{
+    position: relative;
+    /* overflow: hidden; */
   }
-  .timestamp{
-    font-family: "Lucida Console";
-    font-size: 1.7ex;
+  .fa-check-circle{
+    position: absolute;
+    top: 0.75ex;
+    right: 0ex;
+    visibility:hidden;
+    font-size: 3ex;
+  }
+  .fa-exclamation-circle{
+    position: absolute;
+    top: 0.75ex;
+    right: 0ex;
+    visibility:hidden;
+    font-size: 3ex;
+  }
+  .form-control.success input#previewImageURL {
+    border-color: rgba(46,204,113,0.5);
+  }
+  .form-control.success input#title {
+    border-color: rgba(46,204,113,0.5);
+  }
+  .form-control.success textarea#articleBody {
+    border-color: rgba(46,204,113,0.5);
+  }
+  .form-control.success i.fa-check-circle {
+    color: rgba(46,204,113,0.5);
+    visibility: visible;
+  }
+  .form-control.error{
+    margin-bottom: 1.5ex;
+  }
+  .form-control.error input#previewImageURL {
+    border-color: #e74c3c;
+  }
+  .form-control.error input#title {
+    border-color: #e74c3c;
+  }
+  .form-control.error textarea#articleBody {
+    border-color: #e74c3c;
+  }
+  .form-control.error i.fa-exclamation-circle {
+    color: #e74c3c;
+    visibility: visible;
+  }
+  .form-control small {
+    color: #e74c3c;
+    position: absolute;
+    bottom: -2ex;
+    left: 0;
+    visibility: hidden;
+    font-size:medium;
   }
   
- 
+  .form-control.error small {
+    visibility: visible;
+  }
+  #articleBody{
+    font-size: large;
+    line-height: 1.7;
+    color: black;
+    background-color: white;
+  }
+  div label{
+    position: absolute;
+    bottom: 0px;
+    left: 1ex;
+    width: 100%;
+    height: 100%;
+    color: #414141;
+    pointer-events: none;
+    /* border-bottom: 1px solid black; */
+  }
+  .content-title{
+    position: absolute;
+    font-size: 2ex;
+    font-weight: 100;
+    bottom: 1.9ex;
+    left: 0px;
+    transition: all .3s ease;
+    color: rgb(100,100,100,.85);
+  }
+  #title:focus + .label-title .content-title,
+  #title:valid + .label-title .content-title{
+    transform: translateY(-130%);
+    font-size: small;
+    font-weight: bold;
+    color: rgba(65, 65, 210, .5);
+  }
+  #title:focus, #title:valid{
+    border: 2px solid rgba(65, 65, 210, .5);
+  }
+  #previewImageURL {
+    font-family: "Lucida Console";
+    height: 2ex;
+    font-size: 2ex;
+    border-radius: 5px;
+    border: 1px solid rgb(100,100,100);
+    padding-left: 1ex;
+    padding-top: 3ex;
+    padding-bottom: 0.5ex;
+    background-color: rgba(255,255,255,0);
+    width: 100%;
+    /* border: none; */
+    outline: none;
+    color: #818181;
+  }
+  form div{
+    position: relative;
+    /* overflow: hidden; */
+  }
+  div label{
+    position: absolute;
+    bottom: 0px;
+    left: 1ex;
+    width: 100%;
+    height: 100%;
+    color: #414141;
+    pointer-events: none;
+    /* border-bottom: 1px solid black; */
+  }
+  .content-previewImageURL{
+    position: absolute;
+    font-size: 2ex;
+    font-weight: 100;
+    bottom: 1.9ex;
+    left: 0px;
+    transition: all .3s ease;
+    color: rgb(100,100,100,.85);
+  }
+  #previewImageURL:focus + .label-previewImageURL .content-previewImageURL,
+  #previewImageURL:valid + .label-previewImageURL .content-previewImageURL{
+    transform: translateY(-130%);
+    font-size: small;
+    font-weight: bold;
+    color: rgba(65, 65, 210, .5);
+  }
+  /* #email:focus + .label-email::after,
+  #email:valid + .label-email::after{
+    transform: translateX(0%);
+  } */
+  #previewImageURL:focus, #previewImageURL:valid{
+    border: 2px solid rgba(65, 65, 210, .5);
+  }
+  #articleBody{
+    font-family: "Lucida Console";
+    height: 35ex !important;
+    font-size: 2ex;
+    border-radius: 5px;
+    border: 1px solid rgb(100,100,100);
+    padding-left: 1ex;
+    padding-top: 4ex;
+    padding-bottom: 0.5ex;
+    background-color: rgba(255,255,255,0);
+    width: 100%;
+    /* border: none; */
+    outline: none;
+    color: #818181;
+  }
+  .content-articleBody{
+    position: absolute;
+    font-size: 2ex;
+    font-weight: 100;
+    top: 1.5ex;
+    left: 0px;
+    transition: all .3s ease;
+    color: rgb(100,100,100,.85);
+  }
+  #articleBody:focus + .label-articleBody .content-articleBody,
+  #articleBody:valid + .label-articleBody .content-articleBody{
+    transform: translateY(10%);
+    font-size: medium;
+    font-weight: bold;
+    color: rgba(65, 65, 210, .5);
+  }
+  #articleBody:focus, #articleBody:valid{
+    border: 2px solid rgba(65, 65, 210, .5);
+    margin-top: 5ex;
+    padding-top: 0.5ex;
+  }
 
   button{
     border: none;
@@ -331,7 +488,6 @@ body{
     color: rgba(255, 255, 255, 0.7);
     font-weight: normal;
   }
-
   footer{
     margin-top: 2ex;
     margin-bottom: -2ex;
@@ -351,7 +507,7 @@ body{
     grid-template-columns: auto auto auto;
     gap: 5ex;
     padding: 0 15% 0 15%;
-    color: white;
+    color: #818181;
   }
   #footer-contact {
     text-align: center;
@@ -384,12 +540,30 @@ body{
       font-size: 24px;
       margin: 0.5ex;
     }
+    #night-day {
+      position: fixed;
+      right: 0.5ex;
+      bottom: 4ex;
+      text-align: center;
+      font-size: 3ex;
+      color: rgba(156, 156, 156, 0.58);
+      z-index: 10;
+    }
+    #uparrow {
+      position: fixed;
+      right: 0.5ex;
+      bottom: 1.5ex;
+      text-align: center;
+      font-size: 3ex;
+      color: rgba(156, 156, 156, 0.58);
+      z-index: 10;
+    }
     .navbar{
       display: none;
     }
     #navbar2{
       display: block;
-    z-index : 10;
+    z-index : 20;
     position: fixed;
     align-items: center;
     padding: 0.5ex;
@@ -405,6 +579,7 @@ body{
     gap: 2ex;
     color: #414141;
     font-size: 16px;
+    z-index: 20;
     }
     #navbar-expanded{
       border-top: 1px solid white;
@@ -420,7 +595,7 @@ body{
       gap: 1.5ex;
       color: white;
       font-size: 16px;
-      z-index: 10;
+      z-index: 20;
       display:none;
     }
     #brandname{
@@ -450,7 +625,7 @@ body{
       padding-top: 1ex;
       padding-bottom: 1ex;
       width:100%;
-      padding: 0;
+      padding:0;
     }
     #footer-copyright {
       grid-column: 1 / span 2;
@@ -468,7 +643,7 @@ body{
     }
     #navbar2{
       display: block;
-    z-index : 10;
+    z-index : 20;
     position: fixed;
     align-items: center;
     padding: 0.5ex;
@@ -499,7 +674,7 @@ body{
       gap: 1.5ex;
       color: white;
       font-size: 16px;
-      z-index: 10;
+      z-index: 20;
       display:none;
     }
     #brandname{
@@ -580,6 +755,12 @@ body{
     }
     
 
+  }
+
+  @media (max-width: 480px) {   
+    .portfolio button{
+      font-size: small;
+    }
   }
 
 @media (max-width: 320px) { 

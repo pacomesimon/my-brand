@@ -1,5 +1,19 @@
 var myToggler = false;
 document.getElementById("menuicon").onclick = function() {myFunction()};
+document.getElementById("night-day").onclick = function() {togglerFunction()};
+var nightDayToggler = true;
+function togglerFunction(){
+    nightDayToggler = !nightDayToggler;
+    var link = document.createElement('link');
+    link.rel = "stylesheet";
+    if(nightDayToggler){
+        link.href="./styles_dark/styleArticleMenu.css";
+    }
+    else{
+        link.href="./styles/styleArticleMenu.css";
+    }
+    document.head.appendChild(link);
+}
 
 function myFunction() {
     var menuVisibility = "";

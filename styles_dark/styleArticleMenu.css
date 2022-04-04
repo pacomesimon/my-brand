@@ -5,7 +5,7 @@ a {
 body{
   margin: 0;
   font-family: "Lucida Console";
-  background-image: url("../images/background-image.jpg");
+  background-image: url("../images/background-image-dark.jpg");
   background-attachment: fixed;
   background-size: cover;
   position: absolute;
@@ -14,7 +14,6 @@ body{
   left: 0px;
   right: 0px;
 }
-
 #page-container {
   display: grid;
   grid-template-columns: auto;
@@ -36,18 +35,60 @@ body{
     left: 0px;
     top: 0px;
     
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(10, 10, 10, 0.975);
     display: grid;
     grid-template-columns: auto auto auto auto auto 70%;
     gap: 2ex;
-    color: #414141;
+    color: rgba(150,150,150);
     font-size: 16px;
-    z-index: 10;
     padding-left: 1ex;
-  }
+    z-index: 10;
+  } 
   .fa-right-from-bracket{
     margin-left: 3ex;
-  } 
+  }  
+  #panel-navbar {
+    position: fixed;
+    align-items: center;
+    padding: 0.5ex 0ex 0.5ex 2ex;
+
+    width: 100%;
+    height: 4ex;
+    left: 0px;
+    top: 7.2ex;
+    
+    background: rgba(10, 10, 10, 0.975);
+    display: grid;
+    grid-template-columns: 23ex 15ex auto;
+    gap: 0.1ex;
+    color: #414141;
+    font-size: 16px;
+  }
+  #panel-navbar button{
+    color: white;
+    border-radius: 5px;
+    background: rgba(65, 65, 210, .5);
+    height: 3.5ex;
+    font-family: "lucida Console";
+    font-weight: normal;
+    width:fit-content;
+    padding: 0.5ex;
+    
+  }
+  #panel-navbar button:hover{
+    background-color: rgba(67, 67, 250);
+  }
+
+
+  #panel-navbar .selected{
+    background-color: #313131;
+    font-weight: bold;
+  }
+  #panel-navbar .selected:hover{
+    background-color: #313131;
+    font-weight: bold;
+  }
+
   #navbar2 {
     display: none;
   }
@@ -56,7 +97,7 @@ body{
   }
 
   #currentpage{
-    color: black;
+    color: rgba(200,200,200,1);
     font-size:20px;
   }
   #logo {
@@ -64,7 +105,7 @@ body{
     width: 3ex;
     height: 3ex;
     border-radius: 50%;
-    background: rgba(0, 0, 255, 0.49);
+    background: rgba(65, 65, 210, 0.9);
     color: white;
     font-size:x-large;
     padding: 0ex;
@@ -96,88 +137,109 @@ body{
     z-index: 10;
   }
   .intro{
-    padding: 120px 0px 20px 15%;
-    font-weight: normal;
-    font-size: 36px;
-    width: 40%;
-    color: #414141;
-    line-height: 1.2;
-  }
-  #hiwords{
-    color: rgba(0, 0, 255, 0.49);
-    font-size: 48px;
+      padding: 79px 0px 10px 10%;
+      font-weight: 700;
+      font-size: 48px;
+      width: 50%
   }
 
   .portfolio{
-    background: rgba(255, 255, 255, 0.3);
-    padding: 10px 15% 10px 15%;
+    background: rgba(20, 20, 20, 0.5);
+    padding: 10px 10% 10px 10%;
     margin-top: 2ex;
   }
   .portfolio-title{
-    background: rgba(255, 255, 255, 0);
     border-radius: 5px;
-    color: rgba(0, 0, 255, 0.49);
+    color: rgba(65, 65, 210, 1);
     font-weight: bold;
     font-size: 24px;
     height: 3ex;
-    width: 20ex;
+    width: 100%;
     margin-bottom: 1ex;
     display: flex;
     align-items: center;
-    grid-column: 1 / span 3;
+    justify-content: space-between;
+  }
+  .portfolio-title button{
+    color: white;
+    border-radius: 5px;
+    background: rgba(65, 65, 210, .5);
+    height: 3.5ex;
+    font-family: "lucida Console";
+    font-weight: bold;
+    width:fit-content;
+    padding: 0.5ex;
+  }
+  .add-article:hover{
+    background-color: rgba(67, 67, 255, 1);
   }
   .portfolio-title-raw{
     text-align: center;
-    width: 100%;
+    width:fit-content;
+    padding: 0.2ex;
   }
-  #projects-grid{
+  
+  .projects-grid{
     display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 1.6ex;
+    grid-template-columns: auto auto;
+    gap: 1ex;
   }
   .project-card{
     display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 20ex 20ex;
-    column-gap: 3ex;
-    row-gap: 0.5ex;
+    grid-template-columns: 25% 30% auto;
+    gap: 1ex;
     /* border: solid 2px black; */
-    padding: 0%;
+    padding: 0.5ex;
     margin-bottom: 1ex;
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 2px;
+    background: rgba(56, 56, 56, 0.1);
+    align-items: center;
   }
   .project-card:hover{
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.49);
   }
-  .project-card-details{
+  .project-card button{
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    
+    height: 3.5ex;
+    font-family: "lucida Console";
+    font-weight: normal;
+    width:80%;
+    padding: 0.5ex;
+  }
+  .buttons{
     display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 15% 75% 10%;
-    gap: 0ex;
+    grid-template-columns: auto auto;
+    justify-items: center;
+  }
+  .edit{
+    background: rgba(65, 65, 210, .5);
+  }
+  .edit:hover{
+    background-color: rgba(65, 65, 255, 1);
+  }
+  .delete{
+    background-color: rgba(255, 0,0, 0.49);
+  }
+  .delete:hover{
+    background-color: rgba(255, 0, 0, 0.7);
+  }
+
+  .project-card-details{
+    /* display: grid;
+    grid-template-columns: auto; */
     text-align: left;
     color: rgba(0, 0, 0, 0.9);
-    margin: 1.2ex;
+    text-align: center;
   }
   .blog-title{
-    font-size: 24px;
-    color: rgba(0, 0, 255, 0.49);
+    font-size: 18px;
+    color: rgba(65, 65, 255, 1);
   } 
-
-  .blog-title:hover{
-    color: rgba(0, 0, 255, 0.65);
-  }
-
-
-  .blog-pretitle{
-    font-size: 14px;
-    font-weight: bold;
-    color: #414141;
-  }
   .blog-subtitle{
     font-size: 14px;
-    font-weight:bold;
-    color: #414141;
+    font-style: italic;
   }
   .reactions{
     display: grid;
@@ -185,46 +247,28 @@ body{
     gap: 1ex;
     color: #a0a0a0;
   }
-  .like-reaction,.comment-reaction,.view-reaction{
-    font-size: 12px;
-    /* background: rgba(255, 255, 255, 0.4); */
-    text-align: center;
+  #reactions-expanded{
+    width: 50%;
   }
-
+  .like-reaction,.comment-reaction,.view-reaction{
+    background: rgba(255, 255, 255, 0);
+    text-align: center;
+    font-size: 12px;
+  }
+  .col1{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+  }
 
   .project-img {
-      height: 20ex;
+      height: 13.5ex;
       width: 100%;
       object-fit: cover;
-      border-top-left-radius: 2px;
-      border-top-right-radius: 2px;
-      opacity: 1;
-  }
-  #body-loaders{
-    display: grid;
-    grid-template-columns: auto;
-    justify-items: center;
-    margin-top: 2ex;
-  }
-  #load-button{
-    background: rgba(0, 0, 255, 0.5);
-    color: white;
-    padding: 1ex;
-    border-radius: 5px;
   }
 
-  #load-button:hover{
-    background-color: rgba(0, 0, 255, 0.7);
-  }
-
-  #end-button{
-    background-color: rgba(0, 0,0, 0.5);
-    color: white;
-    padding: 1ex;
-    border-radius: 5px;
-    display: none;
-  }
   
+ 
 
   button{
     border: none;
@@ -243,10 +287,9 @@ body{
     color: rgba(255, 255, 255, 0.7);
     font-weight: normal;
   }
-
   footer{
     margin-top: 2ex;
-    width: 100%;
+    margin-bottom: -2ex;
     background: rgba(0, 0, 0, 0.8);
     display: flex;
     align-items: flex-start;
@@ -259,19 +302,17 @@ body{
     width: 100%;
     height: 10ex;
     
-
     display: grid;
     grid-template-columns: auto auto auto;
-    gap: 18ex;
-    color: white;
+    gap: 5ex;
     padding: 0 15% 0 15%;
+    color: #818181;
   }
   #footer-contact {
     text-align: center;
     display: grid;
     grid-template-columns: auto;
     padding: 1%;
-    color: white;
     background: rgba(196, 196, 196, 0.0);
   }
   #footer-blog {
@@ -292,16 +333,12 @@ body{
     /* background: rgba(196, 196, 196, 0.05); */
   }
 
-  @media (max-width: 992px){
-    #projects-grid{
-      grid-template-columns: auto auto;
-    }
-    #footer-social {
-      font-size: medium;
-    }
-  }
-
   @media (max-width: 890px) { 
+    .fa-bars{
+      color: rgba(0, 0, 255, 0.49);
+      font-size: 24px;
+      margin: 0.5ex;
+    }
     #night-day {
       position: fixed;
       right: 0.5ex;
@@ -319,11 +356,6 @@ body{
       font-size: 3ex;
       color: rgba(156, 156, 156, 0.58);
       z-index: 10;
-    }
-    .fa-bars{
-      color: rgba(0, 0, 255, 0.49);
-      font-size: 24px;
-      margin: 0.5ex;
     }
     .navbar{
       display: none;
@@ -375,7 +407,20 @@ body{
   
   }
 
+  @media (max-width: 820px) { 
+    #logout-button{
+      text-align: right;
+      margin-right: 12ex;
+    }
+    #panel-navbar .selected{
+      font-weight: normal;
+    }    
+  }
+
   @media (max-width: 768px) { 
+    .reactions{
+      display: none;
+    }
     .footer{
       grid-template-columns: auto 50%;
       gap: 1ex;
@@ -389,6 +434,8 @@ body{
     #footer-copyright {
       grid-column: 1 / span 2;
     }
+
+
 
 
     .fa-bars{
@@ -444,54 +491,49 @@ body{
       font-weight: bold;
     }
 
-    #projects-grid{
+    .projects-grid{
       display: grid;
-      grid-template-columns: auto auto;
-      gap: 2ex;
+      grid-template-columns: auto;
+      gap: 0.5ex;
     }
 
     .project-card{
       display: grid;
       grid-template-columns: auto;
-      grid-template-rows: 20ex 20ex;
-      column-gap: 3ex;
-      row-gap: 0.5ex;
-      /* border: solid 2px black; */
-      padding: 0%;
+      align-items: center;
+      gap: 1ex;
+      padding: 1%;
       margin-bottom: 1ex;
-      background: rgba(255, 255, 255, 0.6);
+      background: rgba(196, 196, 196, 0.2);
       border-radius: 5px;
-    }
-    .project-card-details{
-      display: grid;
-      grid-template-columns: auto;
-      grid-template-rows: 15% 75% 10%;
-      gap: 0ex;
-      text-align: left;
-      color: rgba(0, 0, 0, 0.9);
-      margin: 1.2ex;
     }
 
     .intro{
-      padding: 70px 0px 5px 10%;
-      font-weight: normal;
+      padding: 83px 0px 5px 10%;
+      font-weight: 700;
       font-size: 36px;
       width: 50%
     }
     .portfolio{
-      padding: 10px 5% 10px 5%;
+      padding: 10px 1.5% 10px 1.5%;
     }
     .portfolio-title{
       font-weight: bold;
-      font-size: 24px;
+      font-size: medium;
       height: 3ex;
-      width: 20ex;
+      width: 100%;
       margin-bottom: 1ex;
       display: flex;
       align-items: center;
     }
+    .portfolio-title button{
+      font-weight: normal;
+      padding: 0.5ex;
+      height: auto;
+    }
+    
     .project-img {
-      height: 20ex;
+      height: 12ex;
       width: 100%;
       object-fit: cover;
     }
@@ -517,45 +559,40 @@ body{
     .project-card-details button{
       font-size: small;
     }
-    .blog-title{
-      font-size: 22px;
-    }
-    
 
   }
 
-  @media (max-width: 480px) {
-    .intro{
-      font-size: 30px;
-      width: 80%;
-      padding-bottom: 0px;
+  @media (max-width: 480px) { 
+    #panel-navbar{
+      gap: 0;
+      padding-left: 5px;
     }
-    #hiwords{
-      font-size: 36px;
-    }
-    #projects-grid{
-      grid-template-columns: auto;
-    }
-    .portfolio-title-raw{
-      font-size: large;
-      font-weight: bold;
+    .portfolio button{
+      font-size: small;
     }
   }
+
 
 @media (max-width: 320px) { 
           footer{
             font-size: x-small;
           }
+          .project-card{
+            font-size: x-small;
+          }
+          .portfolio-title{
+            font-size: small;
+          }
+          .intro{
+            font-size: medium;
+          }
           .intro-buttons button{
             font-size: x-small;
           }
           #footer-social {
-            font-size: small;
+            font-size: medium;
           }
           .project-card-details button{
             font-size: x-small;
-          }
-          .like-reaction,.comment-reaction,.view-reaction{
-            font-size: xx-small;
           }
 }
