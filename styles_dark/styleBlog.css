@@ -495,12 +495,21 @@ body{
       object-fit: cover;
     }
 
+    #night-day {
+      position: fixed;
+      right: 0.5ex;
+      bottom: 4ex;
+      text-align: center;
+      font-size: 3ex;
+      color: rgba(156, 156, 156, 0.58);
+      z-index: 10;
+    }
     #uparrow {
       position: fixed;
       right: 0.5ex;
       bottom: 1.5ex;
       text-align: center;
-      font-size: 4ex;
+      font-size: 3ex;
       color: rgba(156, 156, 156, 0.58);
       z-index: 10;
     }
