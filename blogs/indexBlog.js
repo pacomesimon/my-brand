@@ -1,5 +1,19 @@
 var myToggler = false;
 document.getElementById("menuicon").onclick = function() {myFunction()};
+document.getElementById("night-day").onclick = function() {togglerFunction()};
+var nightDayToggler = true;
+function togglerFunction(){
+    nightDayToggler = !nightDayToggler;
+    var link = document.createElement('link');
+    link.rel = "stylesheet";
+    if(nightDayToggler){
+        link.href="./styleBlog_dark.css";
+    }
+    else{
+        link.href="./styleBlog.css";
+    }
+    document.head.appendChild(link);
+}
 
 function myFunction() {
     var menuVisibility = "";
@@ -101,6 +115,9 @@ function setSuccessFor(input) {
 	formControl.className = 'form-control success';
     const label = formControl.querySelector('.label-raw');
     label.style.color = "#2ecc71";
+    if(nightDayToggler){
+        label.style.color = "rgba(46,204,113,0.5)";
+    }
 }
 	
 function isEmail(email) {
