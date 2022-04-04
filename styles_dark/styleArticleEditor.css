@@ -5,7 +5,7 @@ a {
 body{
   margin: 0;
   font-family: "Lucida Console";
-  background-image: url("../images/background-image.jpg");
+  background-image: url("../images/background-image-dark.jpg");
   background-attachment: fixed;
   background-size: cover;
   position: absolute;
@@ -35,15 +35,15 @@ body{
     left: 0px;
     top: 0px;
     
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(10, 10, 10, 0.975);
     display: grid;
     grid-template-columns: auto auto auto auto auto 70%;
     gap: 2ex;
-    color: #414141;
+    color: rgba(150,150,150);
     font-size: 16px;
-    z-index: 20;
     padding-left: 1ex;
-  }
+    z-index: 10;
+  } 
   .fa-right-from-bracket{
     margin-left: 3ex;
   }  
@@ -57,7 +57,7 @@ body{
     left: 0px;
     top: 7.2ex;
     
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(10, 10, 10, 0.975);
     display: grid;
     grid-template-columns: 23ex 15ex auto;
     gap: 0.1ex;
@@ -74,6 +74,7 @@ body{
     font-weight: normal;
     width:fit-content;
     padding: 0.5ex;
+    color: rgba(255, 255, 255, 0.25);
     
   }
   #panel-navbar .selected{
@@ -89,7 +90,7 @@ body{
   }
 
   #currentpage{
-    color: black;
+    color: rgba(200,200,200,1);
     font-size:20px;
   }
   #logo {
@@ -97,7 +98,7 @@ body{
     width: 3ex;
     height: 3ex;
     border-radius: 50%;
-    background: rgba(0, 0, 255, 0.49);
+    background: rgba(65, 65, 210, 0.9);
     color: white;
     font-size:x-large;
     padding: 0ex;
@@ -110,12 +111,21 @@ body{
     text-align: right;
     margin-right: 8ex;
   }
+  #night-day {
+    position: fixed;
+    right: 1ex;
+    bottom: 3.5ex;
+    text-align: center;
+    font-size: 4ex;
+    color: rgba(156, 156, 156, 0.58);
+    z-index: 10;
+  }
   #uparrow {
     position: fixed;
     right: 1ex;
     bottom: 1ex;
     text-align: center;
-    font-size: 7ex;
+    font-size: 4ex;
     color: rgba(156, 156, 156, 0.58);
     z-index: 10;
   }
@@ -127,13 +137,13 @@ body{
   }
 
   .portfolio{
-    background: rgba(255, 255, 255, 0.65);
+    background: rgba(20, 20, 20, 0.5);
     padding: 10px 10% 10px 10%;
     margin-top: 2ex;
   }
   .portfolio-title{
     border-radius: 5px;
-    color: rgba(0, 0, 255, 0.49);
+    color: rgba(65, 65, 210, 1);
     font-weight: bold;
     font-size: 20px;
     height: 3ex;
@@ -160,7 +170,7 @@ body{
     padding: 0.2ex;
   }
   .portfolio-title-raw:hover{
-    color: rgba(0, 0, 255, 0.7);
+    color: rgba(105, 105, 255, 1);
   }
   
   .projects-grid{
@@ -195,10 +205,10 @@ body{
     justify-items: center;
   }
   .edit{
-    background: rgba(0, 0, 255, 0.5);
+    background: rgba(65, 65, 210, .5);
   }
   .edit:hover{
-    background-color: rgba(0, 0, 255, 0.7);
+    background-color: rgba(65, 65, 255, 1);
   }
   .delete{
     background-color: rgba(255, 0,0, 0.49);
@@ -249,7 +259,7 @@ body{
   
   .contact-title{
     /* background-color: rgba(196, 196, 196, 0.12); */
-    color: rgba(0, 0, 255, 0.49);
+    color: #818181;
     padding: 1% 2% 1% 2%;
     font-weight: bold;
     font-size: 30px;
@@ -276,7 +286,7 @@ body{
     width: 100%;
     /* border: none; */
     outline: none;
-    color: rgba(0,0,0,0.8);
+    color: #818181;
   }
   .form-control{
     position: relative;
@@ -297,16 +307,16 @@ body{
     font-size: 3ex;
   }
   .form-control.success input#previewImageURL {
-    border-color: #2ecc71;
+    border-color: rgba(46,204,113,0.5);
   }
   .form-control.success input#title {
-    border-color: #2ecc71;
+    border-color: rgba(46,204,113,0.5);
   }
   .form-control.success textarea#articleBody {
-    border-color: #2ecc71;
+    border-color: rgba(46,204,113,0.5);
   }
   .form-control.success i.fa-check-circle {
-    color: #2ecc71;
+    color: rgba(46,204,113,0.5);
     visibility: visible;
   }
   .form-control.error{
@@ -367,10 +377,10 @@ body{
     transform: translateY(-130%);
     font-size: small;
     font-weight: bold;
-    color: rgba(0, 0, 255, 0.49);
+    color: rgba(65, 65, 210, .5);
   }
   #title:focus, #title:valid{
-    border: 2px solid rgba(0, 0, 255, 0.49);
+    border: 2px solid rgba(65, 65, 210, .5);
   }
   #previewImageURL {
     font-family: "Lucida Console";
@@ -385,7 +395,7 @@ body{
     width: 100%;
     /* border: none; */
     outline: none;
-    color: rgba(0,0,0,0.8);
+    color: #818181;
   }
   form div{
     position: relative;
@@ -415,14 +425,14 @@ body{
     transform: translateY(-130%);
     font-size: small;
     font-weight: bold;
-    color: rgba(0, 0, 255, 0.49);
+    color: rgba(65, 65, 210, .5);
   }
   /* #email:focus + .label-email::after,
   #email:valid + .label-email::after{
     transform: translateX(0%);
   } */
   #previewImageURL:focus, #previewImageURL:valid{
-    border: 2px solid rgba(0, 0, 255, 0.49);
+    border: 2px solid rgba(65, 65, 210, .5);
   }
   #articleBody{
     font-family: "Lucida Console";
@@ -437,7 +447,7 @@ body{
     width: 100%;
     /* border: none; */
     outline: none;
-    color: rgba(0,0,0,0.8);
+    color: #818181;
   }
   .content-articleBody{
     position: absolute;
@@ -453,10 +463,10 @@ body{
     transform: translateY(10%);
     font-size: medium;
     font-weight: bold;
-    color: rgba(0, 0, 255, 0.49);
+    color: rgba(65, 65, 210, .5);
   }
   #articleBody:focus, #articleBody:valid{
-    border: 2px solid rgba(0, 0, 255, 0.49);
+    border: 2px solid rgba(65, 65, 210, .5);
     margin-top: 5ex;
     padding-top: 0.5ex;
   }
@@ -497,14 +507,13 @@ body{
     grid-template-columns: auto auto auto;
     gap: 5ex;
     padding: 0 15% 0 15%;
-    color: white;
+    color: #818181;
   }
   #footer-contact {
     text-align: center;
     display: grid;
     grid-template-columns: auto;
     padding: 1%;
-    color: white;
     background: rgba(196, 196, 196, 0.0);
   }
   #footer-blog {
@@ -531,12 +540,21 @@ body{
       font-size: 24px;
       margin: 0.5ex;
     }
+    #night-day {
+      position: fixed;
+      right: 0.5ex;
+      bottom: 4ex;
+      text-align: center;
+      font-size: 3ex;
+      color: rgba(156, 156, 156, 0.58);
+      z-index: 10;
+    }
     #uparrow {
       position: fixed;
       right: 0.5ex;
       bottom: 1.5ex;
       text-align: center;
-      font-size: 4ex;
+      font-size: 3ex;
       color: rgba(156, 156, 156, 0.58);
       z-index: 10;
     }
@@ -714,14 +732,23 @@ body{
       object-fit: cover;
     }
 
+    #night-day {
+      position: fixed;
+      right: 0.5ex;
+      bottom: 4ex;
+      text-align: center;
+      font-size: 3ex;
+      color: rgba(156, 156, 156, 0.58);
+      z-index: 10;
+    }
     #uparrow {
       position: fixed;
       right: 0.5ex;
       bottom: 1.5ex;
       text-align: center;
-      font-size: 4ex;
+      font-size: 3ex;
       color: rgba(156, 156, 156, 0.58);
-      z-index: 20;
+      z-index: 10;
     }
     .project-card-details button{
       font-size: small;
