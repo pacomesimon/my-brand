@@ -62,12 +62,21 @@ body{
     margin-top: 0.5ex;
     margin-bottom: 0.5ex;
   }
+  #night-day {
+    position: fixed;
+    right: 1ex;
+    bottom: 3.5ex;
+    text-align: center;
+    font-size: 4ex;
+    color: rgba(156, 156, 156, 0.58);
+    z-index: 10;
+  }
   #uparrow {
     position: fixed;
     right: 1ex;
     bottom: 1ex;
     text-align: center;
-    font-size: 7ex;
+    font-size: 4ex;
     color: rgba(156, 156, 156, 0.58);
     z-index: 10;
   }
@@ -87,6 +96,7 @@ body{
     padding: 30px 20% 30px 20%;
     margin-top: 8ex;
     height:fit-content;
+    color: black;
   }
   .about-title{
     
@@ -159,7 +169,6 @@ body{
     display: grid;
     grid-template-columns: auto;
     padding: 1%;
-    color: white;
     background: rgba(196, 196, 196, 0);
   }
   #footer-blog {
@@ -191,12 +200,21 @@ body{
       padding: 0;
     }
 
+    #night-day {
+      position: fixed;
+      right: 0.5ex;
+      bottom: 4ex;
+      text-align: center;
+      font-size: 3ex;
+      color: rgba(156, 156, 156, 0.58);
+      z-index: 10;
+    }
     #uparrow {
       position: fixed;
       right: 0.5ex;
       bottom: 1.5ex;
       text-align: center;
-      font-size: 4ex;
+      font-size: 3ex;
       color: rgba(156, 156, 156, 0.58);
       z-index: 10;
     }
