@@ -2,7 +2,7 @@ var myToggler = false;
 document.getElementById("menuicon").onclick = function() {myFunction()};
 // document.getElementById("navbar-expanded").onmouseout= function() {myFunction()};
 document.getElementById("night-day").onclick = function() {togglerFunction()};
-var nightDayToggler = false;
+var nightDayToggler = true;
 function togglerFunction(){
     nightDayToggler = !nightDayToggler;
     var link = document.createElement('link');

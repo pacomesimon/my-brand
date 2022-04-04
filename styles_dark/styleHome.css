@@ -63,7 +63,7 @@ body{
     width: 3ex;
     height: 3ex;
     border-radius: 50%;
-    background: rgba(65, 65, 210, 1);
+    background-color: rgba(65, 65, 210, 0.9);
     color: white;
     font-size:x-large;
     padding: 0ex;
