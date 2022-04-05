@@ -64,7 +64,7 @@ body{
     width: 3ex;
     height: 3ex;
     border-radius: 50%;
-    background-color: rgba(65, 65, 210, 0.9);
+    background-color: rgba(65, 65, 130, 1);
     color: white;
     font-size:x-large;
     padding: 0ex;
@@ -104,7 +104,7 @@ body{
     line-height: 1.2;
   }
   #hiwords{
-    color: rgba(65, 65, 210, 1);
+    color: rgba(65, 65, 130, 1);
     font-size: 48px;
   }
 
@@ -116,7 +116,7 @@ body{
   .portfolio-title{
     background: rgba(255, 255, 255, 0);
     border-radius: 5px;
-    color: rgba(65, 65, 210, 0.9);
+    color: #818181;
     font-weight: bold;
     font-size: 24px;
     height: 3ex;
@@ -161,11 +161,11 @@ body{
   }
   .blog-title{
     font-size: 24px;
-    color: rgba(85, 85, 250, 0.9);
+    color: #818181;
   } 
 
   .blog-title:hover{
-    color: rgba(165, 165, 250, 0.9);
+    color: rgba(195, 195, 195, 0.9);
   }
 
 
@@ -207,7 +207,7 @@ body{
     margin-top: 2ex;
   }
   #load-button{
-    background: rgba(65, 65, 250, 0.9);
+    background: rgba(65, 65, 130, 1);
     color: white;
     padding: 1ex;
     border-radius: 5px;

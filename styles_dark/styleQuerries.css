@@ -67,7 +67,7 @@ body{
   #panel-navbar button{
     color: white;
     border-radius: 5px;
-    background: rgba(65, 65, 210, .5);
+    background: rgba(65, 65, 130, 1);
     height: 3.5ex;
     font-family: "lucida Console";
     font-weight: normal;
@@ -105,7 +105,7 @@ body{
     width: 3ex;
     height: 3ex;
     border-radius: 50%;
-    background: rgba(65, 65, 210, 0.9);
+    background: rgba(65, 65, 130, 1);
     color: white;
     font-size:x-large;
     padding: 0ex;

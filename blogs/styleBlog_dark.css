@@ -57,7 +57,7 @@ body{
     width: 3ex;
     height: 3ex;
     border-radius: 50%;
-    background: rgba(65, 65, 210, 0.9);
+    background: rgba(65, 65, 130, 1);
     color: white;
     font-size:x-large;
     padding: 0ex;
@@ -110,7 +110,7 @@ body{
   .portfolio-title{
     background: rgba(196, 196, 196, 0);
     border-radius: 5px;
-    color: rgba(85, 85, 210, 1);
+    color: rgba(65, 65, 130, 1);
     font-weight: bold;
     font-size: 20px;
     height: 3ex;
@@ -150,7 +150,7 @@ body{
   }
   .blog-title{
     font-size: 24px;
-    color: rgba(65, 65, 210, 1);
+    color: #818181;
   } 
   .blog-subtitle{
     font-size: 14px;
@@ -209,7 +209,7 @@ body{
   #comments-title{
     font-size: 20px;
     font-weight: bold;
-    color: rgba(65, 65, 210, 0.9);
+    color: rgba(65, 65, 130, 1);
     margin-top: 2ex; 
     /* margin-bottom: 0.4ex; */
   }
@@ -245,7 +245,7 @@ body{
   }
   .contact-title{
     
-    color: rgba(65, 65, 210, 0.9);
+    color: rgba(65, 65, 130, 1);
     font-weight: bold;
     font-size: 20px;
     margin-bottom: 1ex;
@@ -381,14 +381,14 @@ body{
     transform: translateY(-130%);
     font-size: small;
     font-weight: bold;
-    color: rgba(65, 65, 210, 0.9);
+    color: #818181;
   }
   /* #name:focus + .label-name::after,
   #name:valid + .label-name::after{
     transform: translateX(0%);
   } */
   #name:focus, #name:valid{
-    border: 2px solid rgba(65, 65, 210, 0.9);
+    border: 2px solid #818181;;
   }
 
   /* #email{
@@ -455,14 +455,14 @@ body{
     transform: translateY(-130%);
     font-size: small;
     font-weight: bold;
-    color: rgba(65, 65, 210, 0.9);
+    color: #818181;;
   }
   /* #email:focus + .label-email::after,
   #email:valid + .label-email::after{
     transform: translateX(0%);
   } */
   #email:focus, #email:valid{
-    border: 2px solid rgba(65, 65, 210, 0.9);
+    border: 2px solid #818181;;
   }
 
   /* #message{
@@ -528,14 +528,14 @@ body{
     transform: translateY(10%);
     font-size: medium;
     font-weight: bold;
-    color: rgba(65, 65, 210, 0.9);
+    color: #818181;;
   }
   /* #message:focus + .label-message::after,
   #message:valid + .label-message::after{
     transform: translateX(0%);
   } */
   #message:focus, #message:valid{
-    border: 2px solid rgba(65, 65, 210, 0.9);
+    border: 2px solid #818181;;
     margin-top: 5ex;
     padding-top: 0.5ex;
   }
@@ -543,7 +543,7 @@ body{
   button{
     border: none;
     background-color: rgba(0, 0, 0, 0);
-    color: rgba(37, 37, 130, 1);
+    color: rgba(65, 65, 130, 1);
     font-weight: bold;
     font-size: 18px;
     text-align: left;

@@ -48,7 +48,7 @@ body{
     width: 3ex;
     height: 3ex;
     border-radius: 50%;
-    background-color: rgba(65, 65, 210, 0.9);
+    background-color: rgba(65, 65, 130, 1);
     color: white;
     font-size:x-large;
     padding: 0ex;
@@ -99,7 +99,7 @@ body{
   }
   .about-title{
     
-    color: rgba(65, 65, 210, 0.9);
+    color: rgba(65, 65, 130, 1);
     font-weight: bold;
     font-size: 36px;
     margin-bottom: 1ex;

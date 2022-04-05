@@ -98,7 +98,7 @@ body{
     width: 3ex;
     height: 3ex;
     border-radius: 50%;
-    background: rgba(65, 65, 210, 0.9);
+    background: rgba(65, 65, 130, 1);
     color: white;
     font-size:x-large;
     padding: 0ex;
@@ -143,7 +143,7 @@ body{
   }
   .portfolio-title{
     border-radius: 5px;
-    color: rgba(65, 65, 210, 1);
+    color: rgba(65, 65, 130, 1);
     font-weight: bold;
     font-size: 20px;
     height: 3ex;
@@ -377,10 +377,10 @@ body{
     transform: translateY(-130%);
     font-size: small;
     font-weight: bold;
-    color: rgba(65, 65, 210, .5);
+    color: rgba(65, 65, 130, 1);
   }
   #title:focus, #title:valid{
-    border: 2px solid rgba(65, 65, 210, .5);
+    border: 2px solid rgba(65, 65, 130, 1);
   }
   #previewImageURL {
     font-family: "Lucida Console";
@@ -425,14 +425,14 @@ body{
     transform: translateY(-130%);
     font-size: small;
     font-weight: bold;
-    color: rgba(65, 65, 210, .5);
+    color: rgba(65, 65, 130, 1);
   }
   /* #email:focus + .label-email::after,
   #email:valid + .label-email::after{
     transform: translateX(0%);
   } */
   #previewImageURL:focus, #previewImageURL:valid{
-    border: 2px solid rgba(65, 65, 210, .5);
+    border: 2px solid rgba(65, 65, 130, 1);
   }
   #articleBody{
     font-family: "Lucida Console";
@@ -463,10 +463,10 @@ body{
     transform: translateY(10%);
     font-size: medium;
     font-weight: bold;
-    color: rgba(65, 65, 210, .5);
+    color: rgba(65, 65, 130, 1);
   }
   #articleBody:focus, #articleBody:valid{
-    border: 2px solid rgba(65, 65, 210, .5);
+    border: 2px solid rgba(65, 65, 130, 1);
     margin-top: 5ex;
     padding-top: 0.5ex;
   }
