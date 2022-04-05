@@ -67,7 +67,7 @@ body{
   #panel-navbar button{
     color: white;
     border-radius: 5px;
-    background: rgba(65, 65, 210, .5);
+    background: rgba(65, 65, 130, 1);
     height: 3.5ex;
     font-family: "lucida Console";
     font-weight: normal;
@@ -105,7 +105,7 @@ body{
     width: 3ex;
     height: 3ex;
     border-radius: 50%;
-    background: rgba(65, 65, 210, 0.9);
+    background: rgba(65, 65, 130, 1);
     color: white;
     font-size:x-large;
     padding: 0ex;
@@ -150,7 +150,7 @@ body{
   }
   .portfolio-title{
     border-radius: 5px;
-    color: rgba(65, 65, 210, 1);
+    color: rgba(65, 65, 130, 1);
     font-weight: bold;
     font-size: 24px;
     height: 3ex;
@@ -163,7 +163,7 @@ body{
   .portfolio-title button{
     color: white;
     border-radius: 5px;
-    background: rgba(65, 65, 210, .5);
+    background: rgba(65, 65, 130, 1);
     height: 3.5ex;
     font-family: "lucida Console";
     font-weight: bold;
@@ -214,7 +214,7 @@ body{
     justify-items: center;
   }
   .edit{
-    background: rgba(65, 65, 210, .5);
+    background: rgba(65, 65, 130, 1);
   }
   .edit:hover{
     background-color: rgba(65, 65, 255, 1);
@@ -235,7 +235,7 @@ body{
   }
   .blog-title{
     font-size: 18px;
-    color: rgba(65, 65, 255, 1);
+    color: rgba(65, 65, 130, 1);
   } 
   .blog-subtitle{
     font-size: 14px;
