@@ -381,7 +381,7 @@ body{
 
   @media (max-width: 890px) { 
     .fa-bars{
-      color: rgba(0, 0, 255, 0.49);
+      color: rgba(65, 65, 130, 1);
       font-size: 24px;
       margin: 0.5ex;
     }
@@ -400,7 +400,7 @@ body{
     left: 0px;
     top: 0px;
     
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(10, 10, 10, 0.975);
     display: grid;
     grid-template-columns: 3ex 15ex auto 6ex;
     gap: 2ex;
@@ -408,14 +408,14 @@ body{
     font-size: 16px;
     }
     #navbar-expanded{
-      border-top: 1px solid white;
+      border-top: 1px solid black;
       position: fixed;
       width: 60%;
       border-bottom-left-radius: 5%;
       top: 7ex;
       right: 0px;
       padding: 1.5ex;
-      background: rgba(128, 128, 255, 0.95);
+      background: rgba(35, 35, 65, 0.975);
       display: grid;
       grid-template-columns: auto;
       gap: 1.5ex;
@@ -425,7 +425,7 @@ body{
       display:none;
     }
     #brandname{
-      color: black;
+      color: #818181;
       font-size: 20px;
     }
     #currentpage{
@@ -460,14 +460,14 @@ body{
 
 
     .fa-bars{
-      color: rgba(0, 0, 255, 0.49);
+      /* color: rgba(0, 0, 255, 0.49); */
       font-size: 24px;
       margin: 0.5ex;
     }
     .navbar{
       display: none;
     }
-    #navbar2{
+    /* #navbar2{
       display: block;
     z-index : 10;
     position: fixed;
@@ -485,8 +485,8 @@ body{
     gap: 2ex;
     color: #414141;
     font-size: 16px;
-    }
-    #navbar-expanded{
+    } */
+    /* #navbar-expanded{
       border-top: 1px solid white;
       position: fixed;
       width: 60%;
@@ -502,11 +502,8 @@ body{
       font-size: 16px;
       z-index: 10;
       display:none;
-    }
-    #brandname{
-      color: black;
-      font-size: 20px;
-    }
+    } */
+    
     #currentpage{
       color: white;
       font-weight: bold;
