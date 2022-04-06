@@ -221,7 +221,7 @@ body{
   .commenter-name {
     font-weight: bold;
     word-wrap: break-word;
-    width: 33ex;
+    width: max-content;
     padding-right: 3ex;
     font-size: 18px;
     padding-top: 0.5ex;

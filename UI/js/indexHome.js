@@ -27,12 +27,20 @@ function myFunction() {
         brandnameColor = "black";
         navbarColor = "white";
         menuiconColor = "rgba(0, 0, 255, 0.49)";
+        if(nightDayToggler){
+            menuiconColor = "rgba(65, 65, 130, 1)";
+            brandnameColor = "#818181";
+            navbarColor = "rgba(15, 15, 15, 0.975)";
+        }
     }
     else{
         myToggler = true;
         menuVisibility = "grid";
         brandnameColor = "white";
         navbarColor = "rgba(128, 128, 255, 0.95)";
+        if(nightDayToggler){
+            navbarColor = "rgba(35, 35, 65, 0.975)";
+        }
         menuiconColor = "white";
     }
   document.getElementById("navbar-expanded").style.display = menuVisibility;
