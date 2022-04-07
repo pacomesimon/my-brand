@@ -20,6 +20,7 @@
   "homepage": "https://github.com/pacomesimon/node_mongo_tutorial#readme",
   "dependencies": {
     "express": "^4.17.3",
+    "joi": "^17.6.0",
     "mongoose": "^6.2.10"
   }
 }
