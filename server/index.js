@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const routes = require("./routes");
 
 
-
 mongoose.connect("mongodb://localhost:27017/acmedb", { useNewUrlParser: true })
   .then(() => {
     const app = express();
