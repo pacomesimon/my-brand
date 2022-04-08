@@ -1,11 +1,11 @@
-const express = require("express");
-const articleController = require("./controllers/articleController");
-const queryController = require("./controllers/queryController");
-const commentController = require("./controllers/commentController");
-const likeController = require("./controllers/likeController");
+import express from "express";
+import articleController from "./controllers/articleController";
+import queryController from "./controllers/queryController";
+import commentController from "./controllers/commentController";
+import likeController from "./controllers/likeController";
 const router = express.Router();
-const schemas = require('./validation/schemas'); 
-const middleware = require('./validation/middleware'); 
+import schemas from './validation/schemas'; 
+import middleware from './validation/middleware'; 
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -47,6 +47,6 @@ router.delete("/likes/:id", likeController.delete);
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 
-module.exports = router;
+export default router;
 
 

@@ -1,4 +1,4 @@
-const Comment = require("../models/Comment");
+import Comment from "../models/Comment";
 
 const commentController = {};
 
@@ -53,6 +53,6 @@ commentController.delete = async (req, res) => {
 
 
 
-module.exports = commentController;
+export default commentController;
 
 

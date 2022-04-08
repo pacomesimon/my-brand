@@ -1,4 +1,5 @@
-const Joi = require('joi') 
+import Joi from 'joi'; 
+
 const schemas = { 
   article: Joi.object().keys({ 
     title: Joi.string().required(),
@@ -22,5 +23,6 @@ const schemas = {
     likeBool: Joi.boolean().required()
   }) 
   // future schemas will be defined here below ...
-}; 
-module.exports = schemas;
+};
+
+export default schemas;

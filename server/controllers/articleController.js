@@ -1,4 +1,4 @@
-const Article = require("../models/Article");
+import Article from "../models/Article";
 
 const articleController = {};
 
@@ -77,6 +77,6 @@ articleController.delete = async (req, res) => {
 
 
 
-module.exports = articleController;
+export default articleController;
 
 

@@ -1,4 +1,4 @@
-const Joi = require('joi'); 
+import Joi from 'joi'; 
 
 const middleware = (schema) => { 
   return (req, res, next) => { 
@@ -17,4 +17,4 @@ const middleware = (schema) => {
   } 
 } 
 
-module.exports = middleware;
+export default middleware;

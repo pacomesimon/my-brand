@@ -1,4 +1,4 @@
-const Like = require("../models/Like");
+import Like from "../models/Like";
 
 const likeController = {};
 
@@ -52,6 +52,6 @@ likeController.delete = async (req, res) => {
 
 
 
-module.exports = likeController;
+export default likeController;
 
 

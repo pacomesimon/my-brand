@@ -1,4 +1,4 @@
-const Query = require("../models/Query");
+import Query from "../models/Query";
 
 const queryController = {};
 
@@ -38,6 +38,6 @@ queryController.delete = async (req, res) => {
 
 
 
-module.exports = queryController;
+export default queryController;
 
 
