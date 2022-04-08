@@ -25,7 +25,7 @@ commentController.post = async (req, res) => {
 commentController.getOne = async (req, res) => {
   try {
 
-    const comment = await Comment.findOne({ _id: req.params.id });
+    const comment = await Comment.find({ articleID: req.params.id });
     res.send(comment);
 
   } catch {

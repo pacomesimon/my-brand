@@ -24,7 +24,7 @@ likeController.post = async (req, res) => {
 likeController.getOne = async (req, res) => {
   try {
 
-    const like = await Like.findOne({ _id: req.params.id });
+    const like = await Like.find({ articleID: req.params.id });
     res.send(like);
 
   } catch {
