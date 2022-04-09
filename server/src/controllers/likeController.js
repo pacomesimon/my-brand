@@ -11,14 +11,23 @@ likeController.getAll = async (req, res) => {
 
 likeController.post = async (req, res) => {
 
-  const like = new Like({
-    articleID: req.body.articleID,
-    email : req.body.email,
-    likeBool: req.body.likeBool
-  });
-
-  await like.save();
-  res.send(like);
+  const storedLike = await Like.findOne({ email: req.body.email });
+  console.log(storedLike);
+  if(storedLike == null){
+    const like = new Like({
+      articleID: req.body.articleID,
+      email : req.body.email,
+      likeBool: req.body.likeBool
+    });
+  
+    await like.save();
+    res.send(like);
+  }
+  else{
+    await Like.deleteOne({ email: req.body.email });
+    res.status(204).send();
+  }
+  
 };
 
 likeController.getOne = async (req, res) => {

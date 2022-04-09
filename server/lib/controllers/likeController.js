@@ -17,13 +17,25 @@ likeController.getAll = async (req, res) => {
 };
 
 likeController.post = async (req, res) => {
-  const like = new _Like.default({
-    articleID: req.body.articleID,
-    email: req.body.email,
-    likeBool: req.body.likeBool
+  const storedLike = await _Like.default.findOne({
+    email: req.body.email
   });
-  await like.save();
-  res.send(like);
+  console.log(storedLike);
+
+  if (storedLike == null) {
+    const like = new _Like.default({
+      articleID: req.body.articleID,
+      email: req.body.email,
+      likeBool: req.body.likeBool
+    });
+    await like.save();
+    res.send(like);
+  } else {
+    await _Like.default.deleteOne({
+      email: req.body.email
+    });
+    res.status(204).send();
+  }
 };
 
 likeController.getOne = async (req, res) => {
