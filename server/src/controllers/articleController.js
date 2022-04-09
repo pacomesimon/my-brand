@@ -52,6 +52,7 @@ articleController.patch = async (req, res) => {
     }
 
     await article.save();
+    res.status(201);
     res.send(article);
   } catch {
 

@@ -5,8 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-require("core-js/modules/es.promise.js");
-
 var _Like = _interopRequireDefault(require("../models/Like"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -34,7 +32,7 @@ likeController.getOne = async (req, res) => {
       articleID: req.params.id
     });
     res.send(like);
-  } catch (_unused) {
+  } catch {
     res.status(404);
     res.send({
       error: "Like doesn't exist!"
@@ -48,7 +46,7 @@ likeController.delete = async (req, res) => {
       _id: req.params.id
     });
     res.status(204).send();
-  } catch (_unused2) {
+  } catch {
     res.status(404);
     res.send({
       error: "Like doesn't exist!"

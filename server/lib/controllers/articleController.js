@@ -5,8 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-require("core-js/modules/es.promise.js");
-
 var _Article = _interopRequireDefault(require("../models/Article"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -34,7 +32,7 @@ articleController.getOne = async (req, res) => {
       _id: req.params.id
     });
     res.send(article);
-  } catch (_unused) {
+  } catch {
     res.status(404);
     res.send({
       error: "Article doesn't exist!"
@@ -61,8 +59,9 @@ articleController.patch = async (req, res) => {
     }
 
     await article.save();
+    res.status(201);
     res.send(article);
-  } catch (_unused2) {
+  } catch {
     res.status(404);
     res.send({
       error: "Article doesn't exist!"
@@ -76,7 +75,7 @@ articleController.delete = async (req, res) => {
       _id: req.params.id
     });
     res.status(204).send();
-  } catch (_unused3) {
+  } catch {
     res.status(404);
     res.send({
       error: "Article doesn't exist!"

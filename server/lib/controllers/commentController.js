@@ -5,8 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-require("core-js/modules/es.promise.js");
-
 var _Comment = _interopRequireDefault(require("../models/Comment"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -35,7 +33,7 @@ commentController.getOne = async (req, res) => {
       articleID: req.params.id
     });
     res.send(comment);
-  } catch (_unused) {
+  } catch {
     res.status(404);
     res.send({
       error: "Comment doesn't exist!"
@@ -49,7 +47,7 @@ commentController.delete = async (req, res) => {
       _id: req.params.id
     });
     res.status(204).send();
-  } catch (_unused2) {
+  } catch {
     res.status(404);
     res.send({
       error: "Comment doesn't exist!"

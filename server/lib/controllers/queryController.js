@@ -5,8 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-require("core-js/modules/es.promise.js");
-
 var _Query = _interopRequireDefault(require("../models/Query"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -34,7 +32,7 @@ queryController.delete = async (req, res) => {
       _id: req.params.id
     });
     res.status(204).send();
-  } catch (_unused) {
+  } catch {
     res.status(404);
     res.send({
       error: "Query doesn't exist!"
