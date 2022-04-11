@@ -1,7 +1,8 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const routes = require("./routes");
-
+import "core-js/stable";
+import "regenerator-runtime/runtime";
+import express from "express";
+import mongoose from "mongoose";
+import routes from "./routes";
 
 
 mongoose.connect("mongodb://localhost:27017/acmedb", { useNewUrlParser: true })
