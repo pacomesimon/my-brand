@@ -12,7 +12,6 @@ likeController.getAll = async (req, res) => {
 likeController.post = async (req, res) => {
 
   const storedLike = await Like.findOne({ email: req.body.email });
-  console.log(storedLike);
   if(storedLike == null){
     const like = new Like({
       articleID: req.body.articleID,

@@ -1,4 +1,6 @@
 import Article from "../models/Article";
+import Like from "../models/Like";
+import Comment from "../models/Comment";
 
 const articleController = {};
 
@@ -25,7 +27,19 @@ articleController.getOne = async (req, res) => {
   try {
 
     const article = await Article.findOne({ _id: req.params.id });
-    res.send(article);
+    try {
+      var likes = await Like.find({ articleID: req.params.id });
+    } catch {
+      var likes = [];  
+    }
+    try {
+      var comments = await Comment.find({ articleID: req.params.id });  
+    } catch {  
+      var comments = [];  
+    }
+    article.likes = likes.length;
+    article.comments = comments;
+    res.send({article: article,likes: likes.length,comments: comments});
 
   } catch {
 

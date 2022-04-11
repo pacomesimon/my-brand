@@ -20,7 +20,6 @@ likeController.post = async (req, res) => {
   const storedLike = await _Like.default.findOne({
     email: req.body.email
   });
-  console.log(storedLike);
 
   if (storedLike == null) {
     const like = new _Like.default({

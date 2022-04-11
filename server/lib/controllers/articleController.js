@@ -7,6 +7,10 @@ exports.default = void 0;
 
 var _Article = _interopRequireDefault(require("../models/Article"));
 
+var _Like = _interopRequireDefault(require("../models/Like"));
+
+var _Comment = _interopRequireDefault(require("../models/Comment"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const articleController = {};
@@ -31,7 +35,30 @@ articleController.getOne = async (req, res) => {
     const article = await _Article.default.findOne({
       _id: req.params.id
     });
-    res.send(article);
+
+    try {
+      var likes = await _Like.default.find({
+        articleID: req.params.id
+      });
+    } catch {
+      var likes = [];
+    }
+
+    try {
+      var comments = await _Comment.default.find({
+        articleID: req.params.id
+      });
+    } catch {
+      var comments = [];
+    }
+
+    article.likes = likes.length;
+    article.comments = comments;
+    res.send({
+      article: article,
+      likes: likes.length,
+      comments: comments
+    });
   } catch {
     res.status(404);
     res.send({
