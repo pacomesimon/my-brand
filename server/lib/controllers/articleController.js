@@ -32,33 +32,28 @@ articleController.post = async (req, res) => {
 
 articleController.getOne = async (req, res) => {
   try {
-    const article = await _Article.default.findOne({
+    const singleArticle = {};
+    singleArticle.article = await _Article.default.findOne({
       _id: req.params.id
     });
 
     try {
-      var likes = await _Like.default.find({
+      singleArticle.likes = await _Like.default.find({
         articleID: req.params.id
       });
     } catch {
-      var likes = [];
+      singleArticle.likes = [];
     }
 
     try {
-      var comments = await _Comment.default.find({
+      singleArticle.comments = await _Comment.default.find({
         articleID: req.params.id
       });
     } catch {
-      var comments = [];
+      singleArticle.comments = [];
     }
 
-    article.likes = likes.length;
-    article.comments = comments;
-    res.send({
-      article: article,
-      likes: likes.length,
-      comments: comments
-    });
+    res.send(singleArticle);
   } catch {
     res.status(404);
     res.send({
