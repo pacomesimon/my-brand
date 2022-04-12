@@ -37,8 +37,6 @@ articleController.getOne = async (req, res) => {
     } catch {  
       var comments = [];  
     }
-    article.likes = likes.length;
-    article.comments = comments;
     res.send({article: article,likes: likes.length,comments: comments});
 
   } catch {
