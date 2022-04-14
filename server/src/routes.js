@@ -3,15 +3,28 @@ import articleController from "./controllers/articleController";
 import queryController from "./controllers/queryController";
 import commentController from "./controllers/commentController";
 import likeController from "./controllers/likeController";
+import userController from "./controllers/userController";
 const router = express.Router();
 import schemas from './validation/schemas'; 
 import middleware from './validation/middleware'; 
+import auth from './authentication/auth';
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-router.get("/queries", queryController.getAll);
+router.post("/signin", middleware(schemas.user) , userController.post);
+router.post("/signup", middleware(schemas.user) , userController.postSignup);
+router.patch("/promote/:id", auth , userController.promote);
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+router.get("/queries", auth, queryController.getAll);
 router.post("/queries", middleware(schemas.query) , queryController.post);
-router.delete("/queries/:id", queryController.delete);
+router.delete("/queries/:id", auth, queryController.delete);
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 

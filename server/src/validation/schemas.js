@@ -1,6 +1,11 @@
 import Joi from 'joi'; 
 
 const schemas = { 
+  user: Joi.object().keys({ 
+    name: Joi.string(),
+    email: Joi.string().required(),
+    password: Joi.string().required()
+  }) ,
   article: Joi.object().keys({ 
     title: Joi.string().required(),
     previewImageURL: Joi.string().required(),

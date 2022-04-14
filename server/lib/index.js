@@ -4,6 +4,8 @@ require("core-js/stable");
 
 require("regenerator-runtime/runtime");
 
+var _config = _interopRequireDefault(require("config"));
+
 var _express = _interopRequireDefault(require("express"));
 
 var _mongoose = _interopRequireDefault(require("mongoose"));
@@ -11,6 +13,11 @@ var _mongoose = _interopRequireDefault(require("mongoose"));
 var _routes = _interopRequireDefault(require("./routes"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+if (!_config.default.get('jwtPrivateKey')) {
+  console.error('FATAL ERROR: jwtPrivateKey is not defined.');
+  process.exit(1);
+}
 
 _mongoose.default.connect("mongodb://localhost:27017/acmedb", {
   useNewUrlParser: true

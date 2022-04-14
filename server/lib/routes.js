@@ -15,18 +15,27 @@ var _commentController = _interopRequireDefault(require("./controllers/commentCo
 
 var _likeController = _interopRequireDefault(require("./controllers/likeController"));
 
+var _userController = _interopRequireDefault(require("./controllers/userController"));
+
 var _schemas = _interopRequireDefault(require("./validation/schemas"));
 
 var _middleware = _interopRequireDefault(require("./validation/middleware"));
+
+var _auth = _interopRequireDefault(require("./authentication/auth"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const router = _express.default.Router();
 
 ///////////////////////////////////////////////////////////////////////////////////////////
-router.get("/queries", _queryController.default.getAll);
+router.post("/signin", (0, _middleware.default)(_schemas.default.user), _userController.default.post);
+router.post("/signup", (0, _middleware.default)(_schemas.default.user), _userController.default.postSignup);
+router.patch("/promote/:id", _auth.default, _userController.default.promote); //////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+router.get("/queries", _auth.default, _queryController.default.getAll);
 router.post("/queries", (0, _middleware.default)(_schemas.default.query), _queryController.default.post);
-router.delete("/queries/:id", _queryController.default.delete); //////////////////////////////////////////////////////////////////////////////////////////////
+router.delete("/queries/:id", _auth.default, _queryController.default.delete); //////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 router.get("/articles", _articleController.default.getAll);

@@ -10,6 +10,11 @@ var _joi = _interopRequireDefault(require("joi"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const schemas = {
+  user: _joi.default.object().keys({
+    name: _joi.default.string(),
+    email: _joi.default.string().required(),
+    password: _joi.default.string().required()
+  }),
   article: _joi.default.object().keys({
     title: _joi.default.string().required(),
     previewImageURL: _joi.default.string().required(),
