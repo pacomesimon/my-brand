@@ -11,8 +11,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const schema = _mongoose.default.Schema({
   articleID: String,
+  userID: String,
   name: String,
-  email: String,
   commentBody: String
 });
 

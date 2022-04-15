@@ -14,8 +14,13 @@ var _routes = _interopRequireDefault(require("./routes"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//To configure the jwtPrivateKey, run this in your terminal:
+//(for MAC or LINUX) $ export pacome_jwtPrivateKey=SECURE_KEY
+//(for WINDOWS [CMD]) $ set pacome_jwtPrivateKey=SECURE_KEY
+// where SECURE_KEY can be any string you want.
 if (!_config.default.get('jwtPrivateKey')) {
-  console.error('FATAL ERROR: jwtPrivateKey is not defined.');
+  console.error('FATAL ERROR: jwtPrivateKey is not defined.'); //to avoid the error, refer to the comments above this function definition.
+
   process.exit(1);
 }
 

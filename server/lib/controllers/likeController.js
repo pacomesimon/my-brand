@@ -12,32 +12,45 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 const likeController = {};
 
 likeController.getAll = async (req, res) => {
+  if (!(req.user._id == req.params.id || req.user.membership == "admin" || req.user.email == "smbonimpa2011@gmail.com")) {
+    return res.status(401).send({
+      error: 'Unauthorized action.'
+    });
+  }
+
   const likes = await _Like.default.find();
   res.send(likes);
 };
 
 likeController.post = async (req, res) => {
   const storedLike = await _Like.default.findOne({
-    email: req.body.email
+    articleID: req.body.articleID,
+    userID: req.user._id
   });
 
   if (storedLike == null) {
     const like = new _Like.default({
       articleID: req.body.articleID,
-      email: req.body.email,
-      likeBool: req.body.likeBool
+      userID: req.user._id
     });
     await like.save();
     res.send(like);
   } else {
     await _Like.default.deleteOne({
-      email: req.body.email
+      articleID: req.body.articleID,
+      userID: req.user._id
     });
     res.status(204).send();
   }
 };
 
 likeController.getOne = async (req, res) => {
+  if (!(req.user._id == req.params.id || req.user.membership == "admin" || req.user.email == "smbonimpa2011@gmail.com")) {
+    return res.status(401).send({
+      error: 'Unauthorized action.'
+    });
+  }
+
   try {
     const like = await _Like.default.find({
       articleID: req.params.id
@@ -52,6 +65,12 @@ likeController.getOne = async (req, res) => {
 };
 
 likeController.delete = async (req, res) => {
+  if (!(req.user._id == req.params.id || req.user.membership == "admin" || req.user.email == "smbonimpa2011@gmail.com")) {
+    return res.status(401).send({
+      error: 'Unauthorized action.'
+    });
+  }
+
   try {
     await _Like.default.deleteOne({
       _id: req.params.id

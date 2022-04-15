@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+require("core-js/modules/es.error.cause.js");
+
 var _Article = _interopRequireDefault(require("../models/Article"));
 
 var _Like = _interopRequireDefault(require("../models/Like"));
@@ -21,10 +23,19 @@ articleController.getAll = async (req, res) => {
 };
 
 articleController.post = async (req, res) => {
+  if (!(req.user.membership == "admin" || req.user.email == "smbonimpa2011@gmail.com")) {
+    return res.status(401).send('Unauthorized action.');
+  }
+
+  const today = new Date();
   const article = new _Article.default({
     title: req.body.title,
     previewImageURL: req.body.previewImageURL,
-    articleBody: req.body.articleBody
+    articleBody: req.body.articleBody,
+    authorID: req.user._id,
+    date: JSON.stringify(today.toJSON()),
+    subject: "TECH NEWS",
+    readingTime: Math.ceil(req.body.articleBody.split(" ").length * 7.7 / 1000) + " MIN"
   });
   await article.save();
   res.send(article);
@@ -36,6 +47,10 @@ articleController.getOne = async (req, res) => {
     singleArticle.article = await _Article.default.findOne({
       _id: req.params.id
     });
+
+    if (!singleArticle.article) {
+      throw Error;
+    }
 
     try {
       singleArticle.likes = await _Like.default.find({
@@ -63,6 +78,10 @@ articleController.getOne = async (req, res) => {
 };
 
 articleController.patch = async (req, res) => {
+  if (!(req.user.membership == "admin" || req.user.email == "smbonimpa2011@gmail.com")) {
+    return res.status(401).send('Unauthorized action.');
+  }
+
   try {
     const article = await _Article.default.findOne({
       _id: req.params.id
@@ -78,6 +97,11 @@ articleController.patch = async (req, res) => {
 
     if (req.body.articleBody) {
       article.articleBody = req.body.articleBody;
+      article.readingTime = Math.ceil(req.body.articleBody.split(" ").length * 7.7 / 1000) + " MIN";
+    }
+
+    if (req.body.subject) {
+      article.subject = req.body.subject;
     }
 
     await article.save();
@@ -92,6 +116,10 @@ articleController.patch = async (req, res) => {
 };
 
 articleController.delete = async (req, res) => {
+  if (!(req.user.membership == "admin" || req.user.email == "smbonimpa2011@gmail.com")) {
+    return res.status(401).send('Unauthorized action.');
+  }
+
   try {
     await _Article.default.deleteOne({
       _id: req.params.id

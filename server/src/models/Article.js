@@ -5,7 +5,11 @@ const schema = mongoose.Schema({
 
   title: String,
   previewImageURL: String,
-  articleBody: String
+  articleBody: String,
+  authorID: String,
+  date: String,
+  subject: String,
+  readingTime: String,
 
 });
 

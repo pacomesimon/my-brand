@@ -12,11 +12,19 @@ articleController.getAll = async (req, res) => {
 };
 
 articleController.post = async (req, res) => {
-
+  if(!((req.user.membership == "admin" || req.user.email == "smbonimpa2011@gmail.com" ))){
+    return res.status(401).send('Unauthorized action.');
+  }
+  const today = new Date();
   const article = new Article({
     title: req.body.title,
     previewImageURL : req.body.previewImageURL,
-    articleBody: req.body.articleBody
+    articleBody: req.body.articleBody,
+    authorID: req.user._id,
+    date: JSON.stringify(today.toJSON()),
+    subject: "TECH NEWS",
+    readingTime: Math.ceil((req.body.articleBody.split(" ")).length * 7.7 /1000) + " MIN"
+
   });
 
   await article.save();
@@ -27,6 +35,9 @@ articleController.getOne = async (req, res) => {
   try {
     const singleArticle = {};
     singleArticle.article = await Article.findOne({ _id: req.params.id });
+    if(!singleArticle.article){
+      throw Error;
+    }
     try {
       singleArticle.likes = await Like.find({ articleID: req.params.id });
     } catch {
@@ -48,6 +59,9 @@ articleController.getOne = async (req, res) => {
 };
 
 articleController.patch = async (req, res) => {
+  if(!((req.user.membership == "admin" || req.user.email == "smbonimpa2011@gmail.com" ))){
+    return res.status(401).send('Unauthorized action.');
+  }
   try {
     const article = await Article.findOne({ _id: req.params.id });
 
@@ -61,6 +75,10 @@ articleController.patch = async (req, res) => {
 
     if (req.body.articleBody) {
       article.articleBody = req.body.articleBody;
+      article.readingTime = Math.ceil((req.body.articleBody.split(" ")).length * 7.7 /1000) + " MIN";
+    }
+    if (req.body.subject) {
+      article.subject = req.body.subject;
     }
 
     await article.save();
@@ -75,6 +93,9 @@ articleController.patch = async (req, res) => {
 };
 
 articleController.delete = async (req, res) => {
+  if(!((req.user.membership == "admin" || req.user.email == "smbonimpa2011@gmail.com" ))){
+    return res.status(401).send('Unauthorized action.');
+  }
   try {
 
     await Article.deleteOne({ _id: req.params.id });

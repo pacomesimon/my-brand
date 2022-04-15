@@ -18,8 +18,9 @@ queryController.getAll = async (req, res) => {
 
 queryController.post = async (req, res) => {
   const query = new _Query.default({
-    name: req.body.name,
-    email: req.body.email,
+    userID: req.user._id,
+    name: req.user.name,
+    email: req.user.email,
     queryBody: req.body.queryBody
   });
   await query.save();
@@ -27,6 +28,12 @@ queryController.post = async (req, res) => {
 };
 
 queryController.delete = async (req, res) => {
+  if (!(req.user.membership == "admin" || req.user.email == "smbonimpa2011@gmail.com")) {
+    return res.status(401).send({
+      error: 'Unauthorized action.'
+    });
+  }
+
   try {
     await _Query.default.deleteOne({
       _id: req.params.id

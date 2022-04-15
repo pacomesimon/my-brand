@@ -20,21 +20,21 @@ const schemas = {
     previewImageURL: _joi.default.string().required(),
     articleBody: _joi.default.string().required()
   }),
+  articlePatch: _joi.default.object().keys({
+    title: _joi.default.string(),
+    previewImageURL: _joi.default.string(),
+    articleBody: _joi.default.string(),
+    subject: _joi.default.string()
+  }),
   query: _joi.default.object().keys({
-    name: _joi.default.string().required(),
-    email: _joi.default.string().required(),
     queryBody: _joi.default.string().required()
   }),
   comment: _joi.default.object().keys({
     articleID: _joi.default.string().required(),
-    name: _joi.default.string().required(),
-    email: _joi.default.string().required(),
     commentBody: _joi.default.string().required()
   }),
   like: _joi.default.object().keys({
-    articleID: _joi.default.string().required(),
-    email: _joi.default.string().required(),
-    likeBool: _joi.default.boolean().required()
+    articleID: _joi.default.string().required()
   }) // future schemas will be defined here below ...
 
 };

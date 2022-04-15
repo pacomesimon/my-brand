@@ -13,8 +13,8 @@ commentController.post = async (req, res) => {
 
   const comment = new Comment({
     articleID: req.body.articleID,
-    name: req.body.name,
-    email : req.body.email,
+    userID: req.user._id,
+    name: req.user.name,
     commentBody: req.body.commentBody
   });
 
@@ -38,6 +38,9 @@ commentController.getOne = async (req, res) => {
 
 
 commentController.delete = async (req, res) => {
+  if(!((req.user.membership == "admin" || req.user.email == "smbonimpa2011@gmail.com" ))){
+    return res.status(401).send({error:'Unauthorized action.'});
+  }
   try {
 
     await Comment.deleteOne({ _id: req.params.id });

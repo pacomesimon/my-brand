@@ -11,8 +11,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const schema = _mongoose.default.Schema({
   articleID: String,
-  email: String,
-  likeBool: Boolean
+  userID: String
 });
 
 var _default = _mongoose.default.model("Like", schema);

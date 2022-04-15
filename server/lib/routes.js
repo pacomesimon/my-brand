@@ -30,33 +30,37 @@ const router = _express.default.Router();
 ///////////////////////////////////////////////////////////////////////////////////////////
 router.post("/signin", (0, _middleware.default)(_schemas.default.user), _userController.default.post);
 router.post("/signup", (0, _middleware.default)(_schemas.default.user), _userController.default.postSignup);
-router.patch("/promote/:id", _auth.default, _userController.default.promote); //////////////////////////////////////////////////////////////////////////////////////////////
+router.patch("/promote/:id", _auth.default, _userController.default.promote);
+router.patch("/changecreds/:id", _auth.default, _userController.default.patch);
+router.delete("/deleteuser/:id", _auth.default, _userController.default.delete);
+router.get("/users/:id", _userController.default.getOne);
+router.get("/users/", _auth.default, _userController.default.getAll); //////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 router.get("/queries", _auth.default, _queryController.default.getAll);
-router.post("/queries", (0, _middleware.default)(_schemas.default.query), _queryController.default.post);
+router.post("/queries", _auth.default, (0, _middleware.default)(_schemas.default.query), _queryController.default.post);
 router.delete("/queries/:id", _auth.default, _queryController.default.delete); //////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 router.get("/articles", _articleController.default.getAll);
-router.post("/articles", (0, _middleware.default)(_schemas.default.article), _articleController.default.post);
+router.post("/articles", _auth.default, (0, _middleware.default)(_schemas.default.article), _articleController.default.post);
 router.get("/articles/:id", _articleController.default.getOne);
-router.patch("/articles/:id", (0, _middleware.default)(_schemas.default.article), _articleController.default.patch);
-router.delete("/articles/:id", _articleController.default.delete); //////////////////////////////////////////////////////////////////////////////////////////////
+router.patch("/articles/:id", _auth.default, (0, _middleware.default)(_schemas.default.articlePatch), _articleController.default.patch);
+router.delete("/articles/:id", _auth.default, _articleController.default.delete); //////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 router.get("/comments", _commentController.default.getAll);
-router.post("/comments", (0, _middleware.default)(_schemas.default.comment), _commentController.default.post);
+router.post("/comments", _auth.default, (0, _middleware.default)(_schemas.default.comment), _commentController.default.post);
 router.get("/comments/:id", _commentController.default.getOne); //this will route to ALL COMMENTS on the article associated with the ID.
 
-router.delete("/comments/:id", _commentController.default.delete); //////////////////////////////////////////////////////////////////////////////////////////////
+router.delete("/comments/:id", _auth.default, _commentController.default.delete); //////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-router.get("/likes", _likeController.default.getAll);
-router.post("/likes", (0, _middleware.default)(_schemas.default.like), _likeController.default.post);
-router.get("/likes/:id", _likeController.default.getOne); //this will route to ALL LIKES on the article associated with the ID.
+router.get("/likes", _auth.default, _likeController.default.getAll);
+router.post("/likes", _auth.default, (0, _middleware.default)(_schemas.default.like), _likeController.default.post);
+router.get("/likes/:id", _auth.default, _likeController.default.getOne); //this will route to ALL LIKES on the article associated with the ID.
 
-router.delete("/likes/:id", _likeController.default.delete); //////////////////////////////////////////////////////////////////////////////////////////////
+router.delete("/likes/:id", _auth.default, _likeController.default.delete); //////////////////////////////////////////////////////////////////////////////////////////////
 
 var _default = router;
 exports.default = _default;
