@@ -12,7 +12,7 @@ chai.use(chaiHttp);
 //Our parent block
 describe('DATABASE TESTS START!', () => {
     before((done) => { //Before the first test, we do the following:
-        
+             
         done();           
     });
     describe('USER SIGNUP AND LOGIN ',()=>{
