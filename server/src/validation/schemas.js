@@ -2,7 +2,7 @@ import Joi from 'joi';
 
 const schemas = { 
   user: Joi.object().keys({ 
-    name: Joi.string(),
+    name: Joi.string().required(),
     email: Joi.string().required(),
     password: Joi.string().required()
   }) ,

@@ -1,5 +1,10 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
 require("core-js/stable");
 
 require("regenerator-runtime/runtime");
@@ -24,13 +29,17 @@ if (!_config.default.get('jwtPrivateKey')) {
   process.exit(1);
 }
 
-_mongoose.default.connect("mongodb://localhost:27017/acmedb", {
+const app = (0, _express.default)();
+
+_mongoose.default.connect(_config.default.DBHost, {
   useNewUrlParser: true
 }).then(() => {
-  const app = (0, _express.default)();
   app.use(_express.default.json());
   app.use("/api", _routes.default);
   app.listen(5000, () => {
     console.log("Server has started!");
   });
 });
+
+var _default = app;
+exports.default = _default;

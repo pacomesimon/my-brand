@@ -11,7 +11,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const schemas = {
   user: _joi.default.object().keys({
-    name: _joi.default.string(),
+    name: _joi.default.string().required(),
     email: _joi.default.string().required(),
     password: _joi.default.string().required()
   }),

@@ -15,10 +15,10 @@ if (!config.get('jwtPrivateKey')) {
   process.exit(1);
 }
 
-mongoose.connect("mongodb://localhost:27017/acmedb", { useNewUrlParser: true })
+const app = express();
+mongoose.connect(config.DBHost, { useNewUrlParser: true })
   .then(() => {
-    const app = express();
-
+    
     app.use(express.json());
 
     app.use("/api", routes);
@@ -26,4 +26,7 @@ mongoose.connect("mongodb://localhost:27017/acmedb", { useNewUrlParser: true })
     app.listen(5000, () => {
       console.log("Server has started!");
     });
+    
   });
+
+  export default app;
