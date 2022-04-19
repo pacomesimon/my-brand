@@ -1,4 +1,4 @@
-import server from '../index';
+import server from '../../index';
 import chaiHttp from 'chai-http';
 import chai from 'chai';
 let should = chai.should();

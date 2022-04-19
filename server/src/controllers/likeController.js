@@ -43,12 +43,13 @@ likeController.getOne = async (req, res) => {
   try {
 
     const like = await Like.find({ articleID: req.params.id });
+    if(like.length == 0) throw error;
     res.send(like);
 
   } catch {
 
     res.status(404);
-    res.send({ error: "Like doesn't exist!" });
+    res.send({ error: "Article's likes not found!" });
 
   }
 };

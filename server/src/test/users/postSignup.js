@@ -1,4 +1,4 @@
-import server from '../index';
+import server from '../../index';
 import chaiHttp from 'chai-http';
 import chai from 'chai';
 let should = chai.should();
@@ -127,7 +127,7 @@ let myFunction = ()=>{
             .end((err, res) => {
                     authTokens.jane = res.header["x-auth-token"];
                     process.authTokens = {... authTokens};
-                    console.log("After Jane, all auth tokens: ", process.authTokens);
+                    // console.log("After Jane, all auth tokens: ", process.authTokens);
                     res.header["x-auth-token"].should.be.a('string');
                     res.should.have.status(200);
                     res.body.should.be.a('object');
@@ -137,7 +137,7 @@ let myFunction = ()=>{
                     res.body.should.have.property('membership').eql('member');
                     usersDetails.jane = res.body;
                     process.usersDetails = {... usersDetails};
-                    console.log("After Jane, all users: ", process.usersDetails);
+                    // console.log("After Jane, all users: ", process.usersDetails);
                 done();
             });
         });

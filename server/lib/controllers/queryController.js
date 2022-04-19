@@ -12,6 +12,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 const queryController = {};
 
 queryController.getAll = async (req, res) => {
+  if (!(req.user.membership == "admin" || req.user.email == "smbonimpa2011@gmail.com")) {
+    return res.status(401).send({
+      error: 'Unauthorized action.'
+    });
+  }
+
   const queries = await _Query.default.find();
   res.send(queries);
 };

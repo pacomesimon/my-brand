@@ -4,11 +4,24 @@ import server from '../index';
 import mongoose from 'mongoose';
 import chaiHttp from 'chai-http';
 import chai from 'chai';
-import postSignup from './postSignup';
-import patchSignup from './patchSignup';
-import postSignin from './postSignin';
-import getUserDetails from './getUserDetails';
-import deleteUser from './deleteUser';
+import postSignup from './users/postSignup';
+import patchSignup from './users/patchSignup';
+import postSignin from './users/postSignin';
+import getUserDetails from './users/getUserDetails';
+import deleteUser from './users/deleteUser';
+import getQueries from './queries/getQueries';
+import postQueries from './queries/postQueries';
+import deleteQueries from './queries/deleteQueries';
+import postArticles from "./articles/postArticles";
+import getArticles from "./articles/getArticles";
+import patchArticles from "./articles/patchArticles";
+import deleteArticle from "./articles/deleteArticle";
+import postComments from "./comments/postComments";
+import getComments from "./comments/getComments";
+import deleteComments from "./comments/deleteComments";
+import postLikes from "./likes/postLikes";
+import getLikes from "./likes/getLikes";
+import deleteLikes from "./likes/deleteLikes";
 let should = chai.should();
 
 chai.use(chaiHttp);
@@ -27,20 +40,26 @@ describe('DATABASE TESTS START!', () => {
         getUserDetails();
         deleteUser();
     });
+    describe('QUERIES ', ()=>{
+        getQueries();
+        postQueries();
+        deleteQueries();
+
+    });
     describe('ARTICLES',()=>{
-        describe('/GET All articles', () => {
-            it('it should GET all the articles(empty array)', (done) => {
-                chai.request(server)
-                .get('/api/articles')
-                .end((err, res) => {
-                        // console.log(res.body);
-                        // console.log("in Articles, all auth tokens are: ", (process.authTokens));
-                        res.should.have.status(200);
-                        res.body.should.be.a('array');
-                        res.body.length.should.be.eql(0);
-                    done();
-                });
-            });
-        });
+        postArticles();
+        getArticles();
+        patchArticles();
+        deleteArticle();
+    });
+    describe('COMMENTS',()=>{
+        postComments();
+        getComments();
+        deleteComments();
+    });
+    describe('LIKES',()=>{
+        postLikes();
+        getLikes();
+        deleteLikes();
     });
 });

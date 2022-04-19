@@ -26,12 +26,13 @@ commentController.getOne = async (req, res) => {
   try {
 
     const comment = await Comment.find({ articleID: req.params.id });
+    if(comment.length == 0) throw error;
     res.send(comment);
 
   } catch {
 
     res.status(404);
-    res.send({ error: "Comment doesn't exist!" });
+    res.send({ error: "Article's comments not found!" });
 
   }
 };

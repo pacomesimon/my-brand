@@ -3,7 +3,9 @@ import Query from "../models/Query";
 const queryController = {};
 
 queryController.getAll = async (req, res) => {
-
+  if(!((req.user.membership == "admin" || req.user.email == "smbonimpa2011@gmail.com" ))){
+    return res.status(401).send({error:'Unauthorized action.'});
+  }
   const queries = await Query.find();
   res.send(queries);
 

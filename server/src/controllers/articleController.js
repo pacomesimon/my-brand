@@ -13,7 +13,7 @@ articleController.getAll = async (req, res) => {
 
 articleController.post = async (req, res) => {
   if(!((req.user.membership == "admin" || req.user.email == "smbonimpa2011@gmail.com" ))){
-    return res.status(401).send('Unauthorized action.');
+    return res.status(401).send({ error:'Unauthorized action.'});
   }
   const today = new Date();
   const article = new Article({
@@ -60,7 +60,7 @@ articleController.getOne = async (req, res) => {
 
 articleController.patch = async (req, res) => {
   if(!((req.user.membership == "admin" || req.user.email == "smbonimpa2011@gmail.com" ))){
-    return res.status(401).send('Unauthorized action.');
+    return res.status(401).send({ error:'Unauthorized action.'});
   }
   try {
     const article = await Article.findOne({ _id: req.params.id });
@@ -94,7 +94,7 @@ articleController.patch = async (req, res) => {
 
 articleController.delete = async (req, res) => {
   if(!((req.user.membership == "admin" || req.user.email == "smbonimpa2011@gmail.com" ))){
-    return res.status(401).send('Unauthorized action.');
+    return res.status(401).send({ error:'Unauthorized action.'});
   }
   try {
 
