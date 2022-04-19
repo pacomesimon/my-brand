@@ -15,6 +15,10 @@ const schemas = {
     email: _joi.default.string().required(),
     password: _joi.default.string().required()
   }),
+  userSignin: _joi.default.object().keys({
+    email: _joi.default.string().required(),
+    password: _joi.default.string().required()
+  }),
   article: _joi.default.object().keys({
     title: _joi.default.string().required(),
     previewImageURL: _joi.default.string().required(),

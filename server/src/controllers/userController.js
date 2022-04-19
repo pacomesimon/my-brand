@@ -8,12 +8,12 @@ userController.post = async (req, res) => {
 
   const user = await User.findOne({ email: req.body.email });
   if (!user) {
-    return res.status(400).send('Invalid password or Email.');
+    return res.status(400).send({ error: 'Invalid password or Email.'});
   }
 
   const validPassword = await bcrypt.compare(req.body.password, user.password);
   if (!validPassword) {
-    return res.status(400).send('Invalid Passw0rd or email.');
+    return res.status(400).send({ error: 'Invalid Passw0rd or email.'});
   }
 
   const token = user.generateAuthToken();
@@ -85,6 +85,9 @@ userController.patch = async (req, res) => {
   try{
     const user = await User.findOne({ _id: req.params.id });
 
+    if(req.body.name){
+      user.name = req.body.name;
+    }
     if(req.body.email){
       user.email = req.body.email;
     }

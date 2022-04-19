@@ -28,7 +28,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 const router = _express.default.Router();
 
 ///////////////////////////////////////////////////////////////////////////////////////////
-router.post("/signin", (0, _middleware.default)(_schemas.default.user), _userController.default.post);
+router.post("/signin", (0, _middleware.default)(_schemas.default.userSignin), _userController.default.post);
 router.post("/signup", (0, _middleware.default)(_schemas.default.user), _userController.default.postSignup);
 router.patch("/promote/:id", _auth.default, _userController.default.promote);
 router.patch("/changecreds/:id", _auth.default, _userController.default.patch);

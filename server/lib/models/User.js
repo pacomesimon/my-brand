@@ -25,6 +25,7 @@ schema.methods.generateAuthToken = function () {
     _id: this._id,
     name: this.name,
     email: this.email,
+    password: this.password,
     membership: this.membership
   }, _config.default.get('jwtPrivateKey'));
 

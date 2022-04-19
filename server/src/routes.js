@@ -12,7 +12,7 @@ import auth from './authentication/auth';
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-router.post("/signin", middleware(schemas.user) , userController.post);
+router.post("/signin", middleware(schemas.userSignin) , userController.post);
 router.post("/signup", middleware(schemas.user) , userController.postSignup);
 router.patch("/promote/:id", auth , userController.promote);
 router.patch("/changecreds/:id", auth , userController.patch);

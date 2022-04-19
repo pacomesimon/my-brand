@@ -6,6 +6,10 @@ const schemas = {
     email: Joi.string().required(),
     password: Joi.string().required()
   }) ,
+  userSignin: Joi.object().keys({ 
+    email: Joi.string().required(),
+    password: Joi.string().required()
+  }) ,
   article: Joi.object().keys({ 
     title: Joi.string().required(),
     previewImageURL: Joi.string().required(),
