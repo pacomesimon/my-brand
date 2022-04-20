@@ -1,11 +1,5 @@
 "use strict";
 
-var _config = _interopRequireDefault(require("config"));
-
-var _index = _interopRequireDefault(require("../index"));
-
-var _mongoose = _interopRequireDefault(require("mongoose"));
-
 var _chaiHttp = _interopRequireDefault(require("chai-http"));
 
 var _chai = _interopRequireDefault(require("chai"));

@@ -1,7 +1,5 @@
 // process.env.NODE_ENV = 'test';
-import config from 'config';
-import server from '../index';
-import mongoose from 'mongoose';
+
 import chaiHttp from 'chai-http';
 import chai from 'chai';
 import postSignup from './users/postSignup';
@@ -63,3 +61,4 @@ describe('DATABASE TESTS START!', () => {
         deleteLikes();
     });
 });
+
