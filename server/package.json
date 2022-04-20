@@ -4,15 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "SET NODE_ENV=test&& node ./lib/test/DBinit && nyc --reporter=lcov --reporter=text mocha ./lib/test/test.js --timeout 10000",
+    "test": "SET NODE_ENV=test&& node ./lib/test/DBinit && nyc --reporter=json-summary mocha ./lib/test/test.js --timeout 10000",
     "start": "SET NODE_ENV=dev&& node ./lib/index",
     "buildAndStart": "npm run build && npm start",
     "build": "npx babel src --out-dir lib",
     "buildAndTest": "npm run build && npm test"
   },
-  "nyc":{
-    "exclude": ["lib/test/"],
-    "report-dir": "./COVERAGE_REPORTS"
+  "nyc": {
+    "exclude": [
+      "lib/test/"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -32,6 +33,7 @@
     "@babel/preset-env": "^7.16.11",
     "chai": "^4.3.6",
     "chai-http": "^4.3.0",
+    "istanbul-badges-readme": "^1.8.1",
     "mocha": "^9.2.2",
     "nyc": "^15.1.0"
   }
