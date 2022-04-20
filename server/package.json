@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "SET NODE_ENV=test&& node ./lib/test/DBinit && nyc --reporter=json-summary mocha ./lib/test/test.js --timeout 10000",
+    "test": "SET NODE_ENV=test&& node ./lib/test/DBinit && nyc --reporter=json-summary --reporter=text mocha ./lib/test/test.js --timeout 10000",
     "start": "SET NODE_ENV=dev&& node ./lib/index",
     "buildAndStart": "npm run build && npm start",
     "build": "npx babel src --out-dir lib",
