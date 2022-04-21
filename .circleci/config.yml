@@ -16,4 +16,4 @@ jobs:
           command: cd ./server && npm install
       - run:
           name: Build README.md
-          command: npm run createREADME
+          command: cd ./server && npm run createREADME
