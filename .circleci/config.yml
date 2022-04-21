@@ -15,11 +15,11 @@ jobs:
           name: Install dependencies
           command: cd ./server && npm install
       - run:
-          name: Build README.md
-          command: cd ./server && npm run createREADME
+          name: Build and Test README.md
+          command: cd ./server && "node_modules/.bin/istanbul-badges-readme"
       - run:
           name: Put a README.md copy in Artifacts
           command: cat ./server/README.md > /tmp/README.md;
       - store_artifacts:
           path: /tmp/README.md
-          destination: README2.md
+          destination: README.md
