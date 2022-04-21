@@ -8,7 +8,8 @@
     "start": "SET NODE_ENV=dev&& node ./lib/index",
     "buildAndStart": "npm run build && npm start",
     "build": "npx babel src --out-dir lib",
-    "buildAndTest": "npm run build && npm test"
+    "buildAndTest": "npm run build && npm test",
+    "createREADME": "node ./lib/test/readme.js && \"node_modules/.bin/istanbul-badges-readme\""
   },
   "nyc": {
     "exclude": [
