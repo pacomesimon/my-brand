@@ -12,11 +12,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: CD in server directory
-          command: cd ./server
-      - run:
           name: Install dependencies
-          command: npm install
+          command: cd ./server && npm install
       - run:
           name: Build README.md
           command: npm run createREADME
