@@ -19,8 +19,7 @@ jobs:
           command: cd ./server && npm run createREADME
       - run:
           name: Put a README.md copy in Artifacts
-          command: |
-            cd ./server && cat README.md > /tmp/README.md;
+          command: cd ./server && cat README.md > /tmp/README.md;
       - store_artifacts:
           path: /tmp/README.md
-          destination: artifact-file
+          destination: README.md
