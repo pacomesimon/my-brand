@@ -1,0 +1,22 @@
+version: 2.1
+
+workflows:
+  on_commit:
+    jobs:
+      - createREADME
+
+jobs:
+  createREADME:
+    docker:
+      - image: cimg/node:14.13.0
+    steps:
+      - checkout
+      - run:
+          name: CD in server directory
+          command: cd ./server
+      - run:
+          name: Install dependencies
+          command: npm install
+      - run:
+          name: Build README.md
+          command: npm run createREADME
