@@ -22,6 +22,8 @@ mongoose.connect(config.DBHost, { useNewUrlParser: true })
     app.use(express.json());
 
     app.use("/api", routes);
+
+    app.use("/swagger",express.static('swaggerDist')); // app will also (using path: ./swagger) serve static files in the mentioned folder (parameter)
     
     app.listen(5000, () => {
       console.log("Server has started!");
