@@ -686,7 +686,7 @@
         }
       }
     },
-    "/articles/{id}/1": {
+    "/articleS/{id}": {
       "delete": {
         "tags": [
           "articles"
@@ -1132,9 +1132,6 @@
     "ArticlePost": {
       "type": "object",
       "properties": {
-        "_id": {
-          "type": "string"
-        },
         "title": {
           "type": "string"
         },
