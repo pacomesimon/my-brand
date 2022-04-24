@@ -34,7 +34,7 @@ jobs:
           command: cd ./server && export pacome_jwtPrivateKey=SECURE_KEY && npm run circleCItest
       - run:
           name: Put a test report copy in Artifacts
-          command: cp -r ./server/coverage > /tmp/coverage;
+          command: cp -r ./server/coverage /tmp/coverage;
       - store_artifacts:
-          path: /home/circleci/.npm/_logs/2022-04-24T10_57_32_093Z-debug.log
+          path: /tmp/coverage
           destination: coverage
