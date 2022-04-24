@@ -56,6 +56,15 @@ describe('DATABASE TESTS START!', () => {
     // NOTHING TO DO !  
     done();
   });
+  after(done => {
+    //after the last test, we do the following:
+    const stopTestProcess = () => {
+      process.exit(0);
+    };
+
+    setTimeout(stopTestProcess, 3000);
+    done();
+  });
   describe('USER SIGNUP AND LOGIN ', () => {
     (0, _postSignup.default)();
     (0, _patchSignup.default)();
