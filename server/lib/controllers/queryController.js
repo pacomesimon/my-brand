@@ -23,11 +23,13 @@ queryController.getAll = async (req, res) => {
 };
 
 queryController.post = async (req, res) => {
+  const today = new Date();
   const query = new _Query.default({
     userID: req.user._id,
     name: req.user.name,
     email: req.user.email,
-    queryBody: req.body.queryBody
+    queryBody: req.body.queryBody,
+    date: JSON.stringify(today.toJSON())
   });
   await query.save();
   res.send(query);

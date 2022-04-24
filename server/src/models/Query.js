@@ -5,7 +5,8 @@ const schema = mongoose.Schema({
   userID: String,
   name: String,
   email: String,
-  queryBody: String
+  queryBody: String,
+  date: String
 
 });
 

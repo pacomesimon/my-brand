@@ -16,7 +16,7 @@ jobs:
           command: cd ./server && npm install
       - run:
           name: Build and Test README.md
-          command: cd ./server && "node_modules/.bin/istanbul-badges-readme"
+          command: cd ./server && "node_modules/.bin/istanbul-badges-readme && myGlitchIsGood"
       - run:
           name: Put a README.md copy in Artifacts
           command: cat ./server/README.md > /tmp/README.md;

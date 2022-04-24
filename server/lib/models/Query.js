@@ -13,7 +13,8 @@ const schema = _mongoose.default.Schema({
   userID: String,
   name: String,
   email: String,
-  queryBody: String
+  queryBody: String,
+  date: String
 });
 
 var _default = _mongoose.default.model("Query", schema);

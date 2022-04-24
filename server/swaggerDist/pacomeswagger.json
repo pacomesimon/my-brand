@@ -142,8 +142,14 @@
               }
             }
           },
+          "400": {
+            "description": "invalid authentication token.",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
           "401": {
-            "description": "Access denied. Invalid token.",
+            "description": "no authorized/unauthorized token.",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -193,8 +199,14 @@
               }
             }
           },
+          "400": {
+            "description": "invalid authentication token.",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
           "401": {
-            "description": "Access denied. Invalid token.",
+            "description": "no authorized/unauthorized token.",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -326,8 +338,14 @@
               }
             }
           },
-          "401": {
+          "400": {
             "description": "invalid authentication token.",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "no authorized/unauthorized token.",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -368,8 +386,14 @@
           "204": {
             "description": "User deleted."
           },
-          "401": {
+          "400": {
             "description": "invalid authentication token.",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "no authorized/unauthorized token.",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -415,8 +439,14 @@
               }
             }
           },
-          "401": {
+          "400": {
             "description": "invalid authentication token.",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "no authorized/unauthorized token.",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -462,8 +492,14 @@
               "$ref": "#/definitions/QueryRes"
             }
           },
-          "401": {
+          "400": {
             "description": "invalid authentication token.",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "no authorized/unauthorized token.",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -504,8 +540,14 @@
           "204": {
             "description": "Query deleted."
           },
-          "401": {
+          "400": {
             "description": "invalid authentication token.",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "no authorized/unauthorized token.",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -557,8 +599,14 @@
               "$ref": "#/definitions/ArticleRes"
             }
           },
-          "401": {
+          "400": {
             "description": "invalid authentication token.",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "no authorized/unauthorized token.",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -677,8 +725,14 @@
               "$ref": "#/definitions/ArticleRes"
             }
           },
-          "401": {
+          "400": {
             "description": "invalid authentication token.",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "no authorized/unauthorized token.",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -719,8 +773,14 @@
           "204": {
             "description": "Article deleted."
           },
-          "401": {
+          "400": {
             "description": "invalid authentication token.",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "no authorized/unauthorized token.",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -772,8 +832,14 @@
               "$ref": "#/definitions/CommentRes"
             }
           },
-          "401": {
+          "400": {
             "description": "invalid authentication token.",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "no authorized/unauthorized token.",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -856,8 +922,14 @@
           "204": {
             "description": "Comment deleted."
           },
-          "401": {
+          "400": {
             "description": "invalid authentication token.",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "no authorized/unauthorized token.",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -909,8 +981,14 @@
               "$ref": "#/definitions/LikeRes"
             }
           },
-          "401": {
+          "400": {
             "description": "invalid authentication token.",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "no authorized/unauthorized token.",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -993,8 +1071,14 @@
           "204": {
             "description": "Like deleted."
           },
-          "401": {
+          "400": {
             "description": "invalid authentication token.",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "no authorized/unauthorized token.",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -1122,6 +1206,9 @@
           "type": "string"
         },
         "queryBody": {
+          "type": "string"
+        },
+        "date": {
           "type": "string"
         }
       },
