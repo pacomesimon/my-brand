@@ -3,10 +3,10 @@ version: 2.1
 workflows:
   on_commit:
     jobs:
-      - createREADME
+      - mochaTEST
 
 jobs:
-  createREADME:
+  mochaTEST:
     docker:
       - image: cimg/node:14.13.0
     steps:
@@ -15,11 +15,11 @@ jobs:
           name: Install dependencies
           command: cd ./server && npm install
       - run:
-          name: Build and Test README.md
-          command: cd ./server && "node_modules/.bin/istanbul-badges-readme && myGlitchIsGood"
+          name: Build and Test
+          command: cd ./server && npm run circleCItest
       - run:
-          name: Put a README.md copy in Artifacts
-          command: cat ./server/README.md > /tmp/README.md;
+          name: Put a test report copy in Artifacts
+          command: cp -r ./server/coverage > /tmp/coverage;
       - store_artifacts:
-          path: /tmp/README.md
-          destination: README.md
+          path: /tmp/coverage
+          destination: coverage
