@@ -15,6 +15,8 @@ if (!config.get('jwtPrivateKey')) {
   process.exit(1);
 }
 
+const port = process.env.PORT || 5000;
+
 const app = express();
 mongoose.connect(config.DBHost, { useNewUrlParser: true })
   .then(() => {
@@ -25,7 +27,7 @@ mongoose.connect(config.DBHost, { useNewUrlParser: true })
 
     app.use("/swagger",express.static('swaggerDist')); // app will also (using path: ./swagger) serve static files in the mentioned folder (parameter)
     
-    app.listen(5000, () => {
+    app.listen(port, () => {
       console.log("Server has started!");
     });
     

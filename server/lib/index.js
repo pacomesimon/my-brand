@@ -29,6 +29,7 @@ if (!_config.default.get('jwtPrivateKey')) {
   process.exit(1);
 }
 
+const port = process.env.PORT || 5000;
 const app = (0, _express.default)();
 
 _mongoose.default.connect(_config.default.DBHost, {
@@ -38,7 +39,7 @@ _mongoose.default.connect(_config.default.DBHost, {
   app.use("/api", _routes.default);
   app.use("/swagger", _express.default.static('swaggerDist')); // app will also (using path: ./swagger) serve static files in the mentioned folder (parameter)
 
-  app.listen(5000, () => {
+  app.listen(port, () => {
     console.log("Server has started!");
   });
 });
