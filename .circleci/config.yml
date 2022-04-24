@@ -16,7 +16,7 @@ jobs:
           command: cd ./server && npm install
       - run:
           name: Build and Test
-          command: cd ./server && npm run circleCItest
+          command: cd ./server && export pacome_jwtPrivateKey=SECURE_KEY && npm run circleCItest
       - run:
           name: Put a test report copy in Artifacts
           command: cp -r ./server/coverage > /tmp/coverage;
