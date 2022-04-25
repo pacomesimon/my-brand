@@ -18,7 +18,7 @@ if (!config.get('jwtPrivateKey')) {
 const port = process.env.PORT || 5000;
 
 const app = express();
-mongoose.connect(config.DBHost, { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI || config.DBHost, { useNewUrlParser: true })
   .then(() => {
     
     app.use(express.json());

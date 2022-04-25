@@ -32,7 +32,7 @@ if (!_config.default.get('jwtPrivateKey')) {
 const port = process.env.PORT || 5000;
 const app = (0, _express.default)();
 
-_mongoose.default.connect(_config.default.DBHost, {
+_mongoose.default.connect(process.env.MONGODB_URI || _config.default.DBHost, {
   useNewUrlParser: true
 }).then(() => {
   app.use(_express.default.json());
