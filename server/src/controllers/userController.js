@@ -17,11 +17,9 @@ userController.post = async (req, res) => {
   }
 
   const token = user.generateAuthToken();
-  res.header('x-auth-token',token).send({
-    _id: user._id,
-    name: user.name,
-    email: user.email, 
-    membership: user.membership
+  res.header('user-id',user._id);
+  res.send({
+    "x-auth-token": token
   });
 };
 

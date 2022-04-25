@@ -243,13 +243,7 @@
           "200": {
             "description": "OK: successfully signed in.",
             "schema": {
-              "$ref": "#/definitions/UserRes"
-            },
-            "headers": {
-              "x-auth-token": {
-                "type": "string",
-                "description": "authentication token."
-              }
+              "$ref": "#/definitions/SignInRes"
             }
           },
           "400": {
@@ -1154,6 +1148,17 @@
       },
       "xml": {
         "name": "UserRes"
+      }
+    },
+    "SignInRes": {
+      "type": "object",
+      "properties": {
+        "x-auth-token": {
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "SignInRes"
       }
     },
     "UsersRes": {

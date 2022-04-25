@@ -80,12 +80,8 @@ let myFunction = ()=>{
             .end((err, res) => {
                     // console.log("response status: ",res.status,"response body: ",res.body);
                     res.should.have.status(200);
-                    res.header["x-auth-token"].should.be.a('string');
                     res.body.should.be.a('object');
-                    res.body._id.should.be.a('string');
-                    res.body.name.should.be.a('string');
-                    res.body.email.should.be.a('string');
-                    res.body.membership.should.be.a('string');
+                    res.body["x-auth-token"].should.be.a('string');
                 done();
             });
         });
