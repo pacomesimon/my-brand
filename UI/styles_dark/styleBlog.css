@@ -132,7 +132,7 @@ body{
   }
   #projects-grid{
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 33.33% 33.33% 33.33%;
     gap: 1.6ex;
   }
   .project-card{
@@ -293,7 +293,7 @@ body{
 
   @media (max-width: 992px){
     #projects-grid{
-      grid-template-columns: auto auto;
+      grid-template-columns: 50% 50%;
     }
     #footer-social {
       font-size: medium;
@@ -442,7 +442,7 @@ body{
 
     #projects-grid{
       display: grid;
-      grid-template-columns: auto auto;
+      grid-template-columns: 50% 50%;
       gap: 2ex;
     }
 
@@ -530,7 +530,7 @@ body{
       font-size: 36px;
     }
     #projects-grid{
-      grid-template-columns: auto;
+      grid-template-columns: 100%;
     }
     .portfolio-title-raw{
       font-size: large;
