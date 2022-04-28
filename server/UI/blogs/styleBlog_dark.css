@@ -159,7 +159,7 @@ body{
   }
   .reactions{
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 45% 55%;
     gap: 1ex;
     color: #a0a0a0;
   }

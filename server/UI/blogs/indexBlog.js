@@ -60,13 +60,6 @@ function myFunc(x) {
   x.addListener(myFunc)
 
 
-  // document.getElementById("load-button").onclick = function() {blogLoaderFunction()};
-
-  // function blogLoaderFunction(){
-  //   document.getElementById("projects-grid").innerHTML += document.getElementById("projects-grid").innerHTML;
-  //   document.getElementById("load-button").style["display"] = "none";
-  //   document.getElementById("end-button").style["display"] = "block";
-  // }
 
       ////////////////////////////////////////////////////////////
   ////////////////////////////////////////////////////////////
@@ -130,5 +123,51 @@ function setSuccessFor(input) {
 	
 function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+}
+
+///////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+let requestOptions = {
+    method: 'GET',
+    redirect: 'follow'
+};
+
+const articleURL = "/api/articles/" + window.localStorage.getItem("articleID");
+fetch(articleURL, requestOptions)
+.then(response => response.json())
+.then((result) => {
+    console.log(result);
+    parseArticle(result);
+})
+.catch(error => console.log('error', error));
+
+const parseArticle = async (articleDetails) => {
+    document.getElementById("project-img").src = articleDetails.article.previewImageURL;
+    document.getElementById("article-title").innerHTML = articleDetails.article.title;
+    document.getElementById("author").innerHTML += articleDetails.article.authorID;
+    document.getElementById("date").innerHTML += articleDetails.article.date;
+    document.getElementById("blog-body").innerHTML = articleDetails.article.articleBody;
+    document.getElementById("likes").innerHTML += (articleDetails.likes.length +" liked");
+    document.getElementById("comments").innerHTML += (articleDetails.comments.length +" commented");
+    renderComments(articleDetails.comments);
+}
+const renderComments = (commentsArray) =>{
+    if(commentsArray.length==0){
+        document.getElementById("comments-section").innerHTML = `<span id="comments-title">Comment(s):</span>
+        <div class="comment-template">
+            <div class="comment-payload" style="text-align: center;padding-left: 0px">
+                -- No comments yet ... Be the first! -- 
+            </div>
+        </div>`;
+    }
+    else{
+        document.getElementById("comments-section").innerHTML = `<span id="comments-title">Comment(s):</span>`;
+        const commentsCardParser = (commentItem)=>{
+            console.log(commentItem);
+            // to do ...
+        }
+        commentsArray.forEach(commentsCardParser);
+    }
 }
 

@@ -69,12 +69,12 @@ function myFunc(x) {
   }
 
   /////////////////////////////////////////////////////////////////////////////////////
-  let requestOptions = {
-    method: 'GET',
-    redirect: 'follow'
-  };
+    let requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+    };
   
-  fetch("/api/articles", requestOptions)
+    fetch("/api/articles", requestOptions)
     .then(response => response.json())
     .then((result) => {
         console.log(result);
@@ -83,10 +83,10 @@ function myFunc(x) {
     })
     .catch(error => console.log('error', error));
 
-  const parseArticles = (articlesArray)=> {
+    const parseArticles = (articlesArray)=> {
         const blogCardParser = (arrayElement) =>{
             const projectCard = `
-            <a href="blogs/blogTemplate.html">
+            <a href="blogs/blogTemplate.html" onclick="saveArticleID('${arrayElement._id}')">
                 <div class="project-card">
                     <img src="${arrayElement.previewImageURL}" class="project-img">
                     <div class="project-card-details">
@@ -100,6 +100,10 @@ function myFunc(x) {
             document.getElementById("projects-grid").innerHTML += projectCard;
         }
         articlesArray.forEach(blogCardParser);
+    }
+
+    const saveArticleID = (articleID) =>{
+        window.localStorage.setItem("articleID", articleID);
     }
 
 
