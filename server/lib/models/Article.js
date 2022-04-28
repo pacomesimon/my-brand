@@ -12,7 +12,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 const schema = _mongoose.default.Schema({
   title: String,
   previewImageURL: String,
-  articleBody: String
+  articleBody: String,
+  authorID: String,
+  date: String,
+  subject: String,
+  readingTime: String
 });
 
 var _default = _mongoose.default.model("Article", schema);

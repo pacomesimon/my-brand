@@ -3,8 +3,7 @@ import mongoose from "mongoose";
 
 const schema = mongoose.Schema({
   articleID: String,
-  email: String,
-  likeBool: Boolean
+  userID: String,
 
 });
 

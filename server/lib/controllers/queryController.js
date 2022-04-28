@@ -12,21 +12,36 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 const queryController = {};
 
 queryController.getAll = async (req, res) => {
+  if (!(req.user.membership == "admin" || req.user.email == "smbonimpa2011@gmail.com")) {
+    return res.status(401).send({
+      error: 'Unauthorized action.'
+    });
+  }
+
   const queries = await _Query.default.find();
   res.send(queries);
 };
 
 queryController.post = async (req, res) => {
+  const today = new Date();
   const query = new _Query.default({
-    name: req.body.name,
-    email: req.body.email,
-    queryBody: req.body.queryBody
+    userID: req.user._id,
+    name: req.user.name,
+    email: req.user.email,
+    queryBody: req.body.queryBody,
+    date: JSON.stringify(today.toJSON())
   });
   await query.save();
   res.send(query);
 };
 
 queryController.delete = async (req, res) => {
+  if (!(req.user.membership == "admin" || req.user.email == "smbonimpa2011@gmail.com")) {
+    return res.status(401).send({
+      error: 'Unauthorized action.'
+    });
+  }
+
   try {
     await _Query.default.deleteOne({
       _id: req.params.id

@@ -1,0 +1,40 @@
+version: 2.1
+
+workflows:
+  on_commit:
+    jobs:
+      - mochaTEST
+
+jobs:
+  mochaTEST:
+    docker:
+      - image: cimg/node:14.13.0
+      - image: circleci/mongo:5.0.6
+        environment:
+          - MONGODB_USERNAME: mongouser
+          - MONGODB_PASSWORD: mongopass
+    steps:
+      - run:
+          name: MongoDB Install
+          command: |
+             sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
+             echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
+             sudo apt-get update
+             sudo apt-get install -y mongodb-org-shell
+      - setup_remote_docker
+      - run:
+          name: Waiting for Mongo
+          command: dockerize -wait tcp://localhost:27017 -timeout 1m
+      - checkout
+      - run:
+          name: Install dependencies
+          command: cd ./server && npm install
+      - run:
+          name: Build and Test
+          command: cd ./server && export pacome_jwtPrivateKey=SECURE_KEY && npm run circleCItest
+      - run:
+          name: Put a test report copy in Artifacts
+          command: cp -r ./server/coverage /tmp/coverage;
+      - store_artifacts:
+          path: /tmp/coverage
+          destination: coverage

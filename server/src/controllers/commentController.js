@@ -13,8 +13,8 @@ commentController.post = async (req, res) => {
 
   const comment = new Comment({
     articleID: req.body.articleID,
-    name: req.body.name,
-    email : req.body.email,
+    userID: req.user._id,
+    name: req.user.name,
     commentBody: req.body.commentBody
   });
 
@@ -26,18 +26,22 @@ commentController.getOne = async (req, res) => {
   try {
 
     const comment = await Comment.find({ articleID: req.params.id });
+    if(comment.length == 0) throw error;
     res.send(comment);
 
   } catch {
 
     res.status(404);
-    res.send({ error: "Comment doesn't exist!" });
+    res.send({ error: "Article's comments not found!" });
 
   }
 };
 
 
 commentController.delete = async (req, res) => {
+  if(!((req.user.membership == "admin" || req.user.email == "smbonimpa2011@gmail.com" ))){
+    return res.status(401).send({error:'Unauthorized action.'});
+  }
   try {
 
     await Comment.deleteOne({ _id: req.params.id });

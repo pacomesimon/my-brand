@@ -1,0 +1,4 @@
+{
+    "jwtPrivateKey": "",
+    "DBHost": "mongodb://localhost:27017/acmedb"  
+}
