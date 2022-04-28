@@ -137,7 +137,7 @@ const articleURL = "/api/articles/" + window.localStorage.getItem("articleID");
 fetch(articleURL, requestOptions)
 .then(response => response.json())
 .then((result) => {
-    console.log(result);
+    // console.log(result);
     parseArticle(result);
 })
 .catch(error => console.log('error', error));
@@ -164,8 +164,18 @@ const renderComments = (commentsArray) =>{
     else{
         document.getElementById("comments-section").innerHTML = `<span id="comments-title">Comment(s):</span>`;
         const commentsCardParser = (commentItem)=>{
-            console.log(commentItem);
-            // to do ...
+            // console.log(commentItem);
+            const commentCard = `
+            <div class="comment-template">
+                <div class="commenter-name">
+                    ${commentItem.name}:
+                </div>
+                <div class="comment-payload">
+                    ${commentItem.commentBody}
+                </div>
+            </div>
+            `
+            document.getElementById("comments-section").innerHTML += commentCard;
         }
         commentsArray.forEach(commentsCardParser);
     }
