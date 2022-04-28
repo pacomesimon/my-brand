@@ -1,0 +1,295 @@
+a {
+  color: inherit; 
+  text-decoration: inherit;
+}
+body{
+  margin: 0;
+  font-family: "Lucida Console";
+  background-image: url("../images/background-image.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+/* html, body {height: 100%;} */
+  .navbar {
+    display: block;
+    z-index : 10;
+    position: fixed;
+    align-items: center;
+    padding: 0.5ex;
+    
+    width: 100%;
+    height: 6ex;
+    left: 0px;
+    top: 0px;
+    
+    background: rgba(255, 255, 255, 0.95);
+    display: grid;
+    grid-template-columns: auto auto auto auto auto 70%;
+    gap: 2ex;
+    color: #414141;
+    font-size: 16px;
+    padding-left: 1ex;
+  }
+  #navbar2{
+    display:none;
+  }
+  #navbar-expanded{
+    display:none; 
+  }
+  .fa-right-from-bracket{
+    margin-left: 3ex;
+  }
+      
+  #currentpage{
+    color: black;
+    font-size:20px;
+  }
+  #logo {
+    text-align: center;
+    width: 3ex;
+    height: 3ex;
+    border-radius: 50%;
+    background: rgba(0, 0, 255, 0.49);
+    color: white;
+    font-size:x-large;
+    padding: 0ex;
+  }
+  #logout-button{
+    text-align: right;
+    margin-right: 8ex;
+  }
+  #capitalp{
+    margin-top: 0.5ex;
+    margin-bottom: 0.5ex;
+  }
+  #night-day {
+    position: fixed;
+    right: 1ex;
+    bottom: 3.5ex;
+    text-align: center;
+    font-size: 4ex;
+    color: rgba(156, 156, 156, 0.58);
+    z-index: 10;
+  }
+  #uparrow {
+    position: fixed;
+    right: 1ex;
+    bottom: 1ex;
+    text-align: center;
+    font-size: 4ex;
+    color: rgba(156, 156, 156, 0.58);
+    z-index: 10;
+  }
+  #page-container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto 12.75ex;
+    position: relative;
+    min-height: 100vh;
+  }
+  /* #wrapper{
+    display: flex;
+    align-items: center;
+  } */
+  .about-body{
+    background: rgba(255, 255, 255, 0.65);
+    padding: 30px 20% 30px 20%;
+    margin-top: 8ex;
+    height:fit-content;
+    color: black;
+  }
+  .about-title{
+    
+    color: rgba(0, 0, 255, 0.49);
+    font-weight: bold;
+    font-size: 36px;
+    margin-bottom: 1ex;
+  }
+
+  #profilepic {
+    /* -webkit-transform: scaleX(-1);
+    transform: scaleX(-1); */
+    border-radius: 50%;
+    padding: 0 0 2ex 2ex;
+    width: 30ex;
+    height: 30ex;
+    float: right;
+    opacity: 0.65;
+    z-index : -2;
+    /* border: 2ex solid rgba(0,0,0,0); */
+  }
+
+  #about-paragraph{
+    line-height: 1.8;
+    text-align: justify;
+  }
+
+  button{
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 255, 0.49);
+    font-weight: bold;
+    font-size: 16px;
+    text-align: left;
+    padding-left: 0px;
+  }
+  .footer button{
+    color: inherit;
+    font-weight: normal;
+  }
+  .footer a:hover{
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: normal;
+  }
+
+  footer{
+    margin-top: 2ex;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items:flex-start;
+    padding: 0.5ex 0 1.5ex 0;
+    
+  }
+  .footer{
+    align-items: center;
+    /* padding: 1.5ex; */
+    margin-top: 0.3ex;
+    width: 100%;
+    padding: 0 9% 0 9%;
+    height: 10ex;
+    
+ 
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 1ex;
+    color: white;
+  }
+  #footer-contact {
+    text-align: center;
+    display: grid;
+    grid-template-columns: auto;
+    padding: 1%;
+    background: rgba(196, 196, 196, 0);
+  }
+  #footer-blog {
+    text-align: center;
+    display: grid;
+    grid-template-columns: auto; 
+    padding: 1%;
+    background: rgba(196, 196, 196, 0);
+  }
+  #footer-social {
+    text-align: center;
+    font-size: x-large;
+    /* padding: 10% 10% 10% 10%; */
+    background: rgba(196, 196, 196, 0);
+  }
+  #footer-copyright{
+    text-align: center;
+    /* background: rgba(196, 196, 196, 0.05); */
+  }
+
+  @media (max-width: 890px) { 
+    .footer{
+      grid-template-columns: auto 50%;
+      gap: 1ex;
+      height: auto;
+      padding-top: 1ex;
+      padding-bottom: 1ex;
+      width:100%;
+      padding: 0;
+    }
+
+    #night-day {
+      position: fixed;
+      right: 0.5ex;
+      bottom: 4ex;
+      text-align: center;
+      font-size: 3ex;
+      color: rgba(156, 156, 156, 0.58);
+      z-index: 10;
+    }
+    #uparrow {
+      position: fixed;
+      right: 0.5ex;
+      bottom: 1.5ex;
+      text-align: center;
+      font-size: 3ex;
+      color: rgba(156, 156, 156, 0.58);
+      z-index: 10;
+    }
+
+    .fa-bars{
+      color: rgba(0, 0, 255, 0.49);
+      font-size: 24px;
+      margin: 0.5ex;
+    }
+    .navbar{
+      display: none;
+    }
+    #navbar2{
+      display: block;
+    z-index : 10;
+    position: fixed;
+    align-items: center;
+    padding: 0.5ex;
+    
+    width: 100%;
+    height: 6ex;
+    left: 0px;
+    top: 0px;
+    
+    background: rgba(255, 255, 255, 0.95);
+    display: grid;
+    grid-template-columns: 3ex 15ex auto 6ex;
+    gap: 2ex;
+    color: #414141;
+    font-size: 16px;
+    }
+    #navbar-expanded{
+      border-top: 1px solid white;
+      position: fixed;
+      width: 60%;
+      border-bottom-left-radius: 5%;
+      top: 7ex;
+      right: 0px;
+      padding: 1.5ex;
+      background: rgba(128, 128, 255, 0.95);
+      display: grid;
+      grid-template-columns: auto;
+      gap: 1.5ex;
+      color: white;
+      font-size: 16px;
+      z-index: 10;
+      display:none;
+    }
+    #brandname{
+      color: black;
+      font-size: 20px;
+    }
+    #currentpage{
+      color: white;
+      font-weight: bold;
+    }
+    .about-body{
+      padding: 10px 5% 10px 5%;
+      margin-top: 8ex;
+    }
+
+    #profilepic {
+      width: 15ex;
+      height: 15ex;
+    }
+    #footer-social {
+      font-size: medium;
+    }
+  }
+
+  @media (max-width: 320px) { 
+    footer{
+      font-size: x-small;
+    }
+    #footer-social {
+      font-size: medium;
+    }
+}

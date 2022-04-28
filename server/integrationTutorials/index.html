@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Integration tutorials</title>
+        <script>
+            var requestOptions = {
+            method: 'GET',
+            redirect: 'follow'
+            };
+
+            fetch("/api/articles", requestOptions)
+            .then(response => response.json())
+            .then((result) =>{
+                    console.log(result); document.getElementById("output").innerHTML = JSON.stringify(result);
+                })
+            .catch(error => console.log('error', error));
+        </script>
+    </head>
+    <body>
+        <pre id="output"></pre>
+    </body>
+</html>

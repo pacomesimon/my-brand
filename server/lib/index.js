@@ -39,6 +39,8 @@ _mongoose.default.connect(process.env.MONGODB_URI || _config.default.DBHost, {
   app.use("/api", _routes.default);
   app.use("/swagger", _express.default.static('swaggerDist')); // app will also (using path: ./swagger) serve static files in the mentioned folder (parameter)
 
+  app.use("/tutorials", _express.default.static('integrationTutorials'));
+  app.use("/", _express.default.static('UI'));
   app.listen(port, () => {
     console.log("Server has started!");
   });
