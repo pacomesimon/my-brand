@@ -70,6 +70,13 @@ const name = document.getElementById('name');
 const email = document.getElementById('email');
 const message = document.getElementById('message');
 
+if(window.localStorage.getItem("user-id")) {
+    const userDetails = window.localStorage.getItem("user-id");
+    const userDetailsObj = JSON.parse(userDetails);
+    name.value = userDetailsObj.name;
+    email.value = userDetailsObj.email;
+}
+
 form.addEventListener('submit', e => {
 	e.preventDefault();
 	
@@ -80,6 +87,7 @@ function checkInputs() {
 	const emailValue = email.value.trim();
     const nameValue = name.value.trim();
 	const messageValue = message.value.trim();
+
 	
 	if(emailValue === '') {
 		setErrorFor(email, 'Email cannot be blank');
@@ -145,8 +153,11 @@ fetch(articleURL, requestOptions)
 const parseArticle = async (articleDetails) => {
     document.getElementById("project-img").src = articleDetails.article.previewImageURL;
     document.getElementById("article-title").innerHTML = articleDetails.article.title;
-    document.getElementById("author").innerHTML += articleDetails.article.authorID;
-    document.getElementById("date").innerHTML += articleDetails.article.date;
+    document.getElementById("author").innerHTML += await fetch("/api/users/" + articleDetails.article.authorID, requestOptions)
+        .then(response => response.json())
+        .then(result => result.name)
+        .catch(error => console.log('error', error));
+    document.getElementById("date").innerHTML += JSON.parse(articleDetails.article.date);
     document.getElementById("blog-body").innerHTML = articleDetails.article.articleBody;
     document.getElementById("likes").innerHTML += (articleDetails.likes.length +" liked");
     document.getElementById("comments").innerHTML += (articleDetails.comments.length +" commented");

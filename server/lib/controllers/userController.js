@@ -33,9 +33,11 @@ userController.post = async (req, res) => {
   }
 
   const token = user.generateAuthToken();
-  res.header('user-id', user._id);
+  res.header('user-id', user._id); // res.header('Access-Control-Expose-Headers','user-id');
+
   res.send({
-    "x-auth-token": token
+    "x-auth-token": token,
+    "user-id": user._id
   });
 };
 
