@@ -64,7 +64,8 @@ function myFunc(x) {
       ////////////////////////////////////////////////////////////
   ////////////////////////////////////////////////////////////
 
-
+  const storedArticleID = window.localStorage.getItem("articleID");
+  document.getElementById('message').value = " ";
 const form = document.getElementById('contact-form');
 const name = document.getElementById('name');
 const email = document.getElementById('email');
@@ -83,6 +84,7 @@ form.addEventListener('submit', e => {
 	checkInputs();
 });
 
+let success = true;
 function checkInputs() {
 	const emailValue = email.value.trim();
     const nameValue = name.value.trim();
@@ -107,7 +109,32 @@ function checkInputs() {
 	} else {
 		setSuccessFor(name);
 	}
-	
+	if(success){
+        let myHeaders = new Headers();
+        myHeaders.append("x-auth-token", window.localStorage.getItem("x-auth-token"));
+        myHeaders.append("Content-Type", "application/json");
+
+        let raw = JSON.stringify({
+            "articleID": storedArticleID,
+            "commentBody": messageValue
+        });
+
+        let requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+
+        fetch("/api/comments/", requestOptions)
+        .then(response => response.json())
+        .then((result) => {
+            console.log(result);
+            document.getElementById('message').value = "";
+            fetchArticle();
+        })
+        .catch(error => console.log('error', error));
+    }
 }
 
 function setErrorFor(input, message) {
@@ -117,6 +144,7 @@ function setErrorFor(input, message) {
 	small.innerText = message;
     const label = formControl.querySelector('.label-raw');
     label.style.color = "#e74c3c";
+    success = false;
 }
 
 function setSuccessFor(input) {
@@ -127,6 +155,7 @@ function setSuccessFor(input) {
     if(nightDayToggler){
         label.style.color = "rgba(46,204,113,0.5)";
     }
+    success = success && true;
 }
 	
 function isEmail(email) {
@@ -136,33 +165,39 @@ function isEmail(email) {
 ///////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-let requestOptions = {
-    method: 'GET',
-    redirect: 'follow'
-};
-
-const articleURL = "/api/articles/" + window.localStorage.getItem("articleID");
-fetch(articleURL, requestOptions)
-.then(response => response.json())
-.then((result) => {
-    // console.log(result);
-    parseArticle(result);
-})
-.catch(error => console.log('error', error));
-
-const parseArticle = async (articleDetails) => {
-    document.getElementById("project-img").src = articleDetails.article.previewImageURL;
-    document.getElementById("article-title").innerHTML = articleDetails.article.title;
-    document.getElementById("author").innerHTML += await fetch("/api/users/" + articleDetails.article.authorID, requestOptions)
-        .then(response => response.json())
-        .then(result => result.name)
-        .catch(error => console.log('error', error));
-    document.getElementById("date").innerHTML += JSON.parse(articleDetails.article.date);
-    document.getElementById("blog-body").innerHTML = articleDetails.article.articleBody;
-    document.getElementById("likes").innerHTML += (articleDetails.likes.length +" liked");
-    document.getElementById("comments").innerHTML += (articleDetails.comments.length +" commented");
-    renderComments(articleDetails.comments);
+const fetchArticle = () => {
+    let requestOpts = {
+        method: 'GET',
+        redirect: 'follow'
+    };
+    
+    const articleURL = "/api/articles/" + storedArticleID;
+    fetch(articleURL, requestOpts)
+    .then(response => response.json())
+    .then((result) => {
+        // console.log(result);
+        parseArticle(result);
+    })
+    .catch(error => console.log('error', error));
+    
+    const parseArticle = async (articleDetails) => {
+        document.getElementById("project-img").src = articleDetails.article.previewImageURL;
+        document.getElementById("article-title").innerHTML = articleDetails.article.title;
+        document.getElementById("author").innerHTML = " " + await fetch("/api/users/" + articleDetails.article.authorID, requestOpts)
+            .then(response => response.json())
+            .then(result => result.name)
+            .catch(error => console.log('error', error));
+        document.getElementById("date").innerHTML  = " " + JSON.parse(articleDetails.article.date);
+        document.getElementById("blog-body").innerHTML = articleDetails.article.articleBody;
+        // document.getElementById("likes").innerHTML = "";
+        document.getElementById("likes").innerHTML  =  `<i class="fa-solid fa-heart"></i> ${(articleDetails.likes.length +" liked")}`;
+        // document.getElementById("comments").innerHTML = "";
+        document.getElementById("comments").innerHTML  = " " + (articleDetails.comments.length +" commented");
+        renderComments(articleDetails.comments);
+    }
 }
+fetchArticle();
+
 const renderComments = (commentsArray) =>{
     if(commentsArray.length==0){
         document.getElementById("comments-section").innerHTML = `<span id="comments-title">Comment(s):</span>
@@ -192,3 +227,28 @@ const renderComments = (commentsArray) =>{
     }
 }
 
+document.getElementById("likes").onclick = function() {likeReaction()};
+
+function likeReaction(){
+    console.log("clicked!");
+    var myHeaders = new Headers();
+    myHeaders.append("x-auth-token", window.localStorage.getItem("x-auth-token"));
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+    "articleID": storedArticleID
+    });
+
+    var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+    };
+
+    fetch("/api/likes/", requestOptions)
+    .then((result) => {
+        fetchArticle();
+    })
+    .catch(error => console.log('error', error));
+}
