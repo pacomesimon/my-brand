@@ -12,11 +12,11 @@ import auth from './authentication/auth';
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-router.post("/signin", middleware(schemas.userSignin) , userController.post);
-router.post("/signup", middleware(schemas.user) , userController.postSignup);
-router.patch("/promote/:id", auth , userController.promote);
-router.patch("/changecreds/:id", auth , userController.patch);
-router.delete("/deleteuser/:id", auth , userController.delete);
+router.post("/users/signin", middleware(schemas.userSignin) , userController.post);
+router.post("/users/signup", middleware(schemas.user) , userController.postSignup);
+router.patch("/users/promote/:id", auth , userController.promote);
+router.patch("/users/changecreds/:id", auth , userController.patch);
+router.delete("/users/deleteuser/:id", auth , userController.delete);
 router.get("/users/:id", userController.getOne);
 router.get("/users/", auth , userController.getAll);
 

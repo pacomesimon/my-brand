@@ -12,7 +12,7 @@ let myFunction = ()=>{
                 "password": "abcdefg"
             }
             chai.request(server)
-            .post('/api/signin/')
+            .post('/api/users/signin/')
             .send(signinDetails)
             .end((err, res) => {
                     // console.log("response status: ",res.status,"response body: ",res.body);
@@ -27,7 +27,7 @@ let myFunction = ()=>{
                 "email": "smbonimpa2011@gmail.com"
             }
             chai.request(server)
-            .post('/api/signin/')
+            .post('/api/users/signin/')
             .send(signinDetails)
             .end((err, res) => {
                     // console.log("response status: ",res.status,"response body: ",res.body);
@@ -43,7 +43,7 @@ let myFunction = ()=>{
                 "password": "abcdefg"
             }
             chai.request(server)
-            .post('/api/signin/')
+            .post('/api/users/signin/')
             .send(signinDetails)
             .end((err, res) => {
                     // console.log("response status: ",res.status,"response body: ",res.body);
@@ -59,7 +59,7 @@ let myFunction = ()=>{
                 "password": "zzzzzzzzzabcdefg"
             }
             chai.request(server)
-            .post('/api/signin/')
+            .post('/api/users/signin/')
             .send(signinDetails)
             .end((err, res) => {
                     // console.log("response status: ",res.status,"response body: ",res.body);
@@ -75,7 +75,7 @@ let myFunction = ()=>{
                 "password": "abcdefg"
             }
             chai.request(server)
-            .post('/api/signin/')
+            .post('/api/users/signin/')
             .send(signinDetails)
             .end((err, res) => {
                     // console.log("response status: ",res.status,"response body: ",res.body);

@@ -28,7 +28,7 @@ let myFunction = () => {
         "password": "abcdefg"
       };
 
-      _chai.default.request(_index.default).post('/api/signup').send(signupDetails).end((err, res) => {
+      _chai.default.request(_index.default).post('/api/users/signup').send(signupDetails).end((err, res) => {
         res.should.have.status(422);
         res.body.should.be.a('object');
         res.body.should.have.property('error').eql("\"name\" is required");
@@ -41,7 +41,7 @@ let myFunction = () => {
         "password": "abcdefg"
       };
 
-      _chai.default.request(_index.default).post('/api/signup').send(signupDetails).end((err, res) => {
+      _chai.default.request(_index.default).post('/api/users/signup').send(signupDetails).end((err, res) => {
         res.should.have.status(422);
         res.body.should.be.a('object');
         res.body.should.have.property('error').eql("\"email\" is required");
@@ -54,7 +54,7 @@ let myFunction = () => {
         "email": "boy@doe.com"
       };
 
-      _chai.default.request(_index.default).post('/api/signup').send(signupDetails).end((err, res) => {
+      _chai.default.request(_index.default).post('/api/users/signup').send(signupDetails).end((err, res) => {
         res.should.have.status(422);
         res.body.should.be.a('object');
         res.body.should.have.property('error').eql("\"password\" is required");
@@ -68,18 +68,16 @@ let myFunction = () => {
         "password": "abcdefg"
       };
 
-      _chai.default.request(_index.default).post('/api/signup').send(signupDetails).end((err, res) => {
-        authTokens.boy = res.header["x-auth-token"];
-        res.header["x-auth-token"].should.be.a('string');
+      _chai.default.request(_index.default).post('/api/users/signup').send(signupDetails).end((err, res) => {
+        // authTokens.boy = res.header["x-auth-token"];
+        authTokens.boy = res.body["x-auth-token"];
+        res.header["user-id"].should.be.a('string');
         res.should.have.status(200);
-        res.body.should.be.a('object');
+        res.body.should.be.a('object'); // usersDetails.boy = res.body;
 
-        res.body._id.should.be.a('string');
-
-        res.body.should.have.property('name').eql(signupDetails.name);
-        res.body.should.have.property('email').eql(signupDetails.email);
-        res.body.should.have.property('membership').eql('member');
-        usersDetails.boy = res.body;
+        usersDetails.boy = {
+          _id: res.header["user-id"]
+        };
         done();
       });
     });
@@ -90,7 +88,7 @@ let myFunction = () => {
         "password": "man1s@b31nG"
       };
 
-      _chai.default.request(_index.default).post('/api/signup').send(signupDetails).end((err, res) => {
+      _chai.default.request(_index.default).post('/api/users/signup').send(signupDetails).end((err, res) => {
         res.should.have.status(400);
         res.body.should.be.a('object');
         res.body.should.have.property('error').eql("Email is already registered by another user.");
@@ -104,18 +102,14 @@ let myFunction = () => {
         "password": "abcdefg"
       };
 
-      _chai.default.request(_index.default).post('/api/signup').send(signupDetails).end((err, res) => {
-        authTokens.pacome = res.header["x-auth-token"];
-        res.header["x-auth-token"].should.be.a('string');
+      _chai.default.request(_index.default).post('/api/users/signup').send(signupDetails).end((err, res) => {
+        authTokens.pacome = res.body["x-auth-token"];
+        res.header["user-id"].should.be.a('string');
         res.should.have.status(200);
         res.body.should.be.a('object');
-
-        res.body._id.should.be.a('string');
-
-        res.body.should.have.property('name').eql(signupDetails.name);
-        res.body.should.have.property('email').eql(signupDetails.email);
-        res.body.should.have.property('membership').eql('member');
-        usersDetails.pacome = res.body;
+        usersDetails.pacome = {
+          _id: res.header["user-id"]
+        };
         done();
       });
     });
@@ -126,21 +120,17 @@ let myFunction = () => {
         "password": "abcdefg"
       };
 
-      _chai.default.request(_index.default).post('/api/signup').send(signupDetails).end((err, res) => {
-        authTokens.jane = res.header["x-auth-token"];
+      _chai.default.request(_index.default).post('/api/users/signup').send(signupDetails).end((err, res) => {
+        authTokens.jane = res.body["x-auth-token"];
         process.authTokens = { ...authTokens
         }; // console.log("After Jane, all auth tokens: ", process.authTokens);
 
-        res.header["x-auth-token"].should.be.a('string');
+        res.header["user-id"].should.be.a('string');
         res.should.have.status(200);
         res.body.should.be.a('object');
-
-        res.body._id.should.be.a('string');
-
-        res.body.should.have.property('name').eql(signupDetails.name);
-        res.body.should.have.property('email').eql(signupDetails.email);
-        res.body.should.have.property('membership').eql('member');
-        usersDetails.jane = res.body;
+        usersDetails.jane = {
+          _id: res.header["user-id"]
+        };
         process.usersDetails = { ...usersDetails
         }; // console.log("After Jane, all users: ", process.usersDetails);
 

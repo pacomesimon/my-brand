@@ -24,7 +24,7 @@ let myFunction = () => {
         "password": "abcdefg"
       };
 
-      _chai.default.request(_index.default).post('/api/signin/').send(signinDetails).end((err, res) => {
+      _chai.default.request(_index.default).post('/api/users/signin/').send(signinDetails).end((err, res) => {
         // console.log("response status: ",res.status,"response body: ",res.body);
         res.should.have.status(422);
         res.body.should.be.a('object');
@@ -37,7 +37,7 @@ let myFunction = () => {
         "email": "smbonimpa2011@gmail.com"
       };
 
-      _chai.default.request(_index.default).post('/api/signin/').send(signinDetails).end((err, res) => {
+      _chai.default.request(_index.default).post('/api/users/signin/').send(signinDetails).end((err, res) => {
         // console.log("response status: ",res.status,"response body: ",res.body);
         res.should.have.status(422);
         res.body.should.be.a('object');
@@ -51,7 +51,7 @@ let myFunction = () => {
         "password": "abcdefg"
       };
 
-      _chai.default.request(_index.default).post('/api/signin/').send(signinDetails).end((err, res) => {
+      _chai.default.request(_index.default).post('/api/users/signin/').send(signinDetails).end((err, res) => {
         // console.log("response status: ",res.status,"response body: ",res.body);
         res.should.have.status(400);
         res.body.should.be.a('object');
@@ -65,7 +65,7 @@ let myFunction = () => {
         "password": "zzzzzzzzzabcdefg"
       };
 
-      _chai.default.request(_index.default).post('/api/signin/').send(signinDetails).end((err, res) => {
+      _chai.default.request(_index.default).post('/api/users/signin/').send(signinDetails).end((err, res) => {
         // console.log("response status: ",res.status,"response body: ",res.body);
         res.should.have.status(400);
         res.body.should.be.a('object');
@@ -79,7 +79,7 @@ let myFunction = () => {
         "password": "abcdefg"
       };
 
-      _chai.default.request(_index.default).post('/api/signin/').send(signinDetails).end((err, res) => {
+      _chai.default.request(_index.default).post('/api/users/signin/').send(signinDetails).end((err, res) => {
         // console.log("response status: ",res.status,"response body: ",res.body);
         res.should.have.status(200);
         res.body.should.be.a('object');

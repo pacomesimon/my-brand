@@ -25,7 +25,7 @@ let myFunction = () => {
         "password": "abcdefg"
       };
 
-      _chai.default.request(_index.default).patch('/api/changecreds/' + process.usersDetails.boy._id).send(signupDetails).end((err, res) => {
+      _chai.default.request(_index.default).patch('/api/users/changecreds/' + process.usersDetails.boy._id).send(signupDetails).end((err, res) => {
         // console.log("response status: ",res.status,"response body: ",res.body);
         res.should.have.status(401);
         res.body.should.be.a('object');
@@ -39,7 +39,7 @@ let myFunction = () => {
         "password": "abcdefg"
       };
 
-      _chai.default.request(_index.default).patch('/api/changecreds/' + process.usersDetails.boy._id).set('x-auth-token', 'invalid random stuff zxxvzxvzlj').send(signupDetails).end((err, res) => {
+      _chai.default.request(_index.default).patch('/api/users/changecreds/' + process.usersDetails.boy._id).set('x-auth-token', 'invalid random stuff zxxvzxvzlj').send(signupDetails).end((err, res) => {
         // console.log("response status: ",res.status,"response body: ",res.body);
         res.should.have.status(400);
         res.body.should.be.a('object');
@@ -54,22 +54,15 @@ let myFunction = () => {
         "password": "abcdefg"
       };
 
-      _chai.default.request(_index.default).patch('/api/changecreds/' + process.usersDetails.boy._id).set('x-auth-token', process.authTokens.boy).send(signupDetails).end((err, res) => {
+      _chai.default.request(_index.default).patch('/api/users/changecreds/' + process.usersDetails.boy._id).set('x-auth-token', process.authTokens.boy).send(signupDetails).end((err, res) => {
         // console.log("response status: ",res.status,"response body: ",res.body);
-        res.header["x-auth-token"].should.be.a('string');
-        res.should.have.status(200);
+        res.should.have.status(201);
         res.body.should.be.a('object');
-
-        res.body._id.should.be.a('string');
-
-        res.body.should.have.property('name').eql(signupDetails.name);
-        res.body.should.have.property('email').eql(signupDetails.email);
-        res.body.membership.should.be.a('string');
         done();
       });
     });
     it('it can not promote a user to ADMIN or to MEMBER without a valid admin\'s x-auth-token in request\'s header', done => {
-      _chai.default.request(_index.default).patch('/api/promote/' + process.usersDetails.jane._id).set('x-auth-token', process.authTokens.boy).send().end((err, res) => {
+      _chai.default.request(_index.default).patch('/api/users/promote/' + process.usersDetails.jane._id).set('x-auth-token', process.authTokens.boy).send().end((err, res) => {
         // console.log("response status: ",res.status,"response body: ",res.body);
         res.should.have.status(401);
         res.body.should.be.a('object');
@@ -78,9 +71,9 @@ let myFunction = () => {
       });
     });
     it('it can promote a user to ADMIN with admin\'s x-auth-token in request\'s header', done => {
-      _chai.default.request(_index.default).patch('/api/promote/' + process.usersDetails.jane._id).set('x-auth-token', process.authTokens.pacome).send().end((err, res) => {
+      _chai.default.request(_index.default).patch('/api/users/promote/' + process.usersDetails.jane._id).set('x-auth-token', process.authTokens.pacome).send().end((err, res) => {
         // console.log("response status: ",res.status,"response body: ",res.body);
-        res.should.have.status(200);
+        res.should.have.status(201);
         res.body.should.be.a('object');
 
         res.body._id.should.be.a('string');
@@ -92,9 +85,9 @@ let myFunction = () => {
       });
     });
     it('it can demote an admin to MEMBER with any admin\'s x-auth-token in request\'s header', done => {
-      _chai.default.request(_index.default).patch('/api/promote/' + process.usersDetails.jane._id).set('x-auth-token', process.authTokens.pacome).send().end((err, res) => {
+      _chai.default.request(_index.default).patch('/api/users/promote/' + process.usersDetails.jane._id).set('x-auth-token', process.authTokens.pacome).send().end((err, res) => {
         // console.log("response status: ",res.status,"response body: ",res.body);
-        res.should.have.status(200);
+        res.should.have.status(201);
         res.body.should.be.a('object');
 
         res.body._id.should.be.a('string');

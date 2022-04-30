@@ -11,7 +11,7 @@ let myFunction = ()=>{
 
         it('it should not DELETE any user from the Database, when the x-auth-token is not provided in the header', (done) => {
             chai.request(server)
-            .delete('/api/deleteuser/'+ process.usersDetails.boy._id)
+            .delete('/api/users/deleteuser/'+ process.usersDetails.boy._id)
             .send()
             .end((err, res) => {
                     // console.log("response status: ",res.status,"response body: ",res.body);
@@ -22,7 +22,7 @@ let myFunction = ()=>{
         });
         it('it should not DELETE any user from the Database, when the x-auth-token provided in the header is not from the user or admin', (done) => {
             chai.request(server)
-            .delete('/api/deleteuser/'+ process.usersDetails.boy._id)
+            .delete('/api/users/deleteuser/'+ process.usersDetails.boy._id)
             .set('x-auth-token',process.authTokens.jane)
             .send()
             .end((err, res) => {
@@ -34,7 +34,7 @@ let myFunction = ()=>{
         });
         it('it should DELETE any user from the Database, when the x-auth-token provided in the header is from the user or admin', (done) => {
             chai.request(server)
-            .delete('/api/deleteuser/'+ process.usersDetails.boy._id)
+            .delete('/api/users/deleteuser/'+ process.usersDetails.boy._id)
             .set('x-auth-token',process.authTokens.boy)
             .send()
             .end((err, res) => {

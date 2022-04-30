@@ -106,12 +106,12 @@ userController.patch = async (req, res) => {
 
     if(req.user._id == req.params.id){
       const token = user.generateAuthToken();
-      res.send({
+      return res.send({
         "x-auth-token": token
       });
     }
 
-    res.send({
+    return res.send({
       _id: user._id,
       name: user.name,
       email: user.email, 

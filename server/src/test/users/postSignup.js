@@ -16,7 +16,7 @@ let myFunction = ()=>{
                 "password": "abcdefg"
             }
             chai.request(server)
-            .post('/api/signup')
+            .post('/api/users/signup')
             .send(signupDetails)
             .end((err, res) => {
                     res.should.have.status(422);
@@ -31,7 +31,7 @@ let myFunction = ()=>{
                 "password": "abcdefg"
             }
             chai.request(server)
-            .post('/api/signup')
+            .post('/api/users/signup')
             .send(signupDetails)
             .end((err, res) => {
                     res.should.have.status(422);
@@ -46,7 +46,7 @@ let myFunction = ()=>{
                 "email": "boy@doe.com"
             }
             chai.request(server)
-            .post('/api/signup')
+            .post('/api/users/signup')
             .send(signupDetails)
             .end((err, res) => {
                     res.should.have.status(422);
@@ -62,18 +62,16 @@ let myFunction = ()=>{
                 "password": "abcdefg"
             }
             chai.request(server)
-            .post('/api/signup')
+            .post('/api/users/signup')
             .send(signupDetails)
             .end((err, res) => {
-                    authTokens.boy = res.header["x-auth-token"];
-                    res.header["x-auth-token"].should.be.a('string');
+                    // authTokens.boy = res.header["x-auth-token"];
+                    authTokens.boy = res.body["x-auth-token"];
+                    res.header["user-id"].should.be.a('string');
                     res.should.have.status(200);
                     res.body.should.be.a('object');
-                    res.body._id.should.be.a('string');
-                    res.body.should.have.property('name').eql(signupDetails.name);
-                    res.body.should.have.property('email').eql(signupDetails.email);
-                    res.body.should.have.property('membership').eql('member');
-                    usersDetails.boy = res.body;
+                    // usersDetails.boy = res.body;
+                    usersDetails.boy = { _id : res.header["user-id"]};
                 done();
             });
         });
@@ -84,7 +82,7 @@ let myFunction = ()=>{
                 "password": "man1s@b31nG"
             }
             chai.request(server)
-            .post('/api/signup')
+            .post('/api/users/signup')
             .send(signupDetails)
             .end((err, res) => {
                     res.should.have.status(400);
@@ -100,18 +98,14 @@ let myFunction = ()=>{
                 "password": "abcdefg"
             }
             chai.request(server)
-            .post('/api/signup')
+            .post('/api/users/signup')
             .send(signupDetails)
             .end((err, res) => {
-                    authTokens.pacome = res.header["x-auth-token"];
-                    res.header["x-auth-token"].should.be.a('string');
+                    authTokens.pacome = res.body["x-auth-token"];
+                    res.header["user-id"].should.be.a('string');
                     res.should.have.status(200);
                     res.body.should.be.a('object');
-                    res.body._id.should.be.a('string');
-                    res.body.should.have.property('name').eql(signupDetails.name);
-                    res.body.should.have.property('email').eql(signupDetails.email);
-                    res.body.should.have.property('membership').eql('member');
-                    usersDetails.pacome = res.body;
+                    usersDetails.pacome = { _id : res.header["user-id"]};
                 done();
             });
         });
@@ -122,20 +116,16 @@ let myFunction = ()=>{
                 "password": "abcdefg"
             }
             chai.request(server)
-            .post('/api/signup')
+            .post('/api/users/signup')
             .send(signupDetails)
             .end((err, res) => {
-                    authTokens.jane = res.header["x-auth-token"];
+                    authTokens.jane = res.body["x-auth-token"];
                     process.authTokens = {... authTokens};
                     // console.log("After Jane, all auth tokens: ", process.authTokens);
-                    res.header["x-auth-token"].should.be.a('string');
+                    res.header["user-id"].should.be.a('string');
                     res.should.have.status(200);
                     res.body.should.be.a('object');
-                    res.body._id.should.be.a('string');
-                    res.body.should.have.property('name').eql(signupDetails.name);
-                    res.body.should.have.property('email').eql(signupDetails.email);
-                    res.body.should.have.property('membership').eql('member');
-                    usersDetails.jane = res.body;
+                    usersDetails.jane = { _id : res.header["user-id"]};
                     process.usersDetails = {... usersDetails};
                     // console.log("After Jane, all users: ", process.usersDetails);
                 done();

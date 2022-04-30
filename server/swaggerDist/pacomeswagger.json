@@ -45,7 +45,7 @@
     "http"
   ],
   "paths": {
-    "/signup": {
+    "/users/signup": {
       "post": {
         "tags": [
           "users"
@@ -74,13 +74,7 @@
           "200": {
             "description": "OK: successfully signed up.",
             "schema": {
-              "$ref": "#/definitions/UserRes"
-            },
-            "headers": {
-              "x-auth-token": {
-                "type": "string",
-                "description": "authentication token."
-              }
+              "$ref": "#/definitions/Token"
             }
           },
           "400": {
@@ -98,7 +92,7 @@
         }
       }
     },
-    "/changecreds": {
+    "/users/changecreds/{id}": {
       "patch": {
         "tags": [
           "users"
@@ -120,6 +114,13 @@
             "required": true
           },
           {
+            "name": "id",
+            "in": "path",
+            "description": "ID of user to edit",
+            "required": true,
+            "type": "string"
+          },
+          {
             "in": "body",
             "name": "body",
             "description": "Provide name, email and/or password",
@@ -130,16 +131,10 @@
           }
         ],
         "responses": {
-          "200": {
+          "201": {
             "description": "OK: successfully updated user's credentials.",
             "schema": {
-              "$ref": "#/definitions/UserRes"
-            },
-            "headers": {
-              "x-auth-token": {
-                "type": "string",
-                "description": "authentication token."
-              }
+              "$ref": "#/definitions/Token"
             }
           },
           "400": {
@@ -157,7 +152,7 @@
         }
       }
     },
-    "/promote/{id}": {
+    "/users/promote/{id}": {
       "patch": {
         "tags": [
           "users"
@@ -187,16 +182,10 @@
           }
         ],
         "responses": {
-          "200": {
+          "201": {
             "description": "OK: successfully updated user's credentials.",
             "schema": {
               "$ref": "#/definitions/UserRes"
-            },
-            "headers": {
-              "x-auth-token": {
-                "type": "string",
-                "description": "authentication token."
-              }
             }
           },
           "400": {
@@ -214,7 +203,7 @@
         }
       }
     },
-    "/signin": {
+    "/users/signin": {
       "post": {
         "tags": [
           "users"
@@ -243,7 +232,7 @@
           "200": {
             "description": "OK: successfully signed in.",
             "schema": {
-              "$ref": "#/definitions/SignInRes"
+              "$ref": "#/definitions/Token"
             }
           },
           "400": {
@@ -347,7 +336,7 @@
         }
       }
     },
-    "/deleteuser/{id}": {
+    "/users/deleteuser/{id}": {
       "delete": {
         "tags": [
           "users"
@@ -1128,6 +1117,17 @@
       },
       "xml": {
         "name": "UserSignin"
+      }
+    },
+    "Token": {
+      "type": "object",
+      "properties": {
+        "x-auth-token": {
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "Token"
       }
     },
     "UserRes": {

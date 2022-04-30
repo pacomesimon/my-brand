@@ -83,6 +83,9 @@ userController.promote = async (req, res) => {
     }
 
     await user.save();
+    res.header('user-id', user._id);
+    res.header('Access-Control-Expose-Headers', 'user-id');
+    res.status(201);
     res.send({
       _id: user._id,
       name: user.name,
@@ -124,13 +127,18 @@ userController.patch = async (req, res) => {
     const salt = await _bcrypt.default.genSalt(10);
     user.password = await _bcrypt.default.hash(user.password, salt);
     await user.save();
+    res.header('user-id', user._id);
+    res.header('Access-Control-Expose-Headers', 'user-id');
+    res.status(201);
 
     if (req.user._id == req.params.id) {
       const token = user.generateAuthToken();
-      res.header('x-auth-token', token);
+      return res.send({
+        "x-auth-token": token
+      });
     }
 
-    res.send({
+    return res.send({
       _id: user._id,
       name: user.name,
       email: user.email,
