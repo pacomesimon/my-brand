@@ -33,11 +33,10 @@ userController.post = async (req, res) => {
   }
 
   const token = user.generateAuthToken();
-  res.header('user-id', user._id); // res.header('Access-Control-Expose-Headers','user-id');
-
+  res.header('user-id', user._id);
+  res.header('Access-Control-Expose-Headers', 'user-id');
   res.send({
-    "x-auth-token": token,
-    "user-id": user._id
+    "x-auth-token": token
   });
 };
 
@@ -58,11 +57,10 @@ userController.postSignup = async (req, res) => {
   user.password = await _bcrypt.default.hash(user.password, salt);
   await user.save();
   const token = user.generateAuthToken();
-  res.header('x-auth-token', token).send({
-    _id: user._id,
-    name: user.name,
-    email: user.email,
-    membership: user.membership
+  res.header('user-id', user._id);
+  res.header('Access-Control-Expose-Headers', 'user-id');
+  res.send({
+    "x-auth-token": token
   });
 };
 

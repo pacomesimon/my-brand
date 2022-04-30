@@ -18,10 +18,9 @@ userController.post = async (req, res) => {
 
   const token = user.generateAuthToken();
   res.header('user-id',user._id);
-  // res.header('Access-Control-Expose-Headers','user-id');
+  res.header('Access-Control-Expose-Headers','user-id');
   res.send({
-    "x-auth-token": token,
-    "user-id": user._id
+    "x-auth-token": token
   });
 };
 
@@ -42,11 +41,10 @@ userController.postSignup = async (req, res) => {
   await user.save();
 
   const token = user.generateAuthToken();
-  res.header('x-auth-token',token).send({
-    _id: user._id,
-    name: user.name,
-    email: user.email, 
-    membership: user.membership
+  res.header('user-id',user._id);
+  res.header('Access-Control-Expose-Headers','user-id');
+  res.send({
+    "x-auth-token": token
   });
 };
 
@@ -64,6 +62,9 @@ userController.promote = async (req, res) => {
       user.membership = "member";
     }
     await user.save();
+    res.header('user-id',user._id);
+    res.header('Access-Control-Expose-Headers','user-id');
+    res.status(201);
     res.send({
       _id: user._id,
       name: user.name,
@@ -99,9 +100,15 @@ userController.patch = async (req, res) => {
 
     await user.save();
     
+    res.header('user-id',user._id);
+    res.header('Access-Control-Expose-Headers','user-id');
+    res.status(201);
+
     if(req.user._id == req.params.id){
       const token = user.generateAuthToken();
-      res.header('x-auth-token',token)
+      res.send({
+        "x-auth-token": token
+      });
     }
 
     res.send({
