@@ -122,10 +122,10 @@ userController.patch = async (req, res) => {
 
     if (req.body.password) {
       user.password = req.body.password;
+      const salt = await _bcrypt.default.genSalt(10);
+      user.password = await _bcrypt.default.hash(user.password, salt);
     }
 
-    const salt = await _bcrypt.default.genSalt(10);
-    user.password = await _bcrypt.default.hash(user.password, salt);
     await user.save();
     res.header('user-id', user._id);
     res.header('Access-Control-Expose-Headers', 'user-id');

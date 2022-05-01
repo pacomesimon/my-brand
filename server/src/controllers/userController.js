@@ -94,9 +94,9 @@ userController.patch = async (req, res) => {
     }
     if(req.body.password){
       user.password = req.body.password;
+      const salt = await bcrypt.genSalt(10);
+      user.password = await bcrypt.hash(user.password, salt);
     }
-    const salt = await bcrypt.genSalt(10);
-    user.password = await bcrypt.hash(user.password, salt);
 
     await user.save();
     
