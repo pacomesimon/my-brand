@@ -30,6 +30,8 @@ mongoose.connect(process.env.MONGODB_URI || config.DBHost, { useNewUrlParser: tr
     app.use("/tutorials",express.static('integrationTutorials'));
 
     app.use("/",express.static('UI'));
+
+    app.use("/blogs/", express.static('UI/blogs'));
     
     app.listen(port, () => {
       console.log("Server has started!");

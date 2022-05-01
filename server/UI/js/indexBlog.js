@@ -86,7 +86,7 @@ function myFunc(x) {
     const parseArticles = (articlesArray)=> {
         const blogCardParser = (arrayElement) =>{
             const projectCard = `
-            <a href="blogs/blogTemplate.html" onclick="saveArticleID('${arrayElement._id}')">
+            <a href="blogs/?id=${arrayElement._id}" >
                 <div class="project-card">
                     <img src="${arrayElement.previewImageURL}" class="project-img">
                     <div class="project-card-details">

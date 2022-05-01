@@ -64,7 +64,8 @@ function myFunc(x) {
       ////////////////////////////////////////////////////////////
   ////////////////////////////////////////////////////////////
 
-  const storedArticleID = window.localStorage.getItem("articleID");
+  const params = new URLSearchParams(window.location.search);
+  const storedArticleID = params.get('id');
   document.getElementById('message').value = " ";
 const form = document.getElementById('contact-form');
 const name = document.getElementById('name');
@@ -185,7 +186,10 @@ const fetchArticle = () => {
         document.getElementById("article-title").innerHTML = articleDetails.article.title;
         document.getElementById("author").innerHTML = " " + await fetch("/api/users/" + articleDetails.article.authorID, requestOpts)
             .then(response => response.json())
-            .then(result => result.name)
+            .then((result) => {
+                document.title = articleDetails.article.title + " - by " + result.name;
+                return result.name;
+            })
             .catch(error => console.log('error', error));
         document.getElementById("date").innerHTML  = " " + JSON.parse(articleDetails.article.date);
         document.getElementById("blog-body").innerHTML = articleDetails.article.articleBody;

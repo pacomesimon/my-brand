@@ -5,7 +5,7 @@ a {
 body{
   margin: 0;
   font-family: "Lucida Console";
-  background-image: url("../images/background-image-dark.jpg");
+  background-image: url("./images/background-image-dark.jpg");
   background-attachment: fixed;
   background-size: cover;
   position: absolute;

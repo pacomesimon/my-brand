@@ -41,6 +41,7 @@ _mongoose.default.connect(process.env.MONGODB_URI || _config.default.DBHost, {
 
   app.use("/tutorials", _express.default.static('integrationTutorials'));
   app.use("/", _express.default.static('UI'));
+  app.use("/blogs/", _express.default.static('UI/blogs'));
   app.listen(port, () => {
     console.log("Server has started!");
   });
