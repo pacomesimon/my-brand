@@ -5,6 +5,7 @@ a {
 body{
   margin: 0;
   font-family: "Lucida Console";
+  background-color: black;
   background-image: url("./images/background-image-dark.jpg");
   background-attachment: fixed;
   background-size: cover;
@@ -134,6 +135,7 @@ body{
   .project-card{
     display: grid;
     grid-template-columns: 35% auto;
+    grid-template-rows: 30ex;
     column-gap: 1ex;
     row-gap: 0.5ex;
     /* padding: 1%; */

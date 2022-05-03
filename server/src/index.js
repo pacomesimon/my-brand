@@ -4,6 +4,7 @@ import config from "config";
 import express from "express";
 import mongoose from "mongoose";
 import routes from "./routes";
+import cors from "cors";
 
 //To configure the jwtPrivateKey, run this in your terminal:
 //(for MAC or LINUX) $ export pacome_jwtPrivateKey=SECURE_KEY
@@ -20,6 +21,8 @@ const port = process.env.PORT || 5000;
 const app = express();
 mongoose.connect(process.env.MONGODB_URI || config.DBHost, { useNewUrlParser: true })
   .then(() => {
+
+    app.use(cors());
     
     app.use(express.json());
 

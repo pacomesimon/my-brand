@@ -17,6 +17,8 @@ var _mongoose = _interopRequireDefault(require("mongoose"));
 
 var _routes = _interopRequireDefault(require("./routes"));
 
+var _cors = _interopRequireDefault(require("cors"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //To configure the jwtPrivateKey, run this in your terminal:
@@ -35,6 +37,7 @@ const app = (0, _express.default)();
 _mongoose.default.connect(process.env.MONGODB_URI || _config.default.DBHost, {
   useNewUrlParser: true
 }).then(() => {
+  app.use((0, _cors.default)());
   app.use(_express.default.json());
   app.use("/api", _routes.default);
   app.use("/swagger", _express.default.static('swaggerDist')); // app will also (using path: ./swagger) serve static files in the mentioned folder (parameter)

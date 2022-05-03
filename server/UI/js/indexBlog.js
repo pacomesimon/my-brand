@@ -74,10 +74,9 @@ function myFunc(x) {
         redirect: 'follow'
     };
   
-    fetch("/api/articles", requestOptions)
+    fetch("https://my-brand-pacome.herokuapp.com/api/articles", requestOptions)
     .then(response => response.json())
     .then((result) => {
-        console.log(result);
         document.getElementById("projects-grid").innerHTML = "";
         parseArticles(result);
     })

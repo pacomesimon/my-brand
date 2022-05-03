@@ -127,15 +127,50 @@ function checkInputs() {
             redirect: 'follow'
         };
 
-        fetch("/api/comments/", requestOptions)
+        fetch("https://my-brand-pacome.herokuapp.com/api/comments/", requestOptions)
         .then(response => response.json())
         .then((result) => {
-            console.log(result);
-            document.getElementById('message').value = "";
             fetchArticle();
+            formResetor();
         })
         .catch(error => console.log('error', error));
     }
+}
+
+function formResetor(){
+    document.getElementById('contact-form').innerHTML = `
+        <!-- <label for="name"><strong>Name*</strong></label> -->
+        <div class="form-control">
+        <input type="text" id="name" name="name" required>
+        <label for="name" class="label-name">
+            <span class="content-name label-raw">Name</span>
+        </label>
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error message</small>
+        </div>
+        <div class="form-control">
+        <input type="text" id="email" name="email" required>
+        <label for="email" class="label-email">
+            <span class="content-email label-raw">Email</span>
+        </label>
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error message</small>
+        </div>
+        <!-- <label for="message"><strong>Message*</strong></label> -->
+        <div class="form-control">
+        <textarea id="message" message="message" style="height:200px" required></textarea>
+        <label for="message" class="label-message">
+            <span class="content-message label-raw">Your Comment:</span>
+        </label>
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error message</small>
+        </div>
+        <div></div>  
+        <button type="submit">SUBMIT <i class="fa-solid fa-right-long"></i></button>
+    `;
 }
 
 function setErrorFor(input, message) {
@@ -172,11 +207,10 @@ const fetchArticle = () => {
         redirect: 'follow'
     };
     
-    const articleURL = "/api/articles/" + storedArticleID;
+    const articleURL = "https://my-brand-pacome.herokuapp.com/api/articles/" + storedArticleID;
     fetch(articleURL, requestOpts)
     .then(response => response.json())
     .then((result) => {
-        // console.log(result);
         parseArticle(result);
     })
     .catch(error => console.log('error', error));
@@ -184,7 +218,7 @@ const fetchArticle = () => {
     const parseArticle = async (articleDetails) => {
         document.getElementById("project-img").src = articleDetails.article.previewImageURL;
         document.getElementById("article-title").innerHTML = articleDetails.article.title;
-        document.getElementById("author").innerHTML = " " + await fetch("/api/users/" + articleDetails.article.authorID, requestOpts)
+        document.getElementById("author").innerHTML = " " + await fetch("https://my-brand-pacome.herokuapp.com/api/users/" + articleDetails.article.authorID, requestOpts)
             .then(response => response.json())
             .then((result) => {
                 document.title = articleDetails.article.title + " - by " + result.name;
@@ -214,7 +248,6 @@ const renderComments = (commentsArray) =>{
     else{
         document.getElementById("comments-section").innerHTML = `<span id="comments-title">Comment(s):</span>`;
         const commentsCardParser = (commentItem)=>{
-            // console.log(commentItem);
             const commentCard = `
             <div class="comment-template">
                 <div class="commenter-name">
@@ -234,7 +267,6 @@ const renderComments = (commentsArray) =>{
 document.getElementById("likes").onclick = function() {likeReaction()};
 
 function likeReaction(){
-    console.log("clicked!");
     var myHeaders = new Headers();
     myHeaders.append("x-auth-token", window.localStorage.getItem("x-auth-token"));
     myHeaders.append("Content-Type", "application/json");
@@ -250,7 +282,7 @@ function likeReaction(){
     redirect: 'follow'
     };
 
-    fetch("/api/likes/", requestOptions)
+    fetch("https://my-brand-pacome.herokuapp.com/api/likes/", requestOptions)
     .then((result) => {
         fetchArticle();
     })
