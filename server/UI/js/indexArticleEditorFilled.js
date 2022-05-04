@@ -62,11 +62,17 @@ function myFunc(x) {
       ////////////////////////////////////////////////////////////
   ////////////////////////////////////////////////////////////
 
-
+  const params = new URLSearchParams(window.location.search);
+  const storedArticleID = params.get('id');
 const form = document.getElementById('contact-form');
 const title = document.getElementById('title');
 const previewImageURL = document.getElementById('previewImageURL');
 const articleBody = document.getElementById('articleBody');
+
+const discardFunction = ()=>{
+    window.location.replace("/articleMenu.html");
+}
+document.getElementById("delete-button").onclick = discardFunction;
 
 form.addEventListener('submit', e => {
 	e.preventDefault();
@@ -74,6 +80,7 @@ form.addEventListener('submit', e => {
 	checkInputs();
 });
 
+let success = true;
 function checkInputs() {
 	const emailValue = previewImageURL.value.trim();
     const nameValue = title.value.trim();
@@ -97,6 +104,31 @@ function checkInputs() {
 	} else {
 		setSuccessFor(title);
 	}
+    if(success){
+        var myHeaders = new Headers();
+        myHeaders.append("x-auth-token", window.localStorage.getItem("x-auth-token"));
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+            "title": nameValue,
+            "previewImageURL": emailValue,
+            "articleBody": messageValue
+        });
+
+        var requestOptions = {
+        method: 'PATCH',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+        };
+
+        fetch("https://my-brand-pacome.herokuapp.com/api/articles/" + storedArticleID, requestOptions)
+        .then(response => response.json())
+        .then((result) => {
+            discardFunction();
+        })
+        .catch(error => console.log('error', error));
+    }
 	
 }
 
@@ -107,6 +139,7 @@ function setErrorFor(input, articleBody) {
 	small.innerText = articleBody;
     const label = formControl.querySelector('.label-raw');
     label.style.color = "#e74c3c";
+    success = false;
 }
 
 function setSuccessFor(input) {
@@ -117,6 +150,7 @@ function setSuccessFor(input) {
     if(nightDayToggler){
         label.style.color = "rgba(46,204,113,0.5)";
     }
+    success = success && true;
 }
 	
 function isEmail(previewImageURL) {
@@ -124,3 +158,27 @@ function isEmail(previewImageURL) {
     return true;
 }
 
+///////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+const fetchArticle = () => {
+    let requestOpts = {
+        method: 'GET',
+        redirect: 'follow'
+    };
+    
+    const articleURL = "https://my-brand-pacome.herokuapp.com/api/articles/" + storedArticleID;
+    fetch(articleURL, requestOpts)
+    .then(response => response.json())
+    .then((result) => {
+        parseArticle(result);
+    })
+    .catch(error => console.log('error', error));
+    
+    const parseArticle = async (articleDetails) => {
+        previewImageURL.value = articleDetails.article.previewImageURL;
+        title.value = articleDetails.article.title;
+        articleBody.value = articleDetails.article.articleBody;
+    }
+}
+fetchArticle();
