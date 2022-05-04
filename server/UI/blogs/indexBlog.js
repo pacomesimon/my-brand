@@ -110,8 +110,68 @@ function checkInputs() {
 	} else {
 		setSuccessFor(name);
 	}
+	if(success){
+        let myHeaders = new Headers();
+        myHeaders.append("x-auth-token", window.localStorage.getItem("x-auth-token"));
+        myHeaders.append("Content-Type", "application/json");
+
+        let raw = JSON.stringify({
+            "articleID": storedArticleID,
+            "commentBody": messageValue
+        });
+
+        let requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+
+        fetch("https://my-brand-pacome.herokuapp.com/api/comments/", requestOptions)
+        .then(response => response.json())
+        .then((result) => {
+            fetchArticle();
+            formResetor();
+        })
+        .catch(error => console.log('error', error));
+    }
 }
 
+function formResetor(){
+    document.getElementById('contact-form').innerHTML = `
+        <!-- <label for="name"><strong>Name*</strong></label> -->
+        <div class="form-control">
+        <input type="text" id="name" name="name" required>
+        <label for="name" class="label-name">
+            <span class="content-name label-raw">Name</span>
+        </label>
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error message</small>
+        </div>
+        <div class="form-control">
+        <input type="text" id="email" name="email" required>
+        <label for="email" class="label-email">
+            <span class="content-email label-raw">Email</span>
+        </label>
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error message</small>
+        </div>
+        <!-- <label for="message"><strong>Message*</strong></label> -->
+        <div class="form-control">
+        <textarea id="message" message="message" style="height:200px" required></textarea>
+        <label for="message" class="label-message">
+            <span class="content-message label-raw">Your Comment:</span>
+        </label>
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error message</small>
+        </div>
+        <div></div>  
+        <button type="submit">SUBMIT <i class="fa-solid fa-right-long"></i></button>
+    `;
+}
 
 function setErrorFor(input, message) {
 	const formControl = input.parentElement;
@@ -202,4 +262,29 @@ const renderComments = (commentsArray) =>{
         }
         commentsArray.forEach(commentsCardParser);
     }
+}
+
+document.getElementById("likes").onclick = function() {likeReaction()};
+
+function likeReaction(){
+    var myHeaders = new Headers();
+    myHeaders.append("x-auth-token", window.localStorage.getItem("x-auth-token"));
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+    "articleID": storedArticleID
+    });
+
+    var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+    };
+
+    fetch("https://my-brand-pacome.herokuapp.com/api/likes/", requestOptions)
+    .then((result) => {
+        fetchArticle();
+    })
+    .catch(error => console.log('error', error));
 }
