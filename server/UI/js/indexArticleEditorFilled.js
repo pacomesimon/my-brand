@@ -68,23 +68,13 @@ const title = document.getElementById('title');
 const previewImageURL = document.getElementById('previewImageURL');
 const articleBody = document.getElementById('articleBody');
 
-const discardFunction = ()=>{
-    title.value = "";
-    previewImageURL.value = "";
-    articleBody.value = "";
-    window.location.replace("/articleMenu.html");
-}
-document.getElementById("delete-button").onclick = discardFunction;
-
 form.addEventListener('submit', e => {
 	e.preventDefault();
 	
 	checkInputs();
 });
 
-let success = true;
 function checkInputs() {
-    success = true;
 	const emailValue = previewImageURL.value.trim();
     const nameValue = title.value.trim();
 	const messageValue = articleBody.value.trim();
@@ -107,31 +97,6 @@ function checkInputs() {
 	} else {
 		setSuccessFor(title);
 	}
-    if(success){
-        let myHeaders = new Headers();
-        myHeaders.append("x-auth-token", window.localStorage.getItem("x-auth-token"));
-        myHeaders.append("Content-Type", "application/json");
-
-        let raw = JSON.stringify({
-            "title": nameValue,
-            "previewImageURL": emailValue,
-            "articleBody": messageValue
-        });
-
-        let requestOptions = {
-            method: 'POST',
-            headers: myHeaders,
-            body: raw,
-            redirect: 'follow'
-        };
-
-        fetch("https://my-brand-pacome.herokuapp.com/api/articles", requestOptions)
-        .then(response => response.json())
-        .then((result) => {
-            discardFunction();
-        })
-        .catch(error => console.log('error', error));
-    }
 	
 }
 
@@ -142,7 +107,6 @@ function setErrorFor(input, articleBody) {
 	small.innerText = articleBody;
     const label = formControl.querySelector('.label-raw');
     label.style.color = "#e74c3c";
-    success = false;
 }
 
 function setSuccessFor(input) {
@@ -153,12 +117,10 @@ function setSuccessFor(input) {
     if(nightDayToggler){
         label.style.color = "rgba(46,204,113,0.5)";
     }
-    success = success && true;
 }
 	
 function isEmail(previewImageURL) {
 	// return /./.test(previewImageURL);
     return true;
 }
-
 
