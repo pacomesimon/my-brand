@@ -58,3 +58,42 @@ function myFunc(x) {
   var x = window.matchMedia("(max-width: 890px)")
   myFunc(x) 
   x.addListener(myFunc)
+
+  /////////////////////////////////////////
+  ////////////////////////////////////////
+  
+    var myHeaders = new Headers();
+    myHeaders.append("x-auth-token", window.localStorage.getItem("x-auth-token"));
+
+    var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow'
+    };
+
+    fetch("https://my-brand-pacome.herokuapp.com/api/queries/", requestOptions)
+    .then(response => response.json())
+    .then(result => parseQueries(result))
+    .catch(error => console.log('error', error));
+
+    const parseQueries = (queriesArray)=> {
+        const queryCardParser = (arrayElement) =>{
+            const queryCard = `
+            <div class="contact-form">
+                <a>Time:</a>
+                <div class="timestamp">${JSON.parse(arrayElement.date)}</div>
+                <a>Name:</a>
+                <div class="name">${arrayElement.name}</div>
+                <a>Email:</a>
+                <div class="email">${arrayElement.email} </div>
+                <a>Message:</a>
+                <div class="message">${arrayElement.queryBody}</div>
+            </div>
+            `
+            document.getElementById("queries-grid").innerHTML += queryCard;
+        }
+        document.getElementById("queries-grid").innerHTML = "";
+        for(let i=queriesArray.length-1; i>=0 ; i-- ){
+            queryCardParser(queriesArray[i]);
+        }
+    }
