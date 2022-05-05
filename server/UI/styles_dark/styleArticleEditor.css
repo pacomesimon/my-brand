@@ -274,7 +274,7 @@ body{
     z-index:1;
   }
 
-  #title, #previewImageURL{
+  #title, #previewImageURL, #file-upload{
     font-family: "Lucida Console";
     height: 2ex;
     font-size: 2ex;
@@ -433,6 +433,20 @@ body{
     transform: translateX(0%);
   } */
   #previewImageURL:focus, #previewImageURL:valid{
+    border: 2px solid rgba(65, 65, 130, 1);
+  }
+  #file-upload:focus + .label-previewImageURL .content-previewImageURL,
+  #file-upload:valid + .label-previewImageURL .content-previewImageURL{
+    transform: translateY(-130%);
+    font-size: small;
+    font-weight: bold;
+    color: rgba(65, 65, 130, 1);
+  }
+  /* #email:focus + .label-email::after,
+  #email:valid + .label-email::after{
+    transform: translateX(0%);
+  } */
+  #file-upload:focus, #file-upload:valid{
     border: 2px solid rgba(65, 65, 130, 1);
   }
   #articleBody{

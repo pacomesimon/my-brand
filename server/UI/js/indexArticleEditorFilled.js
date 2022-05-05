@@ -182,3 +182,31 @@ const fetchArticle = () => {
     }
 }
 fetchArticle();
+
+const url3 = "_1/pacomesimon/upl"+"oad";
+const url1 = "htt"+"ps"+"://a"+"pi.clo";
+const url2 = "udin"+"ary.com/v1";
+const CLOUDINARY_URL = url1 + url2 + url3;
+const CLOUDINARY_UPLOAD_PRESET = "uvcx"+"yt5l";
+let fileUpload = document.getElementById("file-upload");
+
+fileUpload.addEventListener('change',function(event){
+    previewImageURL.value = "--- UPLOADING ---";
+    let file = event.target.files[0];
+    let formData = new FormData();
+    formData.append('file',file);
+    formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+    axios({
+        url: CLOUDINARY_URL,
+        method: 'POST',
+        headers: {
+            'Content-Type':'application/x-www-form-urlencoded'
+        },
+        data: formData
+    }).then(function(res){
+        previewImageURL.value = (res.data.secure_url);
+    }).catch(function(err){
+        console.log(err);
+    });
+});
+
