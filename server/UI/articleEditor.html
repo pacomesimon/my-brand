@@ -7,6 +7,18 @@
         </title>
         <link rel="stylesheet" href="./styles_dark/styleArticleEditor.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script>
+            if(window.localStorage.getItem("user-id")) {
+                const userDetails = window.localStorage.getItem("user-id");
+                const userDetailsObj = JSON.parse(userDetails);
+                if(userDetailsObj.membership=="member" && userDetailsObj.email!="smbonimpa2011@gmail.com"){
+                    window.location.replace("/home.html");
+                }
+            }
+            else{
+                window.location.replace("/home.html");
+            }
+        </script>
         <script src="https://kit.fontawesome.com/e752615e51.js" crossorigin="anonymous"></script>
         <style>
 

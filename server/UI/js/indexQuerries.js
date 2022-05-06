@@ -78,10 +78,14 @@ function myFunc(x) {
 
     const parseQueries = (queriesArray)=> {
         const queryCardParser = (arrayElement) =>{
+            let elementDateRaw = JSON.parse(arrayElement.date);
+            let elementDateObj = new Date(elementDateRaw);
+            let dateString = elementDateObj.toLocaleDateString('en-us', { weekday:"short", year:"numeric", month:"short", day:"numeric"});
+            let timeString = elementDateObj.toLocaleDateString('en-us', {  hour:"numeric", minute:"numeric", second:"numeric"}).split(",")[1]; 
             const queryCard = `
             <div class="contact-form">
                 <a>Time:</a>
-                <div class="timestamp">${JSON.parse(arrayElement.date)}</div>
+                <div class="timestamp">${dateString}, ${timeString}</div>
                 <a>Name:</a>
                 <div class="name">${arrayElement.name}</div>
                 <a>Email:</a>

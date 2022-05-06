@@ -98,7 +98,12 @@ function myFunc(x) {
             `
             document.getElementById("projects-grid").innerHTML += projectCard;
         }
-        articlesArray.forEach(blogCardParser);
+        // articlesArray.forEach(blogCardParser);
+        (async()=>{
+            for(let i=(articlesArray.length -1);i>=0;i--){
+                await blogCardParser(articlesArray[i]);
+            }
+        })();
     }
 
     const saveArticleID = (articleID) =>{
