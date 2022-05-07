@@ -75,7 +75,7 @@
                                     <form id="contact-form">
                                   
                                       <div class="form-control">
-                                        <input type="text" id="title" name="title" value="Web design skilled labour needed" required>
+                                        <input type="text" id="title" name="title" value="--- loading ---" required>
                                         <label for="title" class="label-title">
                                             <span class="content-title label-raw">Title</span>
                                         </label>
@@ -85,7 +85,7 @@
                                       </div>
 
                                       <div class="form-control">
-                                        <input type="text" id="previewImageURL" name="previewImageURL" value="./images/digital-writting.jpg" required>
+                                        <input type="text" id="previewImageURL" name="previewImageURL" value="--- loading ---" required>
                                         <label for="previewImageURL" class="label-previewImageURL">
                                             <span class="content-previewImageURL label-raw">Preview Image's URL</span>
                                         </label>
@@ -93,9 +93,18 @@
                                         <i class="fas fa-exclamation-circle"></i>
                                         <small>Error message</small>
                                       </div>
+                                      <div class="form-control">
+                                        <input type="file" id="file-upload" name="previewImageURL" value="" style="opacity:0;">
+                                        <label for="previewImageURL" class="label-previewImageURL">
+                                            <span class="content-previewImageURL label-raw">Upload an image ...</span>
+                                        </label>
+                                        <i class="fas fa-check-circle"></i>
+                                        <i class="fas fa-exclamation-circle"></i>
+                                        <small>Error message</small>
+                                      </div>
 
                                       <div class="form-control">
-                                        <textarea id="articleBody" message="articleBody" style="height:300px" required>The term web developer is used interchangeably with web designer, but this is not correct. Web developing is a special career, focusing on the back-end development, using programming languages to make the web design an app that works fine. <p>The emergence of touchscreen phones and tablet devices has caused a new way of designing websites, making the web designer need to ensure that web pages are screen-adaptive to any type of device that can be used. Therefore, the need to design and test web applications on various devices’ screens, has become a crucial task of this career. </p><p>To build future web design engineers, different training initiatives are being deployed, thus contributing to the task force of web development companies. </p>
+                                        <textarea id="articleBody" message="articleBody" style="height:300px" required> --- loading ---
                                         </textarea>
                                         <label for="articleBody" class="label-articleBody">
                                             <span class="content-articleBody label-raw">Article's Body:</span>
@@ -107,7 +116,7 @@
 
                                         <div class="buttons">
                                             <button type="submit" class="edit"><i class="fa-solid fa-file-pen"></i> Update</button>
-                                            <button class="delete"><i class="fa-solid fa-trash"></i> Discard</button>
+                                            <button type="button" class="delete" id="delete-button"><i class="fa-solid fa-trash"></i> Discard</button>
                                         </div>
                                   
                                     </form>
@@ -141,6 +150,7 @@
                 </div>
             </footer>
         </div>
-        <script src="./js/indexArticleEditor.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="./js/indexArticleEditorFilled.js"></script>
     </body>
 </html>

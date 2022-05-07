@@ -93,7 +93,15 @@
                                         <i class="fas fa-exclamation-circle"></i>
                                         <small>Error message</small>
                                       </div>
-
+                                      <div class="form-control">
+                                        <input type="file" id="file-upload" name="previewImageURL" value="" style="opacity:0;">
+                                        <label for="previewImageURL" class="label-previewImageURL">
+                                            <span class="content-previewImageURL label-raw">Upload an image ...</span>
+                                        </label>
+                                        <i class="fas fa-check-circle"></i>
+                                        <i class="fas fa-exclamation-circle"></i>
+                                        <small>Error message</small>
+                                      </div>
                                       <div class="form-control">
                                         <textarea id="articleBody" message="articleBody" style="height:300px" required></textarea>
                                         <label for="articleBody" class="label-articleBody">
@@ -106,7 +114,7 @@
 
                                         <div class="buttons">
                                             <button type="submit" class="edit"><i class="fa-solid fa-file-pen"></i> Post</button>
-                                            <button class="delete"><i class="fa-solid fa-trash"></i> Discard</button>
+                                            <button type="button" class="delete" id="delete-button"><i class="fa-solid fa-trash"></i> Discard</button>
                                         </div>
                                   
                                     </form>
@@ -140,6 +148,7 @@
                 </div>
             </footer>
         </div>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="./js/indexArticleEditor.js"></script>
     </body>
 </html>

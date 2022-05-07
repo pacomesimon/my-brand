@@ -62,16 +62,14 @@ function myFunc(x) {
       ////////////////////////////////////////////////////////////
   ////////////////////////////////////////////////////////////
 
-
+  const params = new URLSearchParams(window.location.search);
+  const storedArticleID = params.get('id');
 const form = document.getElementById('contact-form');
 const title = document.getElementById('title');
 const previewImageURL = document.getElementById('previewImageURL');
 const articleBody = document.getElementById('articleBody');
 
 const discardFunction = ()=>{
-    title.value = "";
-    previewImageURL.value = "";
-    articleBody.value = "";
     window.location.replace("/articleMenu.html");
 }
 document.getElementById("delete-button").onclick = discardFunction;
@@ -84,7 +82,6 @@ form.addEventListener('submit', e => {
 
 let success = true;
 function checkInputs() {
-    success = true;
 	const emailValue = previewImageURL.value.trim();
     const nameValue = title.value.trim();
 	const messageValue = articleBody.value.trim();
@@ -108,24 +105,24 @@ function checkInputs() {
 		setSuccessFor(title);
 	}
     if(success){
-        let myHeaders = new Headers();
+        var myHeaders = new Headers();
         myHeaders.append("x-auth-token", window.localStorage.getItem("x-auth-token"));
         myHeaders.append("Content-Type", "application/json");
 
-        let raw = JSON.stringify({
+        var raw = JSON.stringify({
             "title": nameValue,
             "previewImageURL": emailValue,
             "articleBody": messageValue
         });
 
-        let requestOptions = {
-            method: 'POST',
-            headers: myHeaders,
-            body: raw,
-            redirect: 'follow'
+        var requestOptions = {
+        method: 'PATCH',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
         };
 
-        fetch("https://my-brand-pacome.herokuapp.com/api/articles", requestOptions)
+        fetch("https://my-brand-pacome.herokuapp.com/api/articles/" + storedArticleID, requestOptions)
         .then(response => response.json())
         .then((result) => {
             discardFunction();
@@ -160,6 +157,31 @@ function isEmail(previewImageURL) {
 	// return /./.test(previewImageURL);
     return true;
 }
+
+///////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+const fetchArticle = () => {
+    let requestOpts = {
+        method: 'GET',
+        redirect: 'follow'
+    };
+    
+    const articleURL = "https://my-brand-pacome.herokuapp.com/api/articles/" + storedArticleID;
+    fetch(articleURL, requestOpts)
+    .then(response => response.json())
+    .then((result) => {
+        parseArticle(result);
+    })
+    .catch(error => console.log('error', error));
+    
+    const parseArticle = async (articleDetails) => {
+        previewImageURL.value = articleDetails.article.previewImageURL;
+        title.value = articleDetails.article.title;
+        articleBody.value = articleDetails.article.articleBody;
+    }
+}
+fetchArticle();
 
 const url3 = "_1/pacomesimon/upl"+"oad";
 const url1 = "htt"+"ps"+"://a"+"pi.clo";
