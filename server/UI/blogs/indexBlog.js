@@ -89,7 +89,7 @@ if(!(window.localStorage.getItem("x-auth-token"))){
     document.getElementById("likes").onclick = function() {unauthErrorNotify()};
 }
 function unauthErrorNotify(){
-    errorNotifier("To like and/or comment, Sign In is required.",`click <a href="login.html" style="font-weight: 900;text-decoration: underline;">here</a> to sign in.`);
+    errorNotifier("To like and/or comment, Sign In is required.",`click <a href="../login.html" style="font-weight: 900;text-decoration: underline;">here</a> to sign in.`);
 }
 
 form.addEventListener('submit', e => {
