@@ -4,7 +4,7 @@ a {
 }
 body{
   margin: 0;
-  font-family: "Lucida Console";
+  font-family: lucida console, monospace,monaco;
   background-color: black;
   background-image: url("../images/background-image-dark.jpg");
   background-attachment: fixed;
@@ -71,7 +71,7 @@ body{
     border-radius: 5px;
     background: rgba(0, 0, 255, 0.15);
     height: 3.5ex;
-    font-family: "lucida Console";
+    font-family: lucida console, monospace,monaco;
     font-weight: normal;
     width:fit-content;
     padding: 0.5ex;
@@ -159,7 +159,7 @@ body{
     border-radius: 5px;
     background: rgba(0, 0, 255, 0.5);
     height: 3.5ex;
-    font-family: "lucida Console";
+    font-family: lucida console, monospace,monaco;
     font-weight: bold;
     width:fit-content;
     padding: 0.5ex;
@@ -195,7 +195,7 @@ body{
     border-radius: 5px;
     
     height: 4.5ex;
-    font-family: "lucida Console";
+    font-family: lucida console, monospace,monaco;
     font-weight: normal;
     width:50%;
     padding: 0.5ex;
@@ -253,9 +253,13 @@ body{
   } */
 
   .project-img {
-      height: 13.5ex;
-      width: 100%;
+      height: 10ex;
+      width: 28ex;
       object-fit: cover;
+      position: absolute;
+      top: 1ex;
+      left: 0ex;
+      opacity: 0.5;
   }
   
   .contact-title{
@@ -274,8 +278,8 @@ body{
     z-index:1;
   }
 
-  #title, #previewImageURL, #file-upload{
-    font-family: "Lucida Console";
+  #title, #previewImageURL, #file-upload, #previewImage{
+    font-family: lucida console, monospace,monaco;
     height: 2ex;
     font-size: 2ex;
     border-radius: 5px;
@@ -288,6 +292,10 @@ body{
     /* border: none; */
     outline: none;
     color: #818181;
+  }
+  #previewImage{
+    height: 12ex;
+    width: 27ex;
   }
   .form-control{
     position: relative;
@@ -384,7 +392,7 @@ body{
     border: 2px solid rgba(65, 65, 130, 1);
   }
   #previewImageURL {
-    font-family: "Lucida Console";
+    font-family: lucida console, monospace,monaco;
     height: 2ex;
     font-size: 2ex;
     border-radius: 5px;
@@ -450,7 +458,7 @@ body{
     border: 2px solid rgba(65, 65, 130, 1);
   }
   #articleBody{
-    font-family: "Lucida Console";
+    font-family: lucida console, monospace,monaco;
     height: 35ex !important;
     font-size: 2ex;
     border-radius: 5px;
@@ -738,10 +746,14 @@ body{
       height: auto;
     }
     .project-img {
-      height: 12ex;
-      width: 100%;
+      height: 10ex;
+      width: 28ex;
       object-fit: cover;
-    }
+      position: absolute;
+      top: 1ex;
+      left: 0ex;
+      opacity: 0.5;
+  }
 
     #night-day {
       position: fixed;

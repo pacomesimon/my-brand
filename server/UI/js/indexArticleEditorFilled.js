@@ -179,6 +179,7 @@ const fetchArticle = () => {
         previewImageURL.value = articleDetails.article.previewImageURL;
         title.value = articleDetails.article.title;
         articleBody.value = articleDetails.article.articleBody;
+        document.getElementById("preview-img").src =articleDetails.article.previewImageURL;
     }
 }
 fetchArticle();
@@ -192,6 +193,7 @@ let fileUpload = document.getElementById("file-upload");
 
 fileUpload.addEventListener('change',function(event){
     previewImageURL.value = "--- UPLOADING ---";
+    document.getElementById("preview-img").src ="./images/loading.gif"; 
     let file = event.target.files[0];
     let formData = new FormData();
     formData.append('file',file);
@@ -205,6 +207,7 @@ fileUpload.addEventListener('change',function(event){
         data: formData
     }).then(function(res){
         previewImageURL.value = (res.data.secure_url);
+        document.getElementById("preview-img").src =res.data.secure_url;   
     }).catch(function(err){
         console.log(err);
     });

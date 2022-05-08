@@ -4,7 +4,7 @@ a {
 }
 body{
   margin: 0;
-  font-family: "Lucida Console";
+  font-family: lucida console, monospace,monaco;
   background-image: url("../images/background-image.jpg");
   background-attachment: fixed;
   background-size: cover;

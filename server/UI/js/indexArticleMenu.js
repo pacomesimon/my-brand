@@ -132,7 +132,7 @@ const parseArticles = (articlesArray)=> {
 
         const projectCard = `
         <div class="project-card" id="${arrayElement._id}">
-            <img src="${arrayElement.previewImageURL}" class="project-img" style="z-index:-1;">
+            <img src="${arrayElement.previewImageURL}" class="project-img" style="z-index:0;">
             <div class="project-card-details">
                 <span class="blog-title"><strong>${arrayElement.title}</strong></span>
             </div>

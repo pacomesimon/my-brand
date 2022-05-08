@@ -4,7 +4,7 @@ a {
 }
 body{
   margin: 0;
-  font-family: "Lucida Console";
+  font-family: lucida console, monospace,monaco;
   background-image: url("../images/background-image.jpg");
   background-attachment: fixed;
   background-size: cover;
@@ -62,13 +62,14 @@ body{
     gap: 0.1ex;
     color: #414141;
     font-size: 16px;
+    z-index : 10;
   }
   #panel-navbar button{
     color: white;
     border-radius: 5px;
     background: rgba(0, 0, 255, 0.5);
     height: 3.5ex;
-    font-family: "lucida Console";
+    font-family: lucida console, monospace,monaco;
     font-weight: normal;
     width:fit-content;
     padding: 0.5ex;
@@ -164,7 +165,7 @@ body{
     border-radius: 5px;
     background: rgba(0, 0, 255, 0.5);
     height: 3.5ex;
-    font-family: "lucida Console";
+    font-family: lucida console, monospace,monaco;
     font-weight: bold;
     width:fit-content;
     padding: 0.5ex;
@@ -202,7 +203,7 @@ body{
     border-radius: 5px;
     
     height: 3.5ex;
-    font-family: "lucida Console";
+    font-family: lucida console, monospace,monaco;
     font-weight: normal;
     width:80%;
     padding: 0.5ex;
@@ -264,6 +265,7 @@ body{
       height: 13.5ex;
       width: 100%;
       object-fit: cover;
+      opacity: 1;
   }
 
   

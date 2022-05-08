@@ -96,8 +96,16 @@
                                         <small>Error message</small>
                                       </div>
 
+                                      <div class="form-control" id="image-preview-control">
+                                        <input type="text" id="previewImage" name="previewImageURL" value="" disabled>
+                                        <label for="previewImageURL" class="label-previewImageURL">
+                                            <span class="content-previewImageURL label-raw">Uploaded Image preview</span>
+                                            <img src="./images/loading.gif" class="project-img" id="preview-img">
+                                        </label>
+                                      </div>
+
                                       <div class="form-control">
-                                        <input type="text" id="previewImageURL" name="previewImageURL" value="--- loading ---" required>
+                                        <input type="text" id="previewImageURL" name="previewImageURL" value="" required>
                                         <label for="previewImageURL" class="label-previewImageURL">
                                             <span class="content-previewImageURL label-raw">Preview Image's URL</span>
                                         </label>
@@ -105,10 +113,10 @@
                                         <i class="fas fa-exclamation-circle"></i>
                                         <small>Error message</small>
                                       </div>
-                                      <div class="form-control">
+                                      <div class="form-control"  id="img-uploader">
                                         <input type="file" id="file-upload" name="previewImageURL" value="" style="opacity:0;">
                                         <label for="previewImageURL" class="label-previewImageURL">
-                                            <span class="content-previewImageURL label-raw">Upload an image ...</span>
+                                            <span class="content-previewImageURL label-raw">Replace the uploaded image ...</span>
                                         </label>
                                         <i class="fas fa-check-circle"></i>
                                         <i class="fas fa-exclamation-circle"></i>
