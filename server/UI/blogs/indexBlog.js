@@ -148,6 +148,9 @@ function checkInputs() {
             if(result.error){
                 throw result;
             }
+            else{
+                successNotifier("Comment Posted!");
+            }
         })
         .catch((error) => {
             console.log('error', error);
@@ -312,6 +315,9 @@ function likeReaction(){
         if(result.error){
             throw result;
         }
+        else{
+            likeNotifier(result.status);
+        }
     })
     .catch((error) => {
         console.log('error', error);
@@ -335,5 +341,47 @@ function errorNotifier(title,error){
             const myTimeout = setTimeout(notificationRemover, 5000);
             function notificationRemover() {
                 document.getElementById("uparrow").innerHTML =`<i class="fa-solid fa-circle-arrow-up"></i>`;
+            }
+}
+
+function successNotifier(title){
+    document.getElementById("night-day").innerHTML =`
+            <div style=" 
+            text-align: left;
+            background-color: black; 
+            opacity:0.8;
+            padding: 0px 1ex 1ex 1ex;
+            display: inline-block; 
+            color:gray;
+            border: solid 2px gray;
+            border-radius:5px; 
+            font-size:0.9ex;
+            font-weight: 50;"><span style="font-size:4.5ex;color: rgba(46,204,113,0.5);">✔️</span> ${title} </div> ${document.getElementById("night-day").innerHTML}
+            `
+            const myTimeout = setTimeout(notificationRemover, 3000);
+            function notificationRemover() {
+                document.getElementById("night-day").innerHTML =`<i class="fa-solid fa-circle-half-stroke"></i>`;
+            }
+}
+
+function likeNotifier(resStatus){
+    const title = (resStatus == 200)? `Liked` : `Unliked`;
+    const emoji = (resStatus == 200)? `👍` : `👎`;
+    document.getElementById("night-day").innerHTML =`
+            <div style=" 
+            text-align: left;
+            background-color: black; 
+            opacity:0.8;
+            padding: 0px 1ex 1ex 1ex;
+            display: inline-block; 
+            color:gray;
+            border: solid 2px gray;
+            border-radius:5px; 
+            font-size:0.9ex;
+            font-weight: 50;"><span style="font-size:4.5ex;color: rgba(46,204,113,0.5);">${emoji}</span> ${title} </div> ${document.getElementById("night-day").innerHTML}
+            `
+            const myTimeout = setTimeout(notificationRemover, 3000);
+            function notificationRemover() {
+                document.getElementById("night-day").innerHTML =`<i class="fa-solid fa-circle-half-stroke"></i>`;
             }
 }
