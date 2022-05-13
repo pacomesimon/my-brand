@@ -7,6 +7,18 @@
         </title>
         <link rel="stylesheet" href="./styles_dark/styleArticleEditor.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script>
+            if(window.localStorage.getItem("user-id")) {
+                const userDetails = window.localStorage.getItem("user-id");
+                const userDetailsObj = JSON.parse(userDetails);
+                if(userDetailsObj.membership=="member" && userDetailsObj.email!="smbonimpa2011@gmail.com"){
+                    window.location.replace("/home.html");
+                }
+            }
+            else{
+                window.location.replace("/home.html");
+            }
+        </script>
         <script src="https://kit.fontawesome.com/e752615e51.js" crossorigin="anonymous"></script>
         <style>
 
@@ -50,7 +62,7 @@
                     <a href="blog.html"><span>Blog</span></a>
                     <span id="currentpage">Admin Panel</span>
                     <!-- <span> </span> -->
-                    <a href="login.html"><span> Log out </span></a>
+                    <a href="login.html"><span id="logout-button-min"> Log out </span></a>
                 </div>
 
 
@@ -83,8 +95,15 @@
                                         <i class="fas fa-exclamation-circle"></i>
                                         <small>Error message</small>
                                       </div>
+                                      <div class="form-control" id="image-preview-control" style="display:none;">
+                                        <input type="text" id="previewImage" name="previewImageURL" value="" disabled>
+                                        <label for="previewImageURL" class="label-previewImageURL">
+                                            <span class="content-previewImageURL label-raw">Uploaded Image preview</span>
+                                            <img src="./images/loading.gif" class="project-img" id="preview-img">
+                                        </label>
+                                      </div>
 
-                                      <div class="form-control">
+                                      <div class="form-control" style="display:none;">
                                         <input type="text" id="previewImageURL" name="previewImageURL" value="" required>
                                         <label for="previewImageURL" class="label-previewImageURL">
                                             <span class="content-previewImageURL label-raw">Preview Image's URL</span>
@@ -96,7 +115,7 @@
                                       <div class="form-control">
                                         <input type="file" id="file-upload" name="previewImageURL" value="" style="opacity:0;">
                                         <label for="previewImageURL" class="label-previewImageURL">
-                                            <span class="content-previewImageURL label-raw">Upload an image ...</span>
+                                            <span class="content-previewImageURL label-raw"  id="img-uploader">Upload an image ...</span>
                                         </label>
                                         <i class="fas fa-check-circle"></i>
                                         <i class="fas fa-exclamation-circle"></i>

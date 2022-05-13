@@ -78,6 +78,19 @@ if(window.localStorage.getItem("user-id")) {
     name.value = userDetailsObj.name;
     email.value = userDetailsObj.email;
 }
+if(!(window.localStorage.getItem("x-auth-token"))){
+    name.disabled = true;
+    email.disabled = true;
+    message.disabled = true;
+    name.onclick = function(){unauthErrorNotify();};
+    email.onclick = function(){unauthErrorNotify();};
+    message.onclick = function(){unauthErrorNotify();};
+    document.getElementById("contact-form").onclick = function(){unauthErrorNotify()};
+    document.getElementById("likes").onclick = function() {unauthErrorNotify()};
+}
+function unauthErrorNotify(){
+    errorNotifier("To like and/or comment, Sign In is required.",`click <a href="../login.html" style="font-weight: 900;text-decoration: underline;">here</a> to sign in.`);
+}
 
 form.addEventListener('submit', e => {
 	e.preventDefault();
@@ -116,8 +129,8 @@ function checkInputs() {
         myHeaders.append("Content-Type", "application/json");
 
         let raw = JSON.stringify({
-            "articleID": storedArticleID,
-            "commentBody": messageValue
+            "articleID": storedArticleID.trim(),
+            "commentBody": messageValue.trim()
         });
 
         let requestOptions = {
@@ -132,8 +145,17 @@ function checkInputs() {
         .then((result) => {
             fetchArticle();
             formResetor();
+            if(result.error){
+                throw result;
+            }
+            else{
+                successNotifier("Comment Posted!");
+            }
         })
-        .catch(error => console.log('error', error));
+        .catch((error) => {
+            console.log('error', error);
+            errorNotifier("Can't send your comment.",error);
+        });
     }
 }
 
@@ -218,14 +240,18 @@ const fetchArticle = () => {
     const parseArticle = async (articleDetails) => {
         document.getElementById("project-img").src = articleDetails.article.previewImageURL;
         document.getElementById("article-title").innerHTML = articleDetails.article.title;
-        document.getElementById("author").innerHTML = " " + await fetch("https://my-brand-pacome.herokuapp.com/api/users/" + articleDetails.article.authorID, requestOpts)
+        document.getElementById("author").innerHTML = " by " + await fetch("https://my-brand-pacome.herokuapp.com/api/users/" + articleDetails.article.authorID, requestOpts)
             .then(response => response.json())
             .then((result) => {
                 document.title = articleDetails.article.title + " - by " + result.name;
                 return result.name;
             })
             .catch(error => console.log('error', error));
-        document.getElementById("date").innerHTML  = " " + JSON.parse(articleDetails.article.date);
+        let articleDateRaw = JSON.parse(articleDetails.article.date);
+        let articleDateObj = new Date(articleDateRaw);
+        let dateString = articleDateObj.toLocaleDateString('en-us', { weekday:"short", year:"numeric", month:"short", day:"numeric"});
+        let timeString = articleDateObj.toLocaleDateString('en-us', {  hour:"numeric", minute:"numeric"}).split(",")[1]; 
+        document.getElementById("date").innerHTML  = ` on ${dateString}, at${timeString}`;
         document.getElementById("blog-body").innerHTML = articleDetails.article.articleBody;
         // document.getElementById("likes").innerHTML = "";
         document.getElementById("likes").innerHTML  =  `<i class="fa-solid fa-heart"></i> ${(articleDetails.likes.length +" liked")}`;
@@ -263,8 +289,9 @@ const renderComments = (commentsArray) =>{
         commentsArray.forEach(commentsCardParser);
     }
 }
-
-document.getElementById("likes").onclick = function() {likeReaction()};
+if((window.localStorage.getItem("x-auth-token"))){
+    document.getElementById("likes").onclick = function() {likeReaction()};
+}
 
 function likeReaction(){
     var myHeaders = new Headers();
@@ -285,6 +312,76 @@ function likeReaction(){
     fetch("https://my-brand-pacome.herokuapp.com/api/likes/", requestOptions)
     .then((result) => {
         fetchArticle();
+        if(result.error){
+            throw result;
+        }
+        else{
+            likeNotifier(result.status);
+        }
     })
-    .catch(error => console.log('error', error));
+    .catch((error) => {
+        console.log('error', error);
+        errorNotifier("Can't like this article.",error);
+    });
+}
+function errorNotifier(title,error){
+    document.getElementById("uparrow").innerHTML =`
+            <div style=" 
+            text-align: left;
+            background-color: black; 
+            opacity:0.8;
+            padding: 0px 1ex 1ex 1ex;
+            display: inline-block; 
+            color:gray;
+            border: solid 2px gray;
+            border-radius:5px; 
+            font-size:0.9ex;
+            font-weight: 50;"><span style="font-size:4.5ex;color: #e74c3c;">&#9888;</span> <br> ${title} <br>${(error.error ? error.error : error)}</div> ${document.getElementById("uparrow").innerHTML}
+            `
+            const myTimeout = setTimeout(notificationRemover, 5000);
+            function notificationRemover() {
+                document.getElementById("uparrow").innerHTML =`<i class="fa-solid fa-circle-arrow-up"></i>`;
+            }
+}
+
+function successNotifier(title){
+    document.getElementById("night-day").innerHTML =`
+            <div style=" 
+            text-align: left;
+            background-color: black; 
+            opacity:0.8;
+            padding: 0px 1ex 1ex 1ex;
+            display: inline-block; 
+            color:gray;
+            border: solid 2px gray;
+            border-radius:5px; 
+            font-size:0.9ex;
+            font-weight: 50;"><span style="font-size:4.5ex;color: rgba(46,204,113,0.5);">✔️</span> ${title} </div> ${document.getElementById("night-day").innerHTML}
+            `
+            const myTimeout = setTimeout(notificationRemover, 3000);
+            function notificationRemover() {
+                document.getElementById("night-day").innerHTML =`<i class="fa-solid fa-circle-half-stroke"></i>`;
+            }
+}
+
+function likeNotifier(resStatus){
+    const title = (resStatus == 200)? `Liked` : `Unliked`;
+    const emoji = (resStatus == 200)? `👍` : `👎`;
+    document.getElementById("night-day").innerHTML =`
+            <div style=" 
+            text-align: left;
+            background-color: black; 
+            opacity:0.8;
+            padding: 0px 1ex 1ex 1ex;
+            display: inline-block; 
+            color:gray;
+            border: solid 2px gray;
+            border-radius:5px; 
+            font-size:0.9ex;
+            font-weight: 50;"><span style="font-size:4.5ex;color: rgba(46,204,113,0.5);">${emoji}</span> ${title} </div> ${document.getElementById("night-day").innerHTML}
+            `
+            const myTimeout = setTimeout(notificationRemover, 3000);
+            function notificationRemover() {
+                document.getElementById("night-day").innerHTML =`<i class="fa-solid fa-circle-half-stroke"></i>`;
+            }
 }

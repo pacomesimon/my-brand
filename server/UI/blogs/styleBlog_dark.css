@@ -4,7 +4,7 @@ a {
 }
 body{
   margin: 0;
-  font-family: "Lucida Console";
+  font-family: lucida console, monospace,monaco;
   background-color: black;
   background-image: url("./images/background-image-dark.jpg");
   background-attachment: fixed;
@@ -261,7 +261,7 @@ body{
   } 
 
   /* #name{
-    font-family: "Lucida Console";
+    font-family: lucida console, monospace,monaco;
     height: 3ex;
     font-size: 1.7ex; 
     border-radius: 5px;
@@ -271,7 +271,7 @@ body{
   } */
 
   #name{
-    font-family: "Lucida Console";
+    font-family: lucida console, monospace,monaco;
     height: 2ex;
     font-size: 2ex;
     border-radius: 5px;
@@ -394,7 +394,7 @@ body{
   }
 
   /* #email{
-    font-family: "Lucida Console";
+    font-family: lucida console, monospace,monaco;
     height: 3ex;
     font-size: 1.7ex;
     border-radius: 5px;
@@ -404,7 +404,7 @@ body{
   } */
 
   #email{
-    font-family: "Lucida Console";
+    font-family: lucida console, monospace,monaco;
     height: 2ex;
     font-size: 2ex;
     border-radius: 5px;
@@ -468,7 +468,7 @@ body{
   }
 
   /* #message{
-    font-family: "Lucida Console";
+    font-family: lucida console, monospace,monaco;
     font-size: 1.7ex;
     border-radius: 5px;
     border: 1px solid rgb(100,100,100);
@@ -477,7 +477,7 @@ body{
   } */
 
   #message{
-    font-family: "Lucida Console";
+    font-family: lucida console, monospace,monaco;
     height: 16ex !important;
     font-size: 2ex;
     border-radius: 5px;

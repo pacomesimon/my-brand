@@ -7,6 +7,18 @@
         </title>
         <link rel="stylesheet" href="./styles_dark/styleArticleMenu.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script>
+            if(window.localStorage.getItem("user-id")) {
+                const userDetails = window.localStorage.getItem("user-id");
+                const userDetailsObj = JSON.parse(userDetails);
+                if(userDetailsObj.membership=="member" && userDetailsObj.email!="smbonimpa2011@gmail.com"){
+                    window.location.replace("/home.html");
+                }
+            }
+            else{
+                window.location.replace("/home.html");
+            }
+        </script>
         <script src="https://kit.fontawesome.com/e752615e51.js" crossorigin="anonymous"></script>
         <style>
 
@@ -50,7 +62,7 @@
                     <a href="blog.html"><span>Blog</span></a>
                     <span id="currentpage">Admin Panel</span>
                     <!-- <span> </span> -->
-                    <a href="login.html"><span> Log out </span></a>
+                    <a href="login.html"><span id="logout-button-min"> Log out </span></a>
                 </div>
 
 
@@ -75,7 +87,7 @@
                             <div class="project-card">
                                 <img src="images/loading.gif" class="project-img">
                                 <div class="project-card-details">
-                                    <span class="blog-title"><strong>Web design skilled labour needed</strong></span>
+                                    <span class="blog-title"><strong>- - -</strong></span>
                                 </div>
                                 <div class="buttons">
                                     <button class="edit"><a href="articleEditorFilled.html"><i class="fa-solid fa-file-pen"></i> Edit</button></a>
@@ -96,7 +108,7 @@
                             <div class="project-card">
                                 <img src="images/loading.gif" class="project-img">
                                 <div class="project-card-details">
-                                    <span class="blog-title"><strong>Web design skilled labour needed</strong></span>
+                                    <span class="blog-title"><strong>- - -</strong></span>
                                 </div>
                                 <div class="buttons">
                                     <button class="edit"><a href="articleEditorFilled.html"><i class="fa-solid fa-file-pen"></i> Edit</button></a>
@@ -117,7 +129,7 @@
                             <div class="project-card">
                                 <img src="images/loading.gif" class="project-img">
                                 <div class="project-card-details">
-                                    <span class="blog-title"><strong>Web design skilled labour needed</strong></span>
+                                    <span class="blog-title"><strong>- - -</strong></span>
                                 </div>
                                 <div class="buttons">
                                     <button class="edit"><a href="articleEditorFilled.html"><i class="fa-solid fa-file-pen"></i> Edit</button></a>
@@ -138,7 +150,7 @@
                             <div class="project-card">
                                 <img src="images/loading.gif" class="project-img">
                                 <div class="project-card-details">
-                                    <span class="blog-title"><strong>Web design skilled labour needed</strong></span>
+                                    <span class="blog-title"><strong>- - -</strong></span>
                                 </div>
                                 <div class="buttons">
                                     <button class="edit"><a href="articleEditorFilled.html"><i class="fa-solid fa-file-pen"></i> Edit</button></a>
@@ -159,7 +171,7 @@
                             <div class="project-card">
                                 <img src="images/loading.gif" class="project-img">
                                 <div class="project-card-details">
-                                    <span class="blog-title"><strong>Web design skilled labour needed</strong></span>
+                                    <span class="blog-title"><strong>- - -</strong></span>
                                 </div>
                                 <div class="buttons">
                                     <button class="edit"><a href="articleEditorFilled.html"><i class="fa-solid fa-file-pen"></i> Edit</button></a>
@@ -180,7 +192,7 @@
                             <div class="project-card">
                                 <img src="images/loading.gif" class="project-img">
                                 <div class="project-card-details">
-                                    <span class="blog-title"><strong>Web design skilled labour needed</strong></span>
+                                    <span class="blog-title"><strong>- - -</strong></span>
                                 </div>
                                 <div class="buttons">
                                     <button class="edit"><a href="articleEditorFilled.html"><i class="fa-solid fa-file-pen"></i> Edit</button></a>

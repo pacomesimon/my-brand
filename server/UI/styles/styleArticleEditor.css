@@ -4,7 +4,7 @@ a {
 }
 body{
   margin: 0;
-  font-family: "Lucida Console";
+  font-family: lucida console, monospace,monaco;
   background-image: url("../images/background-image.jpg");
   background-attachment: fixed;
   background-size: cover;
@@ -70,7 +70,7 @@ body{
     border-radius: 5px;
     background: rgba(0, 0, 255, 0.15);
     height: 3.5ex;
-    font-family: "lucida Console";
+    font-family: lucida console, monospace,monaco;
     font-weight: normal;
     width:fit-content;
     padding: 0.5ex;
@@ -157,7 +157,7 @@ body{
     border-radius: 5px;
     background: rgba(0, 0, 255, 0.5);
     height: 3.5ex;
-    font-family: "lucida Console";
+    font-family: lucida console, monospace,monaco;
     font-weight: bold;
     width:fit-content;
     padding: 0.5ex;
@@ -193,7 +193,7 @@ body{
     border-radius: 5px;
     
     height: 4.5ex;
-    font-family: "lucida Console";
+    font-family: lucida console, monospace,monaco;
     font-weight: normal;
     width:50%;
     padding: 0.5ex;
@@ -251,10 +251,15 @@ body{
   } */
 
   .project-img {
-      height: 13.5ex;
-      width: 100%;
-      object-fit: cover;
+    height: 10ex;
+    width: 28ex;
+    object-fit: cover;
+    position: absolute;
+    top: 1ex;
+    left: 0ex;
+    opacity: .9;
   }
+
   
   .contact-title{
     /* background-color: rgba(196, 196, 196, 0.12); */
@@ -273,7 +278,7 @@ body{
   }
 
   #title, #previewImageURL{
-    font-family: "Lucida Console";
+    font-family: lucida console, monospace,monaco;
     height: 2ex;
     font-size: 2ex;
     border-radius: 5px;
@@ -382,7 +387,7 @@ body{
     border: 2px solid rgba(0, 0, 255, 0.49);
   }
   #previewImageURL {
-    font-family: "Lucida Console";
+    font-family: lucida console, monospace,monaco;
     height: 2ex;
     font-size: 2ex;
     border-radius: 5px;
@@ -434,7 +439,7 @@ body{
     border: 2px solid rgba(0, 0, 255, 0.49);
   }
   #articleBody{
-    font-family: "Lucida Console";
+    font-family: lucida console, monospace,monaco;
     height: 35ex !important;
     font-size: 2ex;
     border-radius: 5px;
@@ -726,10 +731,15 @@ body{
       height: auto;
     }
     .project-img {
-      height: 12ex;
-      width: 100%;
+      height: 10ex;
+      width: 28ex;
       object-fit: cover;
+      position: absolute;
+      top: 1ex;
+      left: 0ex;
+      opacity: 0.9;
     }
+
 
     #night-day {
       position: fixed;
